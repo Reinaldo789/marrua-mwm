@@ -586,8 +586,8 @@ main {
 .page-card h2 { margin: 1.8rem 0 0.4rem; font-size: 1.2rem; color: var(--primary); }
 .page-card img { max-width: 100%; height: auto; border-radius: 10px; }
 .page-card table { border-collapse: collapse; width: 100%; }
-.page-card td, .page-card th { border: 1px solid var(--border-color); padding: 0.4rem 0.7rem; font-size: 0.88rem; line-height: 1.4; }
-@media (max-width: 600px) { .page-card td, .page-card th { font-size: 0.80rem; padding: 0.3rem 0.5rem; } }
+.page-card td, .page-card th { border: 1px solid var(--border-color); padding: 0.4rem 0.7rem; font-size: 0.85rem; line-height: 1.4; }
+@media (max-width: 600px) { .page-card td, .page-card th { font-size: 0.78rem; padding: 0.3rem 0.5rem; } }
 .page-loading { color: var(--text-muted); }
 /* depois de clicar num item, o painel fecha até o mouse sair e voltar */
 .nav-item.closed .mega-menu { opacity: 0 !important; visibility: hidden !important; }
