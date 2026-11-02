@@ -1,1 +1,318 @@
-vh
+<!-- Estudo técnico de viscosidade e tipos de óleos lubrificantes.
+     Estrutura compatível com o modelo lubrificacao.html:
+     art-head, toc, data-goto, aviso e dica.
+     Conteúdo genérico para estudo; não substitui a especificação do fabricante. -->
+
+<header class="art-head">
+  <h1>Viscosidade e Tipos de Óleos Lubrificantes</h1>
+</header>
+
+<nav class="toc" aria-label="Neste artigo">
+  <strong>Neste artigo</strong>
+  <ul>
+    <li><a href="#" data-goto="conceito-viscosidade">1. O que é viscosidade?</a></li>
+    <li><a href="#" data-goto="classificacao-sae">2. Como interpretar a classificação SAE</a></li>
+    <li><a href="#" data-goto="indice-viscosidade">3. Índice de viscosidade (IV)</a></li>
+    <li><a href="#" data-goto="bases-lubrificantes">4. Óleos minerais, semissintéticos e sintéticos</a></li>
+    <li><a href="#" data-goto="comparacao-bases">5. Comparação entre os tipos de óleo</a></li>
+    <li><a href="#" data-goto="mesma-sae">6. Mesma viscosidade SAE, desempenho diferente</a></li>
+    <li><a href="#" data-goto="filme-lubrificante">7. Viscosidade e filme lubrificante</a></li>
+    <li><a href="#" data-goto="normas-desempenho">8. API, ACEA e aprovações</a></li>
+    <li><a href="#" data-goto="erros-oficina">9. Erros comuns na oficina</a></li>
+    <li><a href="#" data-goto="selecao-oleo">10. Como escolher o óleo correto</a></li>
+    <li><a href="#" data-goto="resumo-tecnico">Resumo técnico</a></li>
+  </ul>
+</nav>
+
+<h2 id="conceito-viscosidade">1. O que é viscosidade?</h2>
+<p>Viscosidade é a propriedade física que expressa a resistência de um fluido ao escoamento ou à deformação. Nos lubrificantes, ela influencia a circulação do óleo e a formação de uma película entre as superfícies móveis.</p>
+
+<p>Em termos práticos, quando a temperatura aumenta, a viscosidade de um óleo normalmente diminui. Quando a temperatura cai, a viscosidade aumenta. Por isso, o lubrificante precisa apresentar comportamento adequado tanto na partida a frio quanto na temperatura normal de funcionamento.</p>
+
+<div class="dica">
+  <strong>Exemplo prático</strong>
+  <p>Compare mel e água na mesma temperatura: o mel escoa mais lentamente porque apresenta maior viscosidade. Agora imagine o mesmo óleo lubrificante em duas condições: frio e quente. Quando frio, ele oferece maior resistência ao escoamento; aquecido, fica menos viscoso e circula com mais facilidade.</p>
+</div>
+
+<p><b>Atenção:</b> viscosidade não é sinônimo de qualidade. Um óleo mais viscoso não é automaticamente melhor, assim como um óleo menos viscoso não é necessariamente pior. A viscosidade correta depende do projeto, das folgas, das cargas, da temperatura e da especificação do fabricante.</p>
+
+<h2 id="classificacao-sae">2. Como interpretar a classificação SAE?</h2>
+<p>A classificação SAE informa os graus de viscosidade do lubrificante. Para óleos de motor, utiliza-se a norma SAE J300. Para óleos de engrenagens automotivas, utiliza-se a SAE J306. As duas classificações são diferentes e não devem ser confundidas.</p>
+
+<h3>Óleos de motor multiviscosos</h3>
+<p>Em uma classificação como <b>5W-30</b>, <b>10W-40</b> ou <b>15W-40</b>, cada parte tem uma função:</p>
+<ul>
+  <li><b>Primeiro número + W:</b> identifica o grau de viscosidade para baixa temperatura. W vem de <i>Winter</i> (inverno). Quanto menor o número, mais baixa é a temperatura de referência dos ensaios daquela classe.</li>
+  <li><b>Segundo número:</b> identifica o grau de viscosidade em alta temperatura, conforme os limites definidos pela SAE J300. A classificação considera viscosidade cinemática a 100 °C e requisitos de viscosidade HTHS para os graus aplicáveis.</li>
+</ul>
+
+<div style="overflow-x: auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>Exemplo</th>
+        <th>Interpretação</th>
+        <th>O que não significa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>5W-30</b></td>
+        <td>Grau 5W a frio e grau 30 em alta temperatura.</td>
+        <td>Não significa que o óleo só pode trabalhar até 30 °C.</td>
+      </tr>
+      <tr>
+        <td><b>10W-40</b></td>
+        <td>Grau 10W a frio e grau 40 em alta temperatura.</td>
+        <td>Não significa que seja semissintético.</td>
+      </tr>
+      <tr>
+        <td><b>15W-40</b></td>
+        <td>Grau 15W a frio e grau 40 em alta temperatura.</td>
+        <td>Não significa que seja necessariamente mineral.</td>
+      </tr>
+      <tr>
+        <td><b>20W-50</b></td>
+        <td>Grau 20W a frio e grau 50 em alta temperatura.</td>
+        <td>Não significa que seja de melhor qualidade por ser um número maior.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>O que o segundo número realmente informa?</h3>
+<p>O segundo número não representa uma temperatura máxima de trabalho. Ele identifica uma faixa de viscosidade padronizada. Por exemplo, os graus SAE 30 e SAE 40 possuem faixas diferentes de viscosidade a 100 °C e requisitos próprios de HTHS.</p>
+
+<div class="aviso">
+  <strong>Não confundir SAE J300 com SAE J306</strong>
+  <p>SAE 5W-30 e SAE 15W-40 são classificações de óleos de motor. SAE 75W-90 e SAE 80W-90 são classificações de óleos para engrenagens. Os números parecem semelhantes, mas as faixas e os métodos de classificação são diferentes. Um SAE 90 de engrenagens não tem a mesma viscosidade de um SAE 40 de motor apenas por comparação numérica.</p>
+</div>
+
+<h2 id="indice-viscosidade">3. Índice de viscosidade (IV)</h2>
+<p>O índice de viscosidade, conhecido como IV ou VI (<i>Viscosity Index</i>), indica quanto a viscosidade cinemática de um óleo varia em função da temperatura, calculado a partir de medições padronizadas.</p>
+
+<ul>
+  <li><b>IV mais alto:</b> em geral, indica menor variação relativa da viscosidade com a mudança de temperatura.</li>
+  <li><b>IV mais baixo:</b> em geral, indica maior variação relativa da viscosidade com a mudança de temperatura.</li>
+</ul>
+
+<p>O IV não informa diretamente se o óleo é mineral ou sintético, nem determina sozinho sua qualidade ou capacidade de proteção. É uma propriedade que deve ser analisada junto com a viscosidade SAE, a estabilidade ao cisalhamento e as especificações de desempenho.</p>
+
+<div class="dica">
+  <strong>Exemplo para entender</strong>
+  <p>Dois óleos podem apresentar a mesma viscosidade a 100 °C, mas variar de maneira diferente quando resfriados. O óleo com maior índice de viscosidade tende a conservar melhor sua viscosidade relativa ao longo da variação de temperatura considerada no cálculo do IV.</p>
+</div>
+
+<h2 id="bases-lubrificantes">4. Óleos minerais, semissintéticos e sintéticos</h2>
+<p>A classificação mineral, semissintético ou sintético está relacionada à composição e à tecnologia dos óleos básicos utilizados na formulação. Ela não substitui a classificação SAE e não determina, isoladamente, a viscosidade final do produto.</p>
+
+<h3>4.1 Óleo mineral</h3>
+<p>É formulado com óleos básicos obtidos do petróleo por processos de refino e tratamento. A qualidade varia conforme o tipo de petróleo, o processo de refino, o grupo do óleo básico e os aditivos utilizados.</p>
+<ul>
+  <li>Pode atender corretamente a aplicações que foram projetadas para essa categoria de lubrificante.</li>
+  <li>As propriedades de oxidação, volatilidade e comportamento a frio dependem da qualidade da base e da formulação.</li>
+  <li>Não se pode afirmar que todo óleo mineral exige intervalos de troca menores: o intervalo deve seguir a recomendação do fabricante e as condições de uso.</li>
+</ul>
+<p><b>Exemplos de classificação possíveis:</b> SAE 15W-40 mineral ou SAE 20W-50 mineral. Esses exemplos não significam que toda formulação com esses graus seja mineral.</p>
+
+<h3>4.2 Óleo semissintético</h3>
+<p>É uma denominação comercial normalmente utilizada para formulações que combinam óleos básicos minerais e sintéticos ou de maior desempenho. Não existe uma proporção única e universal que defina todos os produtos vendidos como semissintéticos.</p>
+<ul>
+  <li>Pode combinar características de diferentes tipos de bases.</li>
+  <li>O desempenho depende da qualidade e da proporção dos componentes, dos aditivos e dos ensaios atendidos.</li>
+  <li>Não possui obrigatoriamente desempenho exatamente intermediário entre um mineral e um sintético.</li>
+</ul>
+<p><b>Exemplo de classificação possível:</b> SAE 10W-40 semissintético.</p>
+
+<h3>4.3 Óleo sintético</h3>
+<p>É formulado com bases obtidas por processos de transformação e/ou síntese que permitem controlar determinadas propriedades. No mercado automotivo, a expressão “sintético” pode abranger diferentes tecnologias de óleos básicos, conforme a legislação e as práticas comerciais aplicáveis.</p>
+<ul>
+  <li>Pode oferecer boa estabilidade térmica e resistência à oxidação.</li>
+  <li>Pode ser formulado para apresentar bom comportamento em baixas temperaturas.</li>
+  <li>As propriedades reais dependem do óleo básico, do pacote de aditivos e do desempenho comprovado do produto.</li>
+</ul>
+<p>Entre as tecnologias de bases utilizadas estão os óleos básicos do Grupo III, os polialfaolefinas (PAO, Grupo IV) e os ésteres e outras bases do Grupo V. Nem todo produto comercializado como sintético utiliza PAO ou ésteres.</p>
+<p><b>Exemplos de classificação possíveis:</b> SAE 0W-20 sintético, SAE 5W-30 sintético ou SAE 5W-40 sintético.</p>
+
+<h2 id="comparacao-bases">5. Comparação entre os tipos de óleo</h2>
+<div style="overflow-x: auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>Característica</th>
+        <th>Mineral</th>
+        <th>Semissintético</th>
+        <th>Sintético</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Composição da base</td>
+        <td>Bases minerais refinadas.</td>
+        <td>Combinação de bases, conforme a formulação.</td>
+        <td>Bases de tecnologia sintética e/ou altamente refinadas, conforme a definição comercial aplicável.</td>
+      </tr>
+      <tr>
+        <td>Comportamento a frio</td>
+        <td>Depende da base e do grau SAE.</td>
+        <td>Depende da formulação e do grau SAE.</td>
+        <td>Pode apresentar excelente desempenho, conforme a formulação e o grau SAE.</td>
+      </tr>
+      <tr>
+        <td>Resistência à oxidação</td>
+        <td>Depende da base e dos aditivos.</td>
+        <td>Depende da base e dos aditivos.</td>
+        <td>Pode ser elevada, conforme a tecnologia e os ensaios do produto.</td>
+      </tr>
+      <tr>
+        <td>Estabilidade ao cisalhamento</td>
+        <td>Depende da formulação.</td>
+        <td>Depende da formulação.</td>
+        <td>Depende da formulação e dos melhoradores de viscosidade utilizados.</td>
+      </tr>
+      <tr>
+        <td>Preço de mercado</td>
+        <td>Geralmente menor.</td>
+        <td>Geralmente intermediário.</td>
+        <td>Geralmente maior.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p><b>Importante:</b> a tabela apresenta tendências gerais. Não é uma escala absoluta de qualidade. Um produto mineral que atende à especificação correta é preferível a um sintético que não atende à aplicação.</p>
+
+<h2 id="mesma-sae">6. Dois óleos com a mesma viscosidade SAE podem ter desempenhos diferentes?</h2>
+<p>Sim. A classificação SAE define limites de viscosidade, mas não descreve todas as propriedades de desempenho do lubrificante.</p>
+
+<div style="overflow-x: auto;">
+  <table>
+    <thead>
+      <tr>
+        <th>Exemplo hipotético</th>
+        <th>Tipo de base</th>
+        <th>Classificação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Óleo A</td>
+        <td>Mineral</td>
+        <td>SAE 15W-40</td>
+      </tr>
+      <tr>
+        <td>Óleo B</td>
+        <td>Semissintético</td>
+        <td>SAE 15W-40</td>
+      </tr>
+      <tr>
+        <td>Óleo C</td>
+        <td>Sintético</td>
+        <td>SAE 15W-40</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<p>Os três produtos atendem à mesma classe SAE, mas podem apresentar diferenças em índice de viscosidade, volatilidade, resistência à oxidação, limpeza, proteção contra desgaste e estabilidade ao cisalhamento. Essas diferenças precisam ser avaliadas pelas fichas técnicas e pelas aprovações dos produtos.</p>
+
+<p>Agora compare um óleo mineral SAE 20W-50 com um sintético SAE 5W-30. O segundo pertence a uma classe de viscosidade diferente e normalmente apresenta menor viscosidade a 100 °C. Essa diferença decorre dos graus SAE, não simplesmente do fato de um ser sintético e o outro mineral.</p>
+
+<div class="aviso">
+  <strong>Regra técnica</strong>
+  <p>“Sintético” não significa automaticamente “mais fino”, e “mineral” não significa automaticamente “mais grosso”. A viscosidade é identificada pela classificação SAE e pelos valores medidos na ficha técnica.</p>
+</div>
+
+<h2 id="filme-lubrificante">7. Viscosidade e formação do filme lubrificante</h2>
+<p>O objetivo da lubrificação é reduzir o atrito e o desgaste entre superfícies em movimento. A viscosidade influencia a capacidade de formar e manter um filme de óleo, mas não é o único fator envolvido.</p>
+
+<p>O regime de lubrificação depende, entre outros fatores, de:</p>
+<ul>
+  <li>Viscosidade do lubrificante na temperatura real de trabalho.</li>
+  <li>Velocidade relativa entre as superfícies.</li>
+  <li>Carga aplicada aos componentes.</li>
+  <li>Geometria, folgas e acabamento das superfícies.</li>
+  <li>Alimentação e vazão de óleo.</li>
+</ul>
+
+<h3>Viscosidade excessiva</h3>
+<ul>
+  <li>Pode aumentar a resistência à circulação, especialmente durante a partida a frio.</li>
+  <li>Pode elevar as perdas por arrasto e o esforço necessário para movimentar o óleo.</li>
+  <li>Pode dificultar a alimentação de determinados pontos se o lubrificante não for adequado ao projeto e à temperatura.</li>
+</ul>
+
+<h3>Viscosidade insuficiente</h3>
+<ul>
+  <li>Pode reduzir a espessura do filme lubrificante em determinadas condições.</li>
+  <li>Pode aumentar o contato entre superfícies e o desgaste.</li>
+  <li>Pode contribuir para queda de pressão em relação ao comportamento esperado pelo projeto, mas pressão baixa também pode ter outras causas, como folgas excessivas, bomba desgastada ou válvula reguladora defeituosa.</li>
+</ul>
+
+<div class="dica">
+  <strong>Diagnóstico de oficina</strong>
+  <p>Não condene um motor apenas porque a pressão de óleo está baixa e não tente corrigir o problema colocando um óleo mais grosso sem diagnóstico. Verifique nível, temperatura, filtro, instrumento de medição, válvula reguladora, bomba e folgas internas conforme o procedimento do fabricante.</p>
+</div>
+
+<h2 id="normas-desempenho">8. Classificações API, ACEA e aprovações das montadoras</h2>
+<p>A viscosidade SAE não informa, sozinha, se o lubrificante atende às exigências de um motor. Para isso existem categorias de desempenho e especificações adicionais.</p>
+
+<h3>API</h3>
+<p>O API classifica óleos de motor por categorias de desempenho. Nas categorias para motores a gasolina, a designação normalmente começa com “S”; para motores diesel, com “C”. A categoria exigida depende da geração do motor e dos requisitos do fabricante.</p>
+
+<h3>ACEA</h3>
+<p>A ACEA estabelece sequências de desempenho para óleos de motor utilizados em veículos europeus. As categorias variam conforme o tipo de motor, a proteção contra desgaste, a economia de combustível e a compatibilidade com sistemas de pós-tratamento.</p>
+
+<h3>Aprovações da montadora</h3>
+<p>Alguns fabricantes estabelecem normas próprias, com requisitos específicos de ensaio. Quando o manual exige uma aprovação determinada, não basta escolher um óleo que tenha apenas a mesma viscosidade SAE ou uma categoria API aparentemente semelhante.</p>
+
+<div class="aviso">
+  <strong>Atenção aos sistemas de pós-tratamento</strong>
+  <p>Motores equipados com catalisador, filtro de partículas diesel (DPF) ou outros sistemas de controle de emissões podem exigir lubrificantes com limites específicos de cinzas sulfatadas, fósforo e enxofre (SAPS). Utilize a categoria e a aprovação indicadas para o motor. Não escolha apenas pela viscosidade.</p>
+</div>
+
+<h2 id="erros-oficina">9. Erros comuns na oficina</h2>
+
+<h3>Erro 1 – “Óleo sintético é sempre mais fino que mineral.”</h3>
+<p><b>Incorreto.</b> A viscosidade depende da formulação e do grau SAE. Um sintético 15W-40 e um mineral 15W-40 pertencem à mesma classe SAE, embora possam ter propriedades e desempenho diferentes.</p>
+
+<h3>Erro 2 – “Quanto maior o segundo número, melhor a proteção.”</h3>
+<p><b>Incorreto.</b> Um grau de viscosidade maior não é automaticamente melhor. O óleo precisa ter a viscosidade prevista no projeto. Um produto excessivamente viscoso pode prejudicar a circulação e aumentar perdas por atrito.</p>
+
+<h3>Erro 3 – “Óleo sintético pode ser usado em qualquer motor antigo.”</h3>
+<p><b>Incorreto.</b> A palavra sintético não garante compatibilidade. É necessário conferir viscosidade, categoria de desempenho, aprovações, materiais e recomendações do fabricante.</p>
+
+<h3>Erro 4 – “Dois óleos com o mesmo SAE são iguais.”</h3>
+<p><b>Incorreto.</b> A classe SAE não determina o pacote de aditivos, a resistência à oxidação, a volatilidade, a limpeza ou todas as propriedades de proteção.</p>
+
+<h3>Erro 5 – “Óleo mineral sempre precisa ser trocado antes do sintético.”</h3>
+<p><b>Não é uma regra universal.</b> O intervalo de troca deve seguir o fabricante do motor, o produto aprovado e o regime de utilização. Poeira, combustível, temperatura, marcha lenta prolongada e serviço severo podem exigir intervalos menores.</p>
+
+<h2 id="selecao-oleo">10. Como escolher o óleo correto</h2>
+<p>Na oficina, a seleção deve seguir uma ordem técnica:</p>
+<ol>
+  <li><b>Identificar o equipamento:</b> motor, transmissão manual, diferencial, caixa de transferência ou sistema hidráulico.</li>
+  <li><b>Consultar o manual:</b> verificar a viscosidade e as especificações exigidas pelo fabricante.</li>
+  <li><b>Conferir o desempenho:</b> verificar API, ACEA, normas próprias e aprovações formais aplicáveis.</li>
+  <li><b>Consultar a ficha técnica:</b> conferir viscosidade a 40 °C e 100 °C, índice de viscosidade, HTHS e demais dados relevantes quando disponíveis.</li>
+  <li><b>Considerar a operação:</b> temperatura ambiente, carga, poeira, trajetos curtos, reboque, marcha lenta e serviço severo.</li>
+  <li><b>Definir o intervalo:</b> seguir a recomendação do fabricante e ajustar somente conforme procedimento autorizado para as condições de uso.</li>
+</ol>
+
+<div class="dica">
+  <strong>Exemplo de decisão</strong>
+  <p>Se o manual exige SAE 15W-40 e uma categoria de desempenho específica, não escolha SAE 5W-30 apenas por ser sintético. Primeiro procure um produto que cumpra a viscosidade e a categoria exigidas. A tecnologia da base pode ser um critério adicional, mas não substitui os requisitos do motor.</p>
+</div>
+
+<h2 id="resumo-tecnico">Resumo técnico</h2>
+<ul>
+  <li><b>Viscosidade SAE:</b> classifica o comportamento viscosimétrico em condições padronizadas de temperatura.</li>
+  <li><b>Índice de viscosidade:</b> indica como a viscosidade varia com a temperatura.</li>
+  <li><b>Mineral, semissintético e sintético:</b> descrevem características das bases e da formulação, não um grau de viscosidade.</li>
+  <li><b>API e ACEA:</b> classificam requisitos de desempenho dos lubrificantes.</li>
+  <li><b>Aprovação da montadora:</b> confirma atendimento a requisitos específicos do fabricante, quando formalmente aplicável.</li>
+  <li><b>Ficha técnica:</b> permite comparar propriedades medidas de produtos específicos.</li>
+</ul>
+
+<div class="aviso">
+  <strong>Regra fundamental para o mecânico</strong>
+  <p>Escolha primeiro o lubrificante que atende à viscosidade e às especificações exigidas pelo fabricante. Não substitua uma aprovação técnica por preço, marca, tipo de base ou apenas pela classificação SAE.</p>
+</div>
