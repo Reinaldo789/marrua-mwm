@@ -586,7 +586,8 @@ main {
 .page-card h2 { margin: 1.8rem 0 0.4rem; font-size: 1.2rem; color: var(--primary); }
 .page-card img { max-width: 100%; height: auto; border-radius: 10px; }
 .page-card table { border-collapse: collapse; width: 100%; }
-.page-card td, .page-card th { border: 1px solid var(--border-color); padding: 0.4rem 0.7rem; }
+.page-card td, .page-card th { border: 1px solid var(--border-color); padding: 0.4rem 0.7rem; font-size: 0.82rem; line-height: 1.4; }
+@media (max-width: 600px) { .page-card td, .page-card th { font-size: 0.75rem; padding: 0.3rem 0.5rem; } }
 .page-loading { color: var(--text-muted); }
 /* depois de clicar num item, o painel fecha até o mouse sair e voltar */
 .nav-item.closed .mega-menu { opacity: 0 !important; visibility: hidden !important; }
@@ -818,74 +819,22 @@ main {
 a.img-link { text-decoration: underline dotted; text-underline-offset: 3px; font-weight: 600; cursor: zoom-in; }
 a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.75em; margin-left: 0.35em; }
 
-/* ==========================================
-   CÓDIGOS DE FALHA EM ACORDEÃO (VISUAL DA IMAGEM)
-   ========================================== */
-.codigos { 
-  display: grid; 
-  gap: 0.8rem; 
-  margin-top: 1.2rem; 
-}
-.codigo { 
-  border: 1px solid var(--border-color); 
-  border-radius: 12px; 
-  background: #fff; 
-  transition: var(--transition); 
-  overflow: hidden;
-}
+/* códigos de falha em acordeão */
+.codigos { display: grid; gap: 0.6rem; margin-top: 1rem; }
+.codigo { display: flex; gap: 0.9rem; align-items: flex-start; border: 1px solid var(--border-color); border-radius: 14px; padding: 0.9rem 1rem; background: #fff; transition: var(--transition); }
+.codigo .num { flex: none; font-weight: 800; font-size: 0.95rem; color: #fff; background: var(--primary); border-radius: 10px; padding: 0.4rem 0.7rem; }
+.codigo h4 { margin: 0.25rem 0 0; font-size: 0.95rem; }
+.codigo p { margin: 0.5rem 0 0; font-size: 0.92rem; }
+.codigo ul { margin: 0.4rem 0 0; }
 .codigos.enh .codigo { cursor: pointer; }
 .codigos.enh .codigo:hover { border-color: #c7d2fe; box-shadow: var(--shadow-sm); }
-
-/* Esconde o conteúdo por padrão e mostra quando aberto */
 .codigos.enh .codigo > div > :not(h4) { display: none; }
 .codigos.enh .codigo.open > div > :not(h4) { display: block; }
+.codigos.enh .codigo h4::after { content: "\f078"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.7rem; margin-left: 0.5rem; color: var(--text-muted); display: inline-block; transition: transform 0.25s; }
+.codigos.enh .codigo.open h4::after { transform: rotate(180deg); }
+.codigo.open { border-color: #c7d2fe; background: #fafbff; }
 
-/* A linha do título */
-.codigo h4 { 
-  margin: 0; 
-  padding: 0.8rem 1.2rem; 
-  font-size: 0.95rem; 
-  display: flex; 
-  align-items: center; 
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-/* A pílula roxa do código */
-.codigo .num { 
-  font-weight: 800; 
-  font-size: 0.9rem; 
-  color: #fff; 
-  background: var(--primary); 
-  border-radius: 8px; 
-  padding: 0.4rem 0.8rem; 
-  margin-right: 0.8rem; 
-}
-
-/* A setinha à direita */
-.codigos.enh .codigo h4::after { 
-  content: "\f078"; 
-  font-family: "Font Awesome 6 Free"; 
-  font-weight: 900; 
-  font-size: 0.75rem; 
-  margin-left: auto; 
-  color: var(--text-muted); 
-  transition: transform 0.25s; 
-}
-.codigos.enh .codigo.open h4::after { 
-  transform: rotate(180deg); 
-}
-.codigo.open { 
-  border-color: #c7d2fe; 
-  box-shadow: var(--shadow-md);
-}
-
-/* Textos internos (Causas) */
-.codigo p { margin: 0 1.2rem 0.5rem 1.2rem; font-size: 0.92rem; }
-.codigo ul { margin: 0 1.2rem 1rem 1.2rem; font-size: 0.92rem; padding-left: 1.2rem; }
-.codigo ul li { margin-bottom: 0.3rem; }
-
-/* Caixa de diálogo para imagens */
+/* caixa de diálogo para imagens */
 .lightbox { border: 0; padding: 0; background: #0f172a; color: #e2e8f0; border-radius: 16px; max-width: min(94vw, 1000px); box-shadow: var(--shadow-lg); overflow: hidden; }
 .lightbox::backdrop { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(3px); }
 .lightbox img { display: block; max-width: 100%; max-height: 78vh; margin: 0 auto; }
@@ -1035,4 +984,52 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   .toc {
     padding: 1rem !important;
   }
+}
+
+
+/* ESTILOS PARA O EFEITO DE ZOOM (LIGHTBOX) */
+.img-box-preview {
+  display: inline-block;
+  max-width: 350px; /* ALTERE AQUI O TAMANHO DA MINIATURA (ex: 250px) */
+  margin: 15px 0;
+}
+.img-box-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: pointer; /* Cursor de mãozinha */
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.img-box-preview img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Fundo escuro do modal */
+.modal-zoom {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+.modal-zoom img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 4px;
+}
+.modal-zoom .fechar-zoom {
+  position: absolute;
+  top: 15px; right: 30px;
+  color: #fff;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-zoom .fechar-zoom:hover {
+  color: #ff0000;
 }
