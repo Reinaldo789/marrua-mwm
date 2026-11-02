@@ -1033,3 +1033,14 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 .modal-zoom .fechar-zoom:hover {
   color: #ff0000;
 }
+
+
+/* Tabelas: fonte menor */
+.page-card th, .page-card td { font-size: 0.82rem; }
+@media (max-width: 640px) {
+  .page-card th, .page-card td { font-size: 0.75rem; padding: 0.4rem 0.5rem; }
+  .page-card th { font-size: 0.72rem; }
+}
+
+/* Tabela de fusíveis: Nº, Fusível e Amperagem sem quebra de linha */
+.page-card .tabela-fusiveis td:nth-child(-n+3) { white-space: nowrap; }
