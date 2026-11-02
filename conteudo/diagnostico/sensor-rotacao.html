@@ -60,8 +60,22 @@
 
 <div class="aviso"><strong>Atenção</strong><p>Antes de qualquer teste elétrico, confira a bateria e o alternador. Tensão instável gera falhas em vários sensores ao mesmo tempo.</p></div>
 
-<h2 id="codigos">Códigos relacionados</h2>
+<h2 id="codigos">Códigos de falha</h2>
 <ul>
-<li><strong>P0335</strong>: Sinal do sensor de rotação perdido — desliga o motor e não permite nova partida;</li>
-<li><strong>P0336</strong>: Falha no sensor de rotação — mesmo comportamento do P0335.</li>
+  <li>
+    <strong>P0340</strong>: Falha no circuito do sensor de fase — sem sinal da árvore de comando chegando à ECM. Causas:
+    <ul>
+      <li>Sensor desconectado/queimado;</li>
+      <li>Chicote rompido;</li>
+      <li>Alimentação 5 V ausente.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>P0341</strong>: Sinal incorreto ou fora de faixa do CMP — o sinal existe, mas está com ruído ou fora de sincronismo. Causas:
+    <ul>
+      <li>Sensor perdendo referência;</li>
+      <li>Folga mecânica no comando;</li>
+      <li>Motor fora de ponto.</li>
+    </ul>
+  </li>
 </ul>
