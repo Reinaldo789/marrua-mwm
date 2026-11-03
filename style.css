@@ -167,7 +167,7 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   overflow-y: auto;
   
   /* ALTERADO: Cores e sombra forçadas para não sumir */
-  background: #ffffff !important; 
+  background: #00f3ff !important; 
   border: 1px solid var(--border-color) !important;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
   
