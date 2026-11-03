@@ -37,7 +37,7 @@ html, body {
 }
 
 .site-wrapper > header {
-  background: #ffffff; /* ALTERADO: Fundo branco sólido (antes era transparente) */
+  background: #ffa300; /* ALTERADO: Fundo branco sólido (antes era transparente) */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
