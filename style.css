@@ -64,15 +64,11 @@ html, body {
   position: relative;
 }
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: var(--primary);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  letter-spacing: -0.02em;
+.logo { color: #ffffff; }
+.nav-btn { color: #ffffff; }
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
 }
 
 .logo i { font-size: 1.3rem; }
