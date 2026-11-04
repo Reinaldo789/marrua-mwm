@@ -1,99 +1,20 @@
-/* =====================================================================
-   📑 ÍNDICE RÁPIDO DE EDIÇÃO — style.css
-   ---------------------------------------------------------------------
-   Use Ctrl+F / Cmd+F e busque o nome da seção (ex: "SEÇÃO 3") para ir
-   direto ao ponto que você quer editar.
-   =====================================================================
-
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🎨 CORES E IDENTIDADE VISUAL  → SEÇÃO 1 — :root                 │
-   │  --primary / --primary-hover / --primary-light / --bg-page /     │
-   │  --card-bg / --text-main / --text-muted / --border-color /       │
-   │  --radius / --transition                                         │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🧭 CABEÇALHO / NAVBAR  → SEÇÃO 2                                │
-   │  .site-wrapper > header, .nav-container, .logo, .nav-btn         │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  📂 MEGA MENU / DROPDOWN  → SEÇÕES 3 + 8 + 9                     │
-   │  .mega-menu, .mega-links-grid, .mega-explore-side                │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🏠 PÁGINA INICIAL / HERO  → SEÇÕES 4 + 10                       │
-   │  .hero-box, .home-hero, .home-search, .home-grid                 │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  📄 CARTÃO DO ARTIGO  → SEÇÃO 7 (+ SEÇÃO 19 para mobile)         │
-   │  .page-card { max-width, padding } — mobile width 98%            │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🎯 CABEÇALHO AZUL DO ARTIGO  → SEÇÃO 11 — .art-head             │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🗂️ ABAS DO ARTIGO  → SEÇÕES 11 + 12 — .art-tabs / .mini-tabs    │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  💡 CAIXAS DE DESTAQUE  → SEÇÃO 11 — .dica / .aviso / .toc       │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🖼️ IMAGENS / LIGHTBOX  → SEÇÕES 11 + 16 + FINAL                 │
-   │  .lightbox, .img-box-preview, .modal-zoom                        │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🔢 CÓDIGOS DE FALHA (acordeão)  → SEÇÃO 11 — .codigos/.codigo   │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🔀 FLUXOGRAMA INTERATIVO  → SEÇÃO 15 — .fluxo / .passo / .resp  │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🟦 BARRA ESCURA AO ROLAR  → SEÇÃO 13 — header.scrolled          │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🦶 RODAPÉ  → SEÇÃO 10 — .site-footer / .footer-inner            │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  🔝 BOTÃO VOLTAR AO TOPO  → SEÇÃO 5 — .float-btn                 │
-   └─────────────────────────────────────────────────────────────────┘
-   ┌─────────────────────────────────────────────────────────────────┐
-   │  📱 MENU MOBILE  → SEÇÕES 6 + 14                                 │
-   └─────────────────────────────────────────────────────────────────┘
-
-   =====================================================================
-   ⚡ ATALHOS RÁPIDOS — "Quero..."  →  "Edite..."
-   ---------------------------------------------------------------------
-   Trocar a cor do site ............. --primary (SEÇÃO 1)
-   Deixar o artigo mais largo ....... .page-card { max-width }  (SEÇÃO 7)
-   Miniaturas maiores/menores ....... .img-box-preview { max-width } (FINAL)
-   Mudar cor da barra ao rolar ...... header.scrolled           (SEÇÃO 13)
-   Esconder painel "Explore" ........ .explore-header-title,
-                                      .explore-banner           (SEÇÃO 9)
-   Mais/menos colunas no mega menu .. .mega-links-grid           (SEÇÃO 8)
-   Cor de fundo da página ........... --bg-page                  (SEÇÃO 1)
-   Rodapé com mais colunas .......... .footer-inner { grid-template-columns }
-   Velocidade das animações ......... --transition               (SEÇÃO 1)
-   ===================================================================== */
-
-
 /* ==========================================
    1. ESTILOS BASE E CORES (MELHORADO)
    ========================================== */
-/* ▶ EDITE AQUI: cores, sombras e arredondamentos do site inteiro.
-   Mudar --primary troca a cor principal de TUDO de uma vez. */
 :root {
-  --bg-page: #f8fafc;       /* ▶ fundo geral da página */
-  --card-bg: #ffffff;       /* ▶ fundo dos cartões */
-  --primary: #4f46e5;       /* ▶ cor principal (botões, links, abas) */
-  --primary-hover: #4338ca; /* ▶ cor principal ao passar o mouse */
-  --primary-light: #eef2ff; /* ▶ fundo suave da cor principal */
-  --text-main: #0f172a;     /* ▶ cor do texto principal */
-  --text-muted: #64748b;    /* ▶ texto secundário */
-  --border-color: #e2e8f0;  /* ▶ cor das bordas */
+  --bg-page: #f8fafc;
+  --card-bg: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-light: #eef2ff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
   --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.08), 0 10px 10px -5px rgba(0,0,0,0.03);
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* ▶ velocidade das animações */
-  --radius: 12px;           /* ▶ arredondamento padrão */
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 12px;
 }
 
 html, body {
@@ -121,7 +42,6 @@ html, body {
 /* ==========================================
    2. CABEÇALHO SUPERIOR (NAVBAR) - MELHORADO
    ========================================== */
-/* ▶ EDITE AQUI: altura do cabeçalho, cor do logo, tamanho da fonte do menu. */
 .site-wrapper > header {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
@@ -139,14 +59,14 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.5rem;   /* ▶ altura/espaçamento do menu */
+  padding: 0.75rem 1.5rem;
   position: relative;
 }
 
 .logo {
   font-size: 1.2rem;
   font-weight: 800;
-  color: var(--primary);      /* ▶ cor do logo */
+  color: var(--primary);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -177,7 +97,7 @@ html, body {
   border: none;
   color: var(--text-main);
   font-weight: 600;
-  font-size: 0.9rem;         /* ▶ tamanho da fonte do menu */
+  font-size: 0.9rem;
   padding: 0.6rem 0.9rem;
   border-radius: 8px;
   cursor: pointer;
@@ -189,7 +109,6 @@ html, body {
   font-family: inherit;
 }
 
-/* ▶ efeito hover dos botões do menu */
 .nav-btn:hover {
   background-color: var(--primary-light);
   color: var(--primary);
@@ -224,8 +143,6 @@ html, body {
 /* ==========================================
    3. MEGA MENU DROPDOWN (DESKTOP) - MELHORADO
    ========================================== */
-/* ▶ EDITE AQUI: aparência do dropdown. Para largura/colunas, veja SEÇÃO 8.
-   Para esconder o painel "Explore", veja SEÇÃO 9. */
 .mega-menu {
   position: absolute;
   top: 100%;
@@ -289,7 +206,6 @@ html, body {
   position: relative;
 }
 
-/* ▶ espessura/cor da linha divisória entre categorias */
 .category-group::after {
   content: "";
   display: block;
@@ -309,7 +225,6 @@ html, body {
   display: none;
 }
 
-/* ▶ cor/tamanho do título de categoria dentro do dropdown */
 .category-title {
   font-size: 0.78rem;
   text-transform: uppercase;
@@ -341,7 +256,6 @@ html, body {
   border: 1px solid transparent;
 }
 
-/* ▶ efeito hover dos links do dropdown */
 .mega-link-item:hover {
   background-color: var(--primary-light);
   color: var(--primary);
@@ -447,10 +361,9 @@ html, body {
 /* ==========================================
    4. CONTEÚDO DA PÁGINA
    ========================================== */
-/* ▶ EDITE AQUI: espaçamento vertical e largura do conteúdo principal. */
 main {
   flex-grow: 1;
-  padding: 3rem 1.5rem;   /* ▶ espaço em volta do conteúdo */
+  padding: 3rem 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -465,7 +378,6 @@ main {
   border: 1px solid var(--border-color);
 }
 
-/* ▶ título grande translúcido do hero */
 .hero-title-bg {
   font-size: clamp(2rem, 6vw, 4.5rem);
   font-weight: 900;
@@ -476,7 +388,6 @@ main {
   letter-spacing: -0.03em;
 }
 
-/* ▶ título principal do hero */
 .hero-title-main {
   font-size: clamp(1.5rem, 4vw, 2.2rem);
   color: var(--text-main);
@@ -496,16 +407,15 @@ main {
 /* ==========================================
    5. BOTÃO FLUTUANTE (VOLTAR AO TOPO)
    ========================================== */
-/* ▶ EDITE AQUI: tamanho/cor do botão e posição na tela. */
 .floating-container {
   position: fixed;
-  bottom: 24px;   /* ▶ distância do fundo */
-  right: 24px;    /* ▶ distância da direita */
+  bottom: 24px;
+  right: 24px;
   z-index: 999;
 }
 
 .float-btn {
-  width: 48px;              /* ▶ tamanho do botão */
+  width: 48px;
   height: 48px;
   border-radius: 50%;
   display: flex;
@@ -513,7 +423,7 @@ main {
   align-items: center;
   color: white;
   font-size: 1.2rem;
-  background-color: var(--primary);   /* ▶ cor do botão */
+  background-color: var(--primary);
   box-shadow: var(--shadow-lg);
   border: none;
   cursor: pointer;
@@ -535,14 +445,13 @@ main {
 /* ==========================================
    6. ESTILOS MOBILE - MELHORADO
    ========================================== */
-/* ▶ EDITE AQUI: aparência do menu no celular (até 960px). */
 @media (max-width: 960px) {
   .mobile-toggle { display: block; }
 
   .main-nav {
     display: none;
     position: fixed;
-    top: 61px;                /* ▶ deve bater com a altura do header */
+    top: 61px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -588,7 +497,7 @@ main {
   .nav-btn {
     width: 100%;
     justify-content: space-between;
-    padding: 1rem 1.2rem;    /* ▶ espaçamento dos botões no mobile */
+    padding: 1rem 1.2rem;
     font-size: 0.95rem;
     background: white;
     border-radius: 0;
@@ -660,15 +569,13 @@ main {
 /* ==========================================
    7. PÁGINAS CARREGADAS DE conteudo/
    ========================================== */
-/* ▶ EDITE AQUI: largura e padding do cartão de artigo.
-   Para o cartão no MOBILE, veja SEÇÃO 19. */
 .page-card {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 20px;
   box-shadow: var(--shadow-sm);
-  padding: 2rem;              /* ▶ padding interno do artigo */
-  max-width: 860px;           /* ▶ largura máxima do artigo */
+  padding: 2rem;
+  max-width: 860px;
   margin: 0 auto;
   line-height: 1.7;
 }
@@ -687,7 +594,7 @@ main {
 @media (max-width: 960px) { .page-card { padding: 1.2rem; border-radius: 14px; } }
 
 /* Índice interno, avisos e listas dos artigos */
-.page-card [id] { scroll-margin-top: 80px; }   /* ▶ compensa o header fixo */
+.page-card [id] { scroll-margin-top: 80px; }
 .page-card h3 { margin: 1.4rem 0 0.3rem; font-size: 1.05rem; }
 .page-card ul { padding-left: 1.3rem; }
 .page-card li { margin: 0.2rem 0; }
@@ -704,10 +611,9 @@ main {
 /* ==========================================
    8. MEGA MENU COMPACTO (somente desktop)
    ========================================== */
-/* ▶ EDITE AQUI: largura do dropdown e Nº de colunas dos links (desktop). */
 @media (min-width: 961px) {
   .mega-menu {
-    max-width: 1000px;              /* ▶ largura máxima do dropdown */
+    max-width: 1000px;
     padding: 1rem 1.2rem;
     grid-template-columns: 1fr 230px;
     gap: 1rem;
@@ -717,7 +623,7 @@ main {
   .category-group::after { width: 80%; }
   .category-title { margin-bottom: 0.25rem; font-size: 0.75rem; }
   .mega-links-grid {
-    grid-template-columns: repeat(4, 1fr);   /* ▶ Nº de colunas dos links */
+    grid-template-columns: repeat(4, 1fr);
     gap: 0 0.4rem;
   }
   .mega-link-item { padding: 0.3rem 0.5rem; font-size: 0.82rem; }
@@ -731,10 +637,8 @@ main {
    9. MENUS ELEGANTES (sem mega menu)
    Dropdown simples, uma coluna, abaixo de cada botão
    ========================================== */
-/* ▶ EDITE AQUI para: esconder painel "Explore", esconder ícones,
-   ajustar largura do dropdown e alinhamento à direita. */
-.explore-header-title, .explore-banner { display: none; }   /* ▶ esconde painel Explore */
-.mega-link-item i { display: none; }                        /* ▶ esconde ícones dos links */
+.explore-header-title, .explore-banner { display: none; }
+.mega-link-item i { display: none; }
 .mega-link-item { border-radius: 8px; }
 .mega-explore-side {
   background: none; border: 0; border-radius: 0; box-shadow: none;
@@ -749,15 +653,12 @@ main {
   .nav-item { position: relative; }
   .mega-menu {
     left: 0; right: auto; width: max-content;
-    min-width: 260px;               /* ▶ largura mínima do dropdown */
-    max-width: 340px;               /* ▶ largura máxima do dropdown */
-    margin: 0;
+    min-width: 260px; max-width: 340px; margin: 0;
     padding: 0.6rem; gap: 0;
     grid-template-columns: 1fr;
     border-radius: 14px;
     max-height: calc(100vh - 90px);
   }
-  /* ▶ últimos 2 menus abrem alinhados à direita (evita sair da tela) */
   .nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
   .mega-categories-container { gap: 0; }
   .category-group { padding: 0.5rem 0; }
@@ -784,12 +685,11 @@ main {
 /* ==========================================
    10. PÁGINA INICIAL
    ========================================== */
-/* ▶ EDITE AQUI: hero da home, busca, cards de categoria e rodapé. */
 .home[hidden] { display: none; }
 .home-hero {
   text-align: center; padding: 3.5rem 1.5rem 3rem; border-radius: 24px;
   background: radial-gradient(circle at 20% 0%, #e0e7ff 0%, transparent 55%),
-              radial-gradient(circle at 90% 100%, #dbeafe 0%, transparent 50%), #fff;   /* ▶ fundo do hero */
+              radial-gradient(circle at 90% 100%, #dbeafe 0%, transparent 50%), #fff;
   border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);
 }
 .home-kicker {
@@ -825,7 +725,7 @@ main {
 .home-title { font-size: 1.15rem; margin: 2.2rem 0 1rem; }
 .home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
 .home-card {
-  background: #fff; border: 1px solid var(--border-color); border-top: 4px solid var(--c);   /* ▶ --c = cor do card */
+  background: #fff; border: 1px solid var(--border-color); border-top: 4px solid var(--c);
   border-radius: 16px; padding: 1.3rem; box-shadow: var(--shadow-sm); transition: var(--transition);
   display: flex; flex-direction: column;
 }
@@ -844,8 +744,8 @@ main {
 .home-quick a:hover { border-color: var(--primary); background: var(--primary-light); }
 
 /* Rodapé */
-.site-footer { background: #0f172a; color: #cbd5e1; margin-top: 2rem; }   /* ▶ fundo do rodapé */
-.footer-inner { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 2rem; }   /* ▶ nº de colunas do rodapé */
+.site-footer { background: #0f172a; color: #cbd5e1; margin-top: 2rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 2rem; }
 .footer-brand .logo { color: #fff; }
 .footer-brand p { font-size: 0.85rem; line-height: 1.6; color: #94a3b8; max-width: 260px; }
 .footer-col h4 { margin: 0 0 0.8rem; color: #fff; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; }
@@ -862,13 +762,8 @@ main {
 /* ==========================================
    11. ARTIGOS (abas, caixas, diálogo)
    ========================================== */
-/* ▶ EDITE AQUI: cabeçalho azul, chips, abas, caixas dica/aviso,
-   códigos de falha (acordeão) e lightbox de imagem. */
-
-/* ▶ cabeçalho azul do artigo */
 .page-card .art-head {
-  background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%);
-  color: #fff;
+  background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%); color: #fff;
   border-radius: 16px; padding: 1.5rem 1.6rem; margin: 0.4rem 0 1.3rem;
 }
 .art-kicker { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(255,255,255,0.18); padding: 0.25rem 0.7rem; border-radius: 99px; }
@@ -885,7 +780,7 @@ main {
   background: #fff; color: var(--text-muted); transition: var(--transition);
 }
 .art-tabs button:hover, .mini-tabs button:hover { color: var(--primary); border-color: #c7d2fe; }
-.art-tabs button.on, .mini-tabs button.on { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 4px 10px rgba(79,70,229,0.25); }   /* ▶ aba ativa */
+.art-tabs button.on, .mini-tabs button.on { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 4px 10px rgba(79,70,229,0.25); }
 .art-panel { display: none; }
 .art-panel.on { display: block; animation: slideDown 0.25s ease; }
 .art-panel > h2:first-child { margin-top: 0.5rem; }
@@ -907,7 +802,7 @@ main {
 .spec b { display: block; font-size: 1.1rem; color: var(--primary); }
 .spec span { font-size: 0.78rem; color: var(--text-muted); }
 
-/* ▶ caixas de destaque: dica (azul) e aviso (amarelo) */
+/* caixas de destaque */
 .dica { background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 0.8rem 1rem; margin: 1.2rem 0; }
 .dica p { margin: 0.3rem 0 0; }
 .aviso strong::before, .dica strong::before { font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 0.45rem; }
@@ -924,7 +819,7 @@ main {
 a.img-link { text-decoration: underline dotted; text-underline-offset: 3px; font-weight: 600; cursor: zoom-in; }
 a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.75em; margin-left: 0.35em; }
 
-/* ▶ códigos de falha em acordeão */
+/* códigos de falha em acordeão */
 .codigos { display: grid; gap: 0.6rem; margin-top: 1rem; }
 .codigo { display: flex; gap: 0.9rem; align-items: flex-start; border: 1px solid var(--border-color); border-radius: 14px; padding: 0.9rem 1rem; background: #fff; transition: var(--transition); }
 .codigo .num { flex: none; font-weight: 800; font-size: 0.95rem; color: #fff; background: var(--primary); border-radius: 10px; padding: 0.4rem 0.7rem; }
@@ -939,7 +834,7 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
 .codigos.enh .codigo.open h4::after { transform: rotate(180deg); }
 .codigo.open { border-color: #c7d2fe; background: #fafbff; }
 
-/* ▶ caixa de diálogo para imagens (lightbox) */
+/* caixa de diálogo para imagens */
 .lightbox { border: 0; padding: 0; background: #0f172a; color: #e2e8f0; border-radius: 16px; max-width: min(94vw, 1000px); box-shadow: var(--shadow-lg); overflow: hidden; }
 .lightbox::backdrop { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(3px); }
 .lightbox img { display: block; max-width: 100%; max-height: 78vh; margin: 0 auto; }
@@ -950,16 +845,15 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
 /* ==========================================
    12. ÍNDICE DO ARTIGO (abas numeradas, claro no celular)
    ========================================== */
-/* ▶ EDITE AQUI: numeração das abas e layout no celular (2 colunas). */
 .art-index-title { margin: 1.2rem 0 0.4rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); scroll-margin-top: 72px; }
 .art-tabs { margin-top: 0; }
 .art-panel { scroll-margin-top: 72px; }
 .art-tabs button { display: inline-flex; align-items: center; gap: 0.5rem; }
-.art-tabs button em { font-style: normal; font-size: 0.72rem; font-weight: 800; width: 1.4rem; height: 1.4rem; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--primary-light); color: var(--primary); }   /* ▶ bolinha numerada */
+.art-tabs button em { font-style: normal; font-size: 0.72rem; font-weight: 800; width: 1.4rem; height: 1.4rem; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--primary-light); color: var(--primary); }
 .art-tabs button.on em { background: rgba(255,255,255,0.25); color: #fff; }
 
 @media (max-width: 960px) {
-  .art-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; overflow: visible; padding-bottom: 1rem; }   /* ▶ 2 colunas no mobile */
+  .art-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; overflow: visible; padding-bottom: 1rem; }
   .art-tabs button { border-radius: 12px; text-align: left; justify-content: flex-start; padding: 0.55rem 0.6rem; font-size: 0.82rem; line-height: 1.25; white-space: normal; }
   .art-tabs button:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .aba-nav { flex-direction: column; }
@@ -980,9 +874,8 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
 /* ==========================================
    13. BARRA ESCURA AO ROLAR A PÁGINA
    ========================================== */
-/* ▶ EDITE AQUI: cor da navbar quando a página é rolada. */
 .site-wrapper > header { transition: background 0.3s ease, border-color 0.3s ease; }
-.site-wrapper > header.scrolled { background: rgba(79, 70, 229, 0.95); border-bottom-color: #6366f1; }   /* ▶ cor da barra ao rolar */
+.site-wrapper > header.scrolled { background: rgba(79, 70, 229, 0.95); border-bottom-color: #6366f1; }
 header.scrolled .logo { color: #fff; }
 header.scrolled .mobile-toggle { color: #fff; }
 header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color: #fff; }
@@ -997,14 +890,13 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 /* ==========================================
    14. MENU DO CELULAR: o final da lista não fica escondido
    ========================================== */
-/* ▶ EDITE AQUI: padding inferior do menu mobile. */
 @media (max-width: 960px) {
   /* backdrop-filter faz o menu fixo se medir pelo cabeçalho e não pela tela */
   .site-wrapper > header { backdrop-filter: none; -webkit-backdrop-filter: none; }
   .main-nav {
     height: auto;
     bottom: 0;
-    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));   /* ▶ não esconde últimos itens */
+    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
     overscroll-behavior: contain;
   }
 }
@@ -1012,22 +904,21 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 /* ==========================================
    15. FLUXOGRAMA INTERATIVO (Sim / Não)
    ========================================== */
-/* ▶ EDITE AQUI: cores dos passos finais (ok/erro/ação) e botões Sim/Não. */
 .fluxo { margin: 1rem 0; }
 .passo { display: none; background: #fff; border: 1px solid var(--border-color); border-left: 5px solid var(--primary); border-radius: 14px; padding: 1.1rem 1.2rem; box-shadow: var(--shadow-sm); }
 .passo.on { display: block; animation: slideDown 0.25s ease; }
 .passo-n { display: inline-block; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); background: var(--primary-light); padding: 0.2rem 0.7rem; border-radius: 99px; margin-bottom: 0.4rem; }
 .passo p { margin: 0.4rem 0; }
-.passo.fim.ok { border-left-color: #16a34a; background: #f0fdf4; }      /* ▶ resultado OK */
+.passo.fim.ok { border-left-color: #16a34a; background: #f0fdf4; }
 .passo.fim.ok .passo-n { color: #15803d; background: #dcfce7; }
-.passo.fim.erro { border-left-color: #dc2626; background: #fef2f2; }    /* ▶ resultado ERRO */
+.passo.fim.erro { border-left-color: #dc2626; background: #fef2f2; }
 .passo.fim.erro .passo-n { color: #b91c1c; background: #fee2e2; }
-.passo.fim.acao { border-left-color: #f59e0b; background: #fffbeb; }    /* ▶ resultado AÇÃO */
+.passo.fim.acao { border-left-color: #f59e0b; background: #fffbeb; }
 .passo.fim.acao .passo-n { color: #b45309; background: #fef3c7; }
 .resp { display: flex; gap: 0.7rem; margin-top: 1rem; }
 .resp button { flex: 1; font: inherit; font-weight: 700; font-size: 1rem; padding: 0.8rem; border: 0; border-radius: 12px; cursor: pointer; color: #fff; transition: var(--transition); }
-.resp .sim { background: #16a34a; }   /* ▶ botão SIM */
-.resp .nao { background: #dc2626; }   /* ▶ botão NÃO */
+.resp .sim { background: #16a34a; }
+.resp .nao { background: #dc2626; }
 .passo.fim .resp .sim { background: var(--primary); }
 .resp button:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .fluxo-nav { display: flex; justify-content: space-between; gap: 0.5rem; margin-top: 0.9rem; padding-top: 0.7rem; border-top: 1px dashed var(--border-color); }
@@ -1038,7 +929,6 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 /* ==========================================
    16. ESCOLHA DE SENSOR / ATUADOR E ROTEIROS EM IMAGEM
    ========================================== */
-/* ▶ EDITE AQUI: cards "hub" de escolha e ajustes do lightbox. */
 .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem; margin: 1rem 0 1.5rem; }
 .page-card .hub-card { display: flex; gap: 0.9rem; align-items: flex-start; padding: 1rem; background: #fff; border: 1px solid var(--border-color); border-radius: 14px; text-decoration: none; color: var(--text-main); transition: var(--transition); }
 .page-card .hub-card:hover { border-color: var(--primary); box-shadow: var(--shadow-md); transform: translateY(-2px); }
@@ -1053,7 +943,6 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 /* ==========================================
    17. BOTÃO DO MENU DESTACADO NA PÁGINA ABERTA
    ========================================== */
-/* ▶ EDITE AQUI: destaque do botão do menu correspondente à página atual. */
 .nav-btn.atual { color: var(--primary); background-color: var(--primary-light); }
 @media (min-width: 961px) {
   header.scrolled .nav-btn.atual { background: rgba(255,255,255,0.18); color: #fff; }
@@ -1062,7 +951,6 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 /* ==========================================
    18. TABELAS RESPONSIVAS
    ========================================== */
-/* ▶ EDITE AQUI: tabelas do artigo (padding/fonte e scroll no celular). */
 .page-card th { background: var(--primary-light); color: var(--primary); font-size: 0.9rem; text-align: left; }
 .page-card tbody tr:nth-child(odd) td { background: #f8fafc; }
 .page-card table { display: table !important; width: 100% !important; max-width: 100%; margin: 1rem 0; table-layout: auto; }
@@ -1076,7 +964,6 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 /* ==========================================
    19. AJUSTE MOBILE: Largura do Conteúdo (Quase 100%)
    ========================================== */
-/* ▶ EDITE AQUI: largura do cartão do artigo no celular (quase 100%). */
 @media (max-width: 768px) {
   /* Zera o padding lateral do main para a caixa poder crescer */
   main {
@@ -1085,10 +972,10 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 
   /* O cartão ocupa 98% da tela (quase 100%), centralizado */
   .page-card {
-    width: 98% !important;             /* ▶ largura no mobile */
+    width: 98% !important;
     max-width: 98% !important;
-    margin: 0 auto !important;         /* Centraliza na tela */
-    padding: 1.2rem !important;        /* ▶ margem interna no mobile */
+    margin: 0 auto !important; /* Centraliza na tela */
+    padding: 1.2rem !important; /* Margem interna para o texto não encostar na borda da caixa */
     box-sizing: border-box;
   }
 
@@ -1100,15 +987,10 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 }
 
 
-/* ==========================================
-   20. EFEITO DE ZOOM (LIGHTBOX) — MINIATURAS
-   ========================================== */
-/* ▶ EDITE AQUI: tamanho das miniaturas de imagem e o modal escuro. */
-
-/* ▶ Tamanho da miniatura: altere .img-box-preview { max-width } */
+/* ESTILOS PARA O EFEITO DE ZOOM (LIGHTBOX) */
 .img-box-preview {
   display: inline-block;
-  max-width: 350px;   /* ▶ TAMANHO DA MINIATURA (ex: 250px, 400px) */
+  max-width: 350px; /* ALTERE AQUI O TAMANHO DA MINIATURA (ex: 250px) */
   margin: 15px 0;
 }
 .img-box-preview img {
@@ -1124,14 +1006,14 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* ▶ Fundo escuro do modal */
+/* Fundo escuro do modal */
 .modal-zoom {
   display: none;
   position: fixed;
   z-index: 9999;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);   /* ▶ cor/opacidade do fundo */
+  background-color: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
 }
@@ -1151,3 +1033,52 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 .modal-zoom .fechar-zoom:hover {
   color: #ff0000;
 }
+
+/* ==========================================
+   COR DO MENU QUANDO ABRE (aba + painel)
+   Para trocar as cores, altere só as variáveis abaixo.
+   ========================================== */
+:root {
+  --menu-aberto-bg: #312e81;                    /* fundo da aba aberta e do painel */
+  --menu-aberto-texto: #ffffff;                 /* letras dos itens */
+  --menu-aberto-titulo: #c7d2fe;                /* títulos "LINHA DE BAIXA" etc. */
+  --menu-aberto-linha: rgba(255,255,255,0.18);  /* linhas divisórias */
+  --menu-aberto-hover: rgba(255,255,255,0.14);  /* item ao passar o mouse */
+}
+
+/* Aba do menu enquanto o painel está aberto */
+.nav-item:hover > .nav-btn,
+.nav-item.active > .nav-btn,
+header.scrolled .nav-item:hover > .nav-btn,
+header.scrolled .nav-item.active > .nav-btn {
+  background: var(--menu-aberto-bg) !important;
+  color: #fff !important;
+}
+.nav-item:hover > .nav-btn i,
+.nav-item.active > .nav-btn i,
+header.scrolled .nav-item:hover > .nav-btn i,
+header.scrolled .nav-item.active > .nav-btn i {
+  color: #fff !important;
+}
+
+/* Painel do menu */
+.mega-menu {
+  background: var(--menu-aberto-bg) !important;
+  border-color: rgba(255,255,255,0.14) !important;
+}
+.mega-menu .category-title { color: var(--menu-aberto-titulo) !important; }
+.mega-menu .mega-link-item { color: var(--menu-aberto-texto) !important; }
+.mega-menu .mega-link-item:hover {
+  background: var(--menu-aberto-hover) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.mega-menu .mega-link-item.active {
+  background: rgba(255,255,255,0.22) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.mega-menu .category-group::after { background: var(--menu-aberto-linha) !important; }
+.mega-menu .mega-explore-side { border-top-color: var(--menu-aberto-linha) !important; }
+.mega-menu .explore-link,
+.mega-menu .explore-header-title { color: #fff !important; }
