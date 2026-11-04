@@ -1039,8 +1039,8 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    Para ajustar, altere só as variáveis abaixo.
    ========================================== */
 :root {
-  --vidro-bg: rgba(49, 46, 129, 0.94);          /* cor do vidro: 1 = sólido; 0.94 = leve transparência; menor = mais transparente */
-  --vidro-blur: 22px;                           /* desfoque do que fica atrás (maior = menos nítido) */
+  --vidro-bg: rgba(49, 46, 129, 1);          /* cor do vidro: 1 = sólido; 0.94 = leve transparência; menor = mais transparente */
+  --vidro-blur: 50px;                           /* desfoque do que fica atrás (maior = menos nítido) */
   --vidro-borda: rgba(255, 255, 255, 0.35);     /* borda clara do vidro */
   --vidro-texto: #ffffff;                       /* letras dos itens */
   --vidro-titulo: #e0e7ff;                      /* títulos "LINHA DE BAIXA" etc. */
