@@ -1033,3 +1033,21 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 .modal-zoom .fechar-zoom:hover {
   color: #ff0000;
 }
+
+/* ==========================================
+   COR DO MENU QUANDO ABRE (dropdown)
+   Para trocar a cor, altere só as 3 variáveis abaixo.
+   ========================================== */
+:root {
+  --menu-aberto-bg: #e0e7ff;      /* fundo do menu aberto */
+  --menu-aberto-texto: #0f172a;   /* cor das letras */
+  --menu-aberto-hover: #ffffff;   /* fundo do item ao passar o mouse */
+}
+.mega-menu {
+  background: var(--menu-aberto-bg) !important;
+  color: var(--menu-aberto-texto) !important;
+  border-color: #c7d2fe !important;
+}
+.mega-menu .mega-link-item { color: var(--menu-aberto-texto); }
+.mega-menu .mega-link-item:hover { background-color: var(--menu-aberto-hover); color: var(--primary); }
+.mega-menu .category-title { color: var(--text-muted); }
