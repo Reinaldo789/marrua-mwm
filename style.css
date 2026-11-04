@@ -1035,15 +1035,18 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 }
 
 /* ==========================================
-   COR DO MENU QUANDO ABRE (aba + painel)
-   Para trocar as cores, altere só as variáveis abaixo.
+   MENU COM EFEITO VIDRO (glassmorphism) AO ABRIR
+   Para ajustar, altere só as variáveis abaixo.
    ========================================== */
 :root {
-  --menu-aberto-bg: #312e81;                    /* fundo da aba aberta e do painel */
-  --menu-aberto-texto: #ffffff;                 /* letras dos itens */
-  --menu-aberto-titulo: #c7d2fe;                /* títulos "LINHA DE BAIXA" etc. */
-  --menu-aberto-linha: rgba(255,255,255,0.18);  /* linhas divisórias */
-  --menu-aberto-hover: rgba(255,255,255,0.14);  /* item ao passar o mouse */
+  --vidro-bg: rgba(49, 46, 129, 0.78);          /* cor do vidro (0.78 = quase opaco; menor = mais transparente) */
+  --vidro-blur: 14px;                           /* desfoque do que fica atrás */
+  --vidro-borda: rgba(255, 255, 255, 0.35);     /* borda clara do vidro */
+  --vidro-texto: #ffffff;                       /* letras dos itens */
+  --vidro-titulo: #e0e7ff;                      /* títulos "LINHA DE BAIXA" etc. */
+  --vidro-linha: rgba(255, 255, 255, 0.22);     /* linhas divisórias */
+  --vidro-hover: rgba(255, 255, 255, 0.18);     /* item ao passar o mouse */
+  --vidro-aba: rgba(255, 255, 255, 0.24);       /* aba aberta (botão) */
 }
 
 /* Aba do menu enquanto o painel está aberto */
@@ -1051,8 +1054,10 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 .nav-item.active > .nav-btn,
 header.scrolled .nav-item:hover > .nav-btn,
 header.scrolled .nav-item.active > .nav-btn {
-  background: var(--menu-aberto-bg) !important;
+  background: var(--vidro-aba) !important;
   color: #fff !important;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 .nav-item:hover > .nav-btn i,
 .nav-item.active > .nav-btn i,
@@ -1061,24 +1066,31 @@ header.scrolled .nav-item.active > .nav-btn i {
   color: #fff !important;
 }
 
-/* Painel do menu */
+/* Painel de vidro */
 .mega-menu {
-  background: var(--menu-aberto-bg) !important;
-  border-color: rgba(255,255,255,0.14) !important;
+  background: var(--vidro-bg) !important;
+  -webkit-backdrop-filter: blur(var(--vidro-blur)) saturate(1.4);
+  backdrop-filter: blur(var(--vidro-blur)) saturate(1.4);
+  border: 1px solid var(--vidro-borda) !important;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.35) !important;
 }
-.mega-menu .category-title { color: var(--menu-aberto-titulo) !important; }
-.mega-menu .mega-link-item { color: var(--menu-aberto-texto) !important; }
+/* Navegadores sem backdrop-filter: cor sólida para não perder a leitura */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .mega-menu { background: #312e81 !important; }
+}
+.mega-menu .category-title { color: var(--vidro-titulo) !important; }
+.mega-menu .mega-link-item { color: var(--vidro-texto) !important; }
 .mega-menu .mega-link-item:hover {
-  background: var(--menu-aberto-hover) !important;
+  background: var(--vidro-hover) !important;
   color: #fff !important;
   border-color: transparent !important;
 }
 .mega-menu .mega-link-item.active {
-  background: rgba(255,255,255,0.22) !important;
+  background: rgba(255, 255, 255, 0.26) !important;
   color: #fff !important;
   border-color: transparent !important;
 }
-.mega-menu .category-group::after { background: var(--menu-aberto-linha) !important; }
-.mega-menu .mega-explore-side { border-top-color: var(--menu-aberto-linha) !important; }
+.mega-menu .category-group::after { background: var(--vidro-linha) !important; }
+.mega-menu .mega-explore-side { border-top-color: var(--vidro-linha) !important; }
 .mega-menu .explore-link,
 .mega-menu .explore-header-title { color: #fff !important; }
