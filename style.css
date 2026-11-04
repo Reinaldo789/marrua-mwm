@@ -1051,3 +1051,188 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 .mega-menu .mega-link-item { color: var(--menu-aberto-texto); }
 .mega-menu .mega-link-item:hover { background-color: var(--menu-aberto-hover); color: var(--primary); }
 .mega-menu .category-title { color: var(--text-muted); }
+
+
+/* ==========================================
+   INTEGRAÇÃO DA SIDEBAR LATERAL
+   ========================================== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  padding: 10px 14px;
+  background: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+  z-index: 2000; /* Acima do header */
+}
+
+.sidebar.close {
+  width: 78px;
+}
+
+.sidebar header {
+  position: relative;
+  background: transparent; /* Remove o fundo do header antigo */
+  border: none;
+}
+
+.sidebar header .image-text {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar header .toggle {
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 25px;
+  width: 25px;
+  background-color: #4070f4;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close header .toggle {
+  transform: translateY(-50%);
+}
+
+.sidebar .text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.sidebar.close .text {
+  opacity: 0;
+}
+
+/* Menu Items */
+.sidebar .menu {
+  margin-top: 20px;
+}
+
+.sidebar .menu-links {
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  height: 50px;
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: #707070;
+}
+
+.sidebar li a:hover {
+  background-color: #4070f4;
+  color: #fff;
+}
+
+.sidebar .icon {
+  min-width: 50px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.sidebar .bottom-content {
+  position: absolute;
+  bottom: 20px;
+  width: calc(100% - 28px);
+}
+
+/* BOTÃO DE ABRIR A SIDEBAR (no celular/tela pequena) */
+#sidebar-open {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  display: none; /* Escondido no desktop */
+  z-index: 2001;
+}
+
+/* ==========================================
+   AJUSTES DE LAYOUT (Empurrar o conteúdo)
+   ========================================== */
+/* Para o conteúdo não ficar embaixo da sidebar, adicionamos margem no body */
+body {
+  padding-left: 250px;
+  transition: padding-left 0.4s ease;
+}
+
+/* Quando a sidebar fecha, diminuímos a margem */
+body.sidebar-closed {
+  padding-left: 78px;
+}
+
+/* Fix para a sua Navbar superior não ficar por baixo da sidebar */
+.site-wrapper > header {
+  padding-left: 0; /* O body já tem padding */
+}
+
+/* ==========================================
+   RESPONSIVO (Mobile)
+   ========================================== */
+@media (max-width: 960px) {
+  body {
+    padding-left: 0; /* No celular o conteúdo ocupa 100% */
+  }
+
+  .sidebar {
+    left: -250px; /* Esconde a sidebar fora da tela */
+    z-index: 2000;
+  }
+  
+  .sidebar.close {
+    left: -250px;
+  }
+
+  /* Quando ativa no celular, ela desliza para dentro */
+  .sidebar.open-mobile {
+    left: 0;
+    width: 250px;
+  }
+
+  .sidebar.open-mobile .text {
+    opacity: 1;
+  }
+
+  #sidebar-open {
+    display: block; /* Mostra o botão de abrir */
+    color: #4f46e5; /* Cor do seu tema */
+  }
+
+  /* Se o seu menu superior for fixo, precisamos empurrar o botão */
+  .site-wrapper > header {
+    padding-left: 60px; 
+  }
+}
