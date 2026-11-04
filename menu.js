@@ -439,3 +439,54 @@ card.addEventListener('input', e => {
   const info = card.querySelector('.filtro-info');
   if (info) info.textContent = q ? (achou ? achou + ' de ' + grupos.size + ' grupos' : 'Nada encontrado') : '';
 });
+
+
+// Selecionando os elementos da Sidebar
+const sidebar = document.querySelector(".sidebar");
+const sidebarOpenBtn = document.querySelector("#sidebar-open");
+const sidebarCloseBtn = document.querySelector("#sidebar-close");
+
+// Função para abrir/fechar a sidebar no Desktop
+const toggleSidebar = () => {
+  sidebar.classList.toggle("close");
+  
+  // Faz o conteúdo do site "empurrar" junto com a sidebar
+  document.body.classList.toggle("sidebar-closed");
+};
+
+// Função para abrir/fechar no Celular
+const toggleSidebarMobile = () => {
+  sidebar.classList.toggle("open-mobile");
+};
+
+// Eventos Desktop
+sidebarCloseBtn.addEventListener("click", toggleSidebar);
+
+// Eventos Mobile
+sidebarOpenBtn.addEventListener("click", () => {
+  // Se a tela for pequena, usa a classe mobile
+  if (window.innerWidth <= 960) {
+    toggleSidebarMobile();
+  } else {
+    toggleSidebar();
+  }
+});
+
+// Se a tela for redimensionada, limpa as classes para evitar bugs
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 960) {
+    sidebar.classList.remove("open-mobile");
+  } else {
+    sidebar.classList.add("close");
+    document.body.classList.remove("sidebar-closed");
+  }
+});
+
+// Verifica o tamanho da tela ao carregar
+if (window.innerWidth <= 960) {
+  sidebar.classList.add("close");
+} else {
+  // Começa aberta no desktop
+  sidebar.classList.remove("close");
+  document.body.classList.remove("sidebar-closed");
+}
