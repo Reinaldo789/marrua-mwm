@@ -46,8 +46,8 @@ html, body {
    2. CABEÇALHO SUPERIOR (NAVBAR)
    ========================================== */
 .site-wrapper > header {
-  background: #2d2d2d; /* Fundo cinza escuro */
-  border-bottom: 1px solid #1f1f1f;
+  background: #4b3eb8; /* Azul royal idêntico à imagem */
+  border-bottom: 1px solid #3b3196;
   position: sticky;
   top: 0;
   z-index: 1000;
