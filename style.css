@@ -763,7 +763,7 @@ main {
    11. ARTIGOS (abas, caixas, diálogo)
    ========================================== */
 .page-card .art-head {
-  background: linear-gradient(135deg, #312e81 0%, #4f46e5 100%); color: #fff;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #fff;
   border-radius: 16px; padding: 1.5rem 1.6rem; margin: 0.4rem 0 1.3rem;
 }
 .art-kicker { display: inline-block; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(255,255,255,0.18); padding: 0.25rem 0.7rem; border-radius: 99px; }
