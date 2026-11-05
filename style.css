@@ -1085,3 +1085,18 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   .site-wrapper > header .mega-menu .explore-link,
   .site-wrapper > header .mega-menu .explore-header-title { color: #fff !important; }
 }
+
+/* ==========================================
+   LATERAIS DA PÁGINA MAIS ESCURAS
+   (para o cartão branco do conteúdo se destacar)
+   Para trocar, altere só as variáveis abaixo.
+   ========================================== */
+:root {
+  --bg-page: #cbd5e1;        /* cor do fundo atrás do conteúdo (as laterais) */
+  --card-borda: #94a3b8;     /* borda do cartão branco do conteúdo */
+  --text-muted: #475569;     /* textos secundários, um pouco mais escuros */
+}
+.page-card {
+  border: 1px solid var(--card-borda);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
+}
