@@ -1,5 +1,5 @@
 /* ==========================================
-   1. ESTILOS BASE E CORES
+   1. ESTILOS BASE E CORES (MELHORADO)
    ========================================== */
 :root {
   --bg-page: #f8fafc;
@@ -13,9 +13,6 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
   --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.08), 0 10px 10px -5px rgba(0,0,0,0.03);
-  --shadow-menu: 0 30px 70px rgba(15, 23, 42, 0.28),
-                 0 12px 28px rgba(15, 23, 42, 0.18),
-                 0 4px 12px rgba(79, 70, 229, 0.14);
   --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --radius: 12px;
 }
@@ -43,11 +40,13 @@ html, body {
 }
 
 /* ==========================================
-   2. CABEÇALHO SUPERIOR (NAVBAR)
+   2. CABEÇALHO SUPERIOR (NAVBAR) - MELHORADO
    ========================================== */
 .site-wrapper > header {
-  background: #4b3eb8; /* Azul royal da sua imagem */
-  border-bottom: 1px solid #3b3196;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -64,14 +63,20 @@ html, body {
   position: relative;
 }
 
-.logo { color: #ffffff; }
-.nav-btn { color: #ffffff; }
-.nav-btn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+.logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
-.logo i { font-size: 1.3rem; }
+.logo i {
+  font-size: 1.3rem;
+}
 
 .main-nav {
   display: flex;
@@ -136,7 +141,7 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (DESKTOP)
+   3. MEGA MENU DROPDOWN (DESKTOP) - MELHORADO
    ========================================== */
 .mega-menu {
   position: absolute;
@@ -148,13 +153,10 @@ html, body {
   margin: 0 auto;
   max-height: calc(85vh - 70px);
   overflow-y: auto;
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 16px;
-  box-shadow: var(--shadow-menu);
-  border: 1px solid rgba(79, 70, 229, 0.28);
-  border-left: 3px solid var(--primary);
-  outline: 1px solid rgba(255, 255, 255, 0.9);
-  outline-offset: -2px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
   padding: 1.5rem;
   opacity: 0;
   visibility: hidden;
@@ -166,8 +168,13 @@ html, body {
   gap: 1.5rem;
 }
 
-.mega-menu::-webkit-scrollbar { width: 6px; }
-.mega-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+.mega-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.mega-menu::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
 
 /* HOVER DESKTOP */
 @media (min-width: 961px) {
@@ -175,9 +182,11 @@ html, body {
     background-color: var(--primary-light);
     color: var(--primary);
   }
+
   .nav-item:hover > .nav-btn i.fa-chevron-down {
     transform: rotate(180deg);
   }
+
   .nav-item:hover .mega-menu {
     opacity: 1;
     visibility: visible;
@@ -191,7 +200,7 @@ html, body {
   gap: 1.2rem;
 }
 
-/* Linha de divisão personalizada */
+/* --- LINHA DE DIVISÃO PERSONALIZADA --- */
 .category-group {
   padding-bottom: 1rem;
   position: relative;
@@ -202,19 +211,24 @@ html, body {
   display: block;
   width: 60%;
   height: 1px;
-  background-color: rgba(15, 23, 42, 0.08);
+  background-color: #f1f5f9;
   position: absolute;
   bottom: 0;
   left: 0;
 }
 
-.category-group:last-child { padding-bottom: 0; }
-.category-group:last-child::after { display: none; }
+.category-group:last-child {
+  padding-bottom: 0;
+}
+
+.category-group:last-child::after {
+  display: none;
+}
 
 .category-title {
   font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--primary);
   font-weight: 700;
   margin-bottom: 0.6rem;
@@ -233,20 +247,20 @@ html, body {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.65rem;
+  padding: 0.45rem 0.6rem;
   border-radius: 8px;
   text-decoration: none;
   color: var(--text-main);
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.85rem;
   transition: var(--transition);
   border: 1px solid transparent;
 }
 
 .mega-link-item:hover {
-  background-color: rgba(79, 70, 229, 0.08);
+  background-color: var(--primary-light);
   color: var(--primary);
-  border-color: rgba(79, 70, 229, 0.18);
+  border-color: #e0e7ff;
+  transform: translateX(3px);
 }
 
 .mega-link-item i {
@@ -255,28 +269,33 @@ html, body {
   transition: var(--transition);
 }
 
-.mega-link-item:hover i { color: var(--primary); }
-
-.mega-link-item.active {
-  background-color: rgba(79, 70, 229, 0.14);
+.mega-link-item:hover i {
   color: var(--primary);
-  font-weight: 700;
-  border-color: rgba(79, 70, 229, 0.22);
+  transform: translateX(2px);
 }
 
-/* Painel lateral Explore */
+.mega-link-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  border-color: #c7d2fe;
+}
+
+/* Painel Lateral Explore - MELHORADO */
 .mega-explore-side {
-  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   border-radius: 14px;
   padding: 1.2rem;
-  border: 1px solid rgba(79, 70, 229, 0.15);
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: var(--transition);
 }
 
-.mega-explore-side:hover { box-shadow: var(--shadow-md); }
+.mega-explore-side:hover {
+  box-shadow: var(--shadow-md);
+}
 
 .explore-header-title {
   font-size: 0.72rem;
@@ -334,7 +353,10 @@ html, body {
   padding: 0.4rem 0;
 }
 
-.explore-link:hover { gap: 0.7rem; color: var(--primary-hover); }
+.explore-link:hover {
+  gap: 0.7rem;
+  color: var(--primary-hover);
+}
 
 /* ==========================================
    4. CONTEÚDO DA PÁGINA
@@ -415,10 +437,13 @@ main {
   transform: translateY(-4px) scale(1.05);
 }
 
-.float-btn.visible { opacity: 1; pointer-events: auto; }
+.float-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* ==========================================
-   6. ESTILOS MOBILE
+   6. ESTILOS MOBILE - MELHORADO
    ========================================== */
 @media (max-width: 960px) {
   .mobile-toggle { display: block; }
@@ -431,14 +456,12 @@ main {
     right: 0;
     bottom: 0;
     width: 100%;
-    height: auto;
+    height: calc(100vh - 61px);
     background: var(--bg-page);
     flex-direction: column;
     padding: 1rem;
-    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
     gap: 0.6rem;
     z-index: 999;
     animation: fadeInDown 0.2s ease;
@@ -449,7 +472,9 @@ main {
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .main-nav.active { display: flex; }
+  .main-nav.active { 
+    display: flex; 
+  }
 
   .nav-item {
     padding-bottom: 0;
@@ -490,12 +515,9 @@ main {
     right: auto;
     transform: none !important;
     width: 100%;
-    box-shadow: inset 0 8px 24px rgba(79, 70, 229, 0.12);
+    box-shadow: none;
     border: none;
-    border-top: 1px solid rgba(79, 70, 229, 0.18);
-    border-left: 3px solid var(--primary);
-    border-radius: 0;
-    outline: none;
+    border-top: 1px solid var(--border-color);
     padding: 1rem;
     display: none;
     grid-template-columns: 1fr;
@@ -503,7 +525,7 @@ main {
     visibility: visible;
     max-height: none;
     overflow-y: visible;
-    background: #fafbff;
+    background: #ffffff;
   }
 
   .nav-item.active .mega-menu {
@@ -527,13 +549,21 @@ main {
 
   .mega-link-item {
     padding: 0.7rem 0.9rem;
-    background: #ffffff;
+    background: #f8fafc;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
   }
 
-  .mega-explore-side { margin-top: 1rem; }
-  .category-group::after { width: 100%; }
+  .mega-link-item:hover {
+    transform: none;
+  }
+
+  .mega-explore-side {
+    margin-top: 1rem;
+  }
+
+  .category-group::after {
+    width: 100%;
+  }
 }
 
 /* ==========================================
@@ -559,10 +589,11 @@ main {
 .page-card td, .page-card th { border: 1px solid var(--border-color); padding: 0.4rem 0.7rem; font-size: 0.82rem; line-height: 1.4; }
 @media (max-width: 600px) { .page-card td, .page-card th { font-size: 0.75rem; padding: 0.3rem 0.5rem; } }
 .page-loading { color: var(--text-muted); }
-
+/* depois de clicar num item, o painel fecha até o mouse sair e voltar */
 .nav-item.closed .mega-menu { opacity: 0 !important; visibility: hidden !important; }
 @media (max-width: 960px) { .page-card { padding: 1.2rem; border-radius: 14px; } }
 
+/* Índice interno, avisos e listas dos artigos */
 .page-card [id] { scroll-margin-top: 80px; }
 .page-card h3 { margin: 1.4rem 0 0.3rem; font-size: 1.05rem; }
 .page-card ul { padding-left: 1.3rem; }
@@ -578,7 +609,7 @@ main {
 .aviso p { margin: 0.3rem 0 0; }
 
 /* ==========================================
-   8. MEGA MENU COMPACTO (DESKTOP)
+   8. MEGA MENU COMPACTO (somente desktop)
    ========================================== */
 @media (min-width: 961px) {
   .mega-menu {
@@ -591,7 +622,10 @@ main {
   .category-group { padding-bottom: 0.5rem; }
   .category-group::after { width: 80%; }
   .category-title { margin-bottom: 0.25rem; font-size: 0.75rem; }
-  .mega-links-grid { grid-template-columns: repeat(4, 1fr); gap: 0 0.4rem; }
+  .mega-links-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 0.4rem;
+  }
   .mega-link-item { padding: 0.3rem 0.5rem; font-size: 0.82rem; }
   .mega-explore-side { padding: 0.8rem; justify-content: flex-start; gap: 0.6rem; }
   .explore-header-title { margin-bottom: 0; }
@@ -600,7 +634,8 @@ main {
 }
 
 /* ==========================================
-   9. MENUS ELEGANTES (dropdown simples, 1 coluna)
+   9. MENUS ELEGANTES (sem mega menu)
+   Dropdown simples, uma coluna, abaixo de cada botão
    ========================================== */
 .explore-header-title, .explore-banner { display: none; }
 .mega-link-item i { display: none; }
@@ -612,7 +647,7 @@ main {
 }
 .mega-explore-side:hover { box-shadow: none; }
 .explore-link { font-size: 0.82rem; padding: 0.3rem 0; }
-.category-title { color: var(--primary); padding: 0 0.6rem; }
+.category-title { color: var(--text-muted); padding: 0 0.6rem; }
 
 @media (min-width: 961px) {
   .nav-item { position: relative; }
@@ -627,10 +662,11 @@ main {
   .nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
   .mega-categories-container { gap: 0; }
   .category-group { padding: 0.5rem 0; }
-  .category-group::after { left: 0.6rem; width: calc(100% - 1.2rem); background-color: rgba(15, 23, 42, 0.08); }
+  .category-group::after { left: 0.6rem; width: calc(100% - 1.2rem); background-color: var(--border-color); }
   .category-title { margin: 0 0 0.3rem; font-size: 0.7rem; }
   .mega-links-grid { grid-template-columns: 1fr; gap: 2px; }
   .mega-link-item { padding: 0.45rem 0.7rem; font-size: 0.88rem; }
+  .mega-link-item:hover { transform: none; padding-left: 0.95rem; }
   .mega-explore-side { padding: 0.5rem 0.6rem 0.1rem; gap: 0; }
 }
 
@@ -736,8 +772,8 @@ main {
 .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .chips span { font-size: 0.78rem; padding: 0.25rem 0.7rem; border-radius: 99px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.25); }
 
-/* Abas principais */
-.art-tabs { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0.3rem 0 1rem; margin: 1rem 0 0; border-bottom: 1px solid var(--border-color); scroll-margin-top: 70px; }
+/* abas principais */
+.art-tabs { display: flex; gap: 0.4rem; overflow-x: auto; padding: 0.3rem 0 0.6rem; margin: 1rem 0; border-bottom: 1px solid var(--border-color); scroll-margin-top: 70px; scrollbar-width: thin; }
 .art-tabs button, .mini-tabs button {
   flex: none; font: inherit; font-size: 0.86rem; font-weight: 600; cursor: pointer;
   padding: 0.5rem 0.95rem; border-radius: 99px; border: 1px solid var(--border-color);
@@ -745,14 +781,14 @@ main {
 }
 .art-tabs button:hover, .mini-tabs button:hover { color: var(--primary); border-color: #c7d2fe; }
 .art-tabs button.on, .mini-tabs button.on { background: var(--primary); border-color: var(--primary); color: #fff; box-shadow: 0 4px 10px rgba(79,70,229,0.25); }
-.art-panel { display: none; scroll-margin-top: 72px; }
+.art-panel { display: none; }
 .art-panel.on { display: block; animation: slideDown 0.25s ease; }
 .art-panel > h2:first-child { margin-top: 0.5rem; }
 .aba-nav { display: flex; justify-content: space-between; gap: 0.6rem; flex-wrap: wrap; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
 .aba-nav button { font: inherit; font-size: 0.85rem; font-weight: 600; cursor: pointer; padding: 0.5rem 0.9rem; border-radius: 10px; border: 1px solid var(--border-color); background: #fff; color: var(--primary); transition: var(--transition); }
 .aba-nav button:hover { background: var(--primary-light); }
 
-/* Mini abas (sintomas / causas / soluções) */
+/* mini abas (sintomas / causas / soluções) */
 .trio { border: 1px solid var(--border-color); border-radius: 14px; padding: 1rem; margin: 1rem 0; background: #fafbff; }
 .trio.enh .mini-panel { display: none; }
 .trio.enh .mini-panel.on { display: block; animation: slideDown 0.2s ease; }
@@ -760,20 +796,20 @@ main {
 .mini-tabs button { padding: 0.35rem 0.8rem; font-size: 0.82rem; }
 .trio h4 { margin: 0 0 0.3rem; }
 
-/* Cartões de especificação */
+/* cartões de especificação */
 .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.7rem; margin: 1.2rem 0; }
 .spec { background: var(--primary-light); border: 1px solid #e0e7ff; border-radius: 12px; padding: 0.9rem; text-align: center; }
 .spec b { display: block; font-size: 1.1rem; color: var(--primary); }
 .spec span { font-size: 0.78rem; color: var(--text-muted); }
 
-/* Caixas de destaque */
+/* caixas de destaque */
 .dica { background: #eff6ff; border-left: 4px solid #3b82f6; border-radius: 8px; padding: 0.8rem 1rem; margin: 1.2rem 0; }
 .dica p { margin: 0.3rem 0 0; }
 .aviso strong::before, .dica strong::before { font-family: "Font Awesome 6 Free"; font-weight: 900; margin-right: 0.45rem; }
 .aviso strong::before { content: "\f071"; color: #f59e0b; }
 .dica strong::before { content: "\f0eb"; color: #3b82f6; }
 
-/* Figuras e links de imagem */
+/* figuras e links de imagem */
 .page-card figure { margin: 1.2rem 0; }
 .page-card figure img { margin: 0; cursor: zoom-in; border: 1px solid var(--border-color); transition: var(--transition); }
 .page-card figure img:hover { box-shadow: var(--shadow-md); }
@@ -783,7 +819,7 @@ main {
 a.img-link { text-decoration: underline dotted; text-underline-offset: 3px; font-weight: 600; cursor: zoom-in; }
 a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 0.75em; margin-left: 0.35em; }
 
-/* Códigos de falha em acordeão */
+/* códigos de falha em acordeão */
 .codigos { display: grid; gap: 0.6rem; margin-top: 1rem; }
 .codigo { display: flex; gap: 0.9rem; align-items: flex-start; border: 1px solid var(--border-color); border-radius: 14px; padding: 0.9rem 1rem; background: #fff; transition: var(--transition); }
 .codigo .num { flex: none; font-weight: 800; font-size: 0.95rem; color: #fff; background: var(--primary); border-radius: 10px; padding: 0.4rem 0.7rem; }
@@ -798,19 +834,20 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
 .codigos.enh .codigo.open h4::after { transform: rotate(180deg); }
 .codigo.open { border-color: #c7d2fe; background: #fafbff; }
 
-/* Caixa de diálogo para imagens */
-.lightbox { border: 0; padding: 0; background: #0f172a; color: #e2e8f0; border-radius: 16px; max-width: min(94vw, 1000px); max-height: 94vh; overflow: auto; box-shadow: var(--shadow-lg); }
+/* caixa de diálogo para imagens */
+.lightbox { border: 0; padding: 0; background: #0f172a; color: #e2e8f0; border-radius: 16px; max-width: min(94vw, 1000px); box-shadow: var(--shadow-lg); overflow: hidden; }
 .lightbox::backdrop { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(3px); }
-.lightbox img { display: block; max-width: 100%; max-height: 78vh; margin: 0 auto; cursor: zoom-in; }
-.lightbox img.zoom { max-height: none; width: min(94vw, 1000px); cursor: zoom-out; }
+.lightbox img { display: block; max-width: 100%; max-height: 78vh; margin: 0 auto; }
 .lightbox p { margin: 0; padding: 0.8rem 1.2rem 1rem; font-size: 0.88rem; text-align: center; }
 .lb-close { position: absolute; top: 0.6rem; right: 0.6rem; width: 36px; height: 36px; border-radius: 50%; border: 0; cursor: pointer; background: rgba(255,255,255,0.9); color: #0f172a; font-size: 1rem; z-index: 2; }
 @media (max-width: 960px) { .page-card .art-head { padding: 1.1rem; } .codigo { padding: 0.8rem; } }
 
 /* ==========================================
-   12. ÍNDICE DO ARTIGO (abas numeradas)
+   12. ÍNDICE DO ARTIGO (abas numeradas, claro no celular)
    ========================================== */
 .art-index-title { margin: 1.2rem 0 0.4rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); scroll-margin-top: 72px; }
+.art-tabs { margin-top: 0; }
+.art-panel { scroll-margin-top: 72px; }
 .art-tabs button { display: inline-flex; align-items: center; gap: 0.5rem; }
 .art-tabs button em { font-style: normal; font-size: 0.72rem; font-weight: 800; width: 1.4rem; height: 1.4rem; flex: none; border-radius: 50%; display: grid; place-items: center; background: var(--primary-light); color: var(--primary); }
 .art-tabs button.on em { background: rgba(255,255,255,0.25); color: #fff; }
@@ -825,16 +862,19 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
   .mini-tabs button { flex: 1 1 auto; }
 }
 
+/* Índice sem barra de rolagem: as abas quebram em várias linhas */
+.art-tabs { flex-wrap: wrap; overflow: visible; gap: 0.5rem; padding-bottom: 1rem; }
+
 /* Tabelas e listas numeradas dos artigos */
-.page-card th { background: var(--primary-light); color: var(--primary); text-align: left; font-size: 0.9rem; }
+.page-card th { background: var(--primary-light); color: var(--primary); text-align: left; font-size: 0.85rem; }
 .page-card tr:nth-child(even) td { background: #f8fafc; }
-.page-card tbody tr:nth-child(odd) td { background: #f8fafc; }
 .page-card ol { padding-left: 1.4rem; }
 .page-card li { margin: 0.35rem 0; }
 
 /* ==========================================
    13. BARRA ESCURA AO ROLAR A PÁGINA
    ========================================== */
+.site-wrapper > header { transition: background 0.3s ease, border-color 0.3s ease; }
 .site-wrapper > header.scrolled { background: rgba(79, 70, 229, 0.95); border-bottom-color: #6366f1; }
 header.scrolled .logo { color: #fff; }
 header.scrolled .mobile-toggle { color: #fff; }
@@ -848,10 +888,17 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 }
 
 /* ==========================================
-   14. MENU DO CELULAR (o final da lista não fica escondido)
+   14. MENU DO CELULAR: o final da lista não fica escondido
    ========================================== */
 @media (max-width: 960px) {
+  /* backdrop-filter faz o menu fixo se medir pelo cabeçalho e não pela tela */
   .site-wrapper > header { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .main-nav {
+    height: auto;
+    bottom: 0;
+    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
+    overscroll-behavior: contain;
+  }
 }
 
 /* ==========================================
@@ -889,6 +936,9 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 .hub-card strong, .hub-card small, .hub-card em { display: block; }
 .hub-card small { color: var(--text-muted); font-size: 0.82rem; line-height: 1.4; margin: 0.15rem 0 0.3rem; }
 .hub-card em { font-style: normal; font-size: 0.75rem; font-weight: 700; color: var(--primary); }
+.lightbox { max-height: 94vh; overflow: auto; }
+.lightbox img { cursor: zoom-in; }
+.lightbox img.zoom { max-height: none; width: min(94vw, 1000px); cursor: zoom-out; }
 
 /* ==========================================
    17. BOTÃO DO MENU DESTACADO NA PÁGINA ABERTA
@@ -901,6 +951,8 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
 /* ==========================================
    18. TABELAS RESPONSIVAS
    ========================================== */
+.page-card th { background: var(--primary-light); color: var(--primary); font-size: 0.9rem; text-align: left; }
+.page-card tbody tr:nth-child(odd) td { background: #f8fafc; }
 .page-card table { display: table !important; width: 100% !important; max-width: 100%; margin: 1rem 0; table-layout: auto; }
 
 @media (max-width: 640px) {
@@ -913,30 +965,39 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    19. AJUSTE MOBILE: Largura do Conteúdo (Quase 100%)
    ========================================== */
 @media (max-width: 768px) {
-  main { padding: 1.5rem 0 !important; }
+  /* Zera o padding lateral do main para a caixa poder crescer */
+  main {
+    padding: 1.5rem 0 !important; 
+  }
+
+  /* O cartão ocupa 98% da tela (quase 100%), centralizado */
   .page-card {
     width: 98% !important;
     max-width: 98% !important;
-    margin: 0 auto !important;
-    padding: 1.2rem !important;
+    margin: 0 auto !important; /* Centraliza na tela */
+    padding: 1.2rem !important; /* Margem interna para o texto não encostar na borda da caixa */
     box-sizing: border-box;
   }
-  .page-card .art-head, .toc { padding: 1rem !important; }
+
+  /* Ajusta o cabeçalho azul e o índice para caberem bem dentro do novo tamanho */
+  .page-card .art-head, 
+  .toc {
+    padding: 1rem !important;
+  }
 }
 
-/* ==========================================
-   20. EFEITO DE ZOOM (LIGHTBOX)
-   ========================================== */
+
+/* ESTILOS PARA O EFEITO DE ZOOM (LIGHTBOX) */
 .img-box-preview {
   display: inline-block;
-  max-width: 350px;
+  max-width: 350px; /* ALTERE AQUI O TAMANHO DA MINIATURA (ex: 250px) */
   margin: 15px 0;
 }
 .img-box-preview img {
   width: 100%;
   height: auto;
   border-radius: 6px;
-  cursor: pointer;
+  cursor: pointer; /* Cursor de mãozinha */
   transition: transform 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
@@ -945,6 +1006,7 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+/* Fundo escuro do modal */
 .modal-zoom {
   display: none;
   position: fixed;
@@ -968,4 +1030,58 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   font-weight: bold;
   cursor: pointer;
 }
-.modal-zoom .fechar-zoom:hover { color: #ff0000; }
+.modal-zoom .fechar-zoom:hover {
+  color: #ff0000;
+}
+
+/* ==========================================
+   MENU SIMPLES: barra colorida + menu aberto escuro
+   Para trocar as cores, altere só as variáveis abaixo.
+   ========================================== */
+:root {
+  --barra-menu: #4338ca;        /* cor da barra do menu (sempre colorida) */
+  --menu-aberto: #312e81;       /* cor da aba aberta e do painel do menu */
+}
+
+/* Barra do menu: sempre colorida, com letras brancas */
+.site-wrapper > header,
+.site-wrapper > header.scrolled {
+  background: var(--barra-menu);
+  border-bottom: 1px solid var(--menu-aberto);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+.site-wrapper > header .logo,
+.site-wrapper > header .mobile-toggle { color: #fff; }
+
+@media (min-width: 961px) {
+  .site-wrapper > header .nav-btn { color: #fff; }
+  .site-wrapper > header .nav-btn i { color: #e0e7ff !important; }
+
+  /* Aba aberta (ou da página atual) */
+  .site-wrapper > header .nav-item:hover > .nav-btn,
+  .site-wrapper > header .nav-btn.atual {
+    background: var(--menu-aberto);
+    color: #fff;
+  }
+
+  /* Painel do menu aberto */
+  .site-wrapper > header .mega-menu {
+    background: var(--menu-aberto) !important;
+    border: 0 !important;
+  }
+  .site-wrapper > header .mega-menu .category-title { color: #c7d2fe !important; }
+  .site-wrapper > header .mega-menu .mega-link-item { color: #fff !important; }
+  .site-wrapper > header .mega-menu .mega-link-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+  }
+  .site-wrapper > header .mega-menu .mega-link-item.active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    color: #fff !important;
+  }
+  .site-wrapper > header .mega-menu .category-group::after { background: rgba(255, 255, 255, 0.2) !important; }
+  .site-wrapper > header .mega-menu .mega-explore-side { border-top-color: rgba(255, 255, 255, 0.2) !important; }
+  .site-wrapper > header .mega-menu .explore-link,
+  .site-wrapper > header .mega-menu .explore-header-title { color: #fff !important; }
+}
