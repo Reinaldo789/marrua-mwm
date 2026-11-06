@@ -17,24 +17,21 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
 
-  /* ---------- Cabeçalho do artigo ---------- */
+  /* Cabeçalho */
   .art-head{padding:32px 24px 8px;max-width:1100px;margin:0 auto}
   .art-kicker{display:inline-block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;
                color:var(--accent);border:1px solid var(--accent);border-radius:999px;
                padding:4px 10px;margin-bottom:14px}
   .art-head h1{margin:0 0 6px;font-size:2rem;line-height:1.2}
   .art-lead{margin:0 0 16px;color:var(--muted);max-width:70ch}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-  .chips span{background:var(--chip);border:1px solid var(--line);color:var(--muted);
-              padding:4px 10px;border-radius:999px;font-size:.8rem}
 
-  /* ---------- Dica ---------- */
+  /* Dica */
   .dica{background:rgba(34,211,238,.06);border-left:4px solid var(--accent);
         padding:14px 18px;border-radius:8px;margin:0 auto 24px;max-width:1100px}
   .dica strong{color:var(--accent)}
   .dica p{margin:6px 0 0;color:var(--muted)}
 
-  /* ---------- Índice ---------- */
+  /* Índice */
   .indice{max-width:1100px;margin:0 auto 32px;padding:0 24px}
   .indice h2{font-size:1.25rem;margin:0 0 12px;color:var(--ink)}
   .indice-grupo{margin-bottom:18px}
@@ -46,21 +43,20 @@
   .indice li a:hover{color:var(--accent)}
   .indice .codigo-mini{color:var(--accent-2);font-weight:600;min-width:44px}
 
-  /* ---------- Seções por sistema ---------- */
+  /* Seções */
   .sistema{max-width:1100px;margin:0 auto;padding:0 24px}
   .sistema > h2{font-size:1.5rem;border-bottom:1px solid var(--line);
                 padding-bottom:8px;margin:40px 0 20px;color:var(--accent)}
 
-  /* ---------- Cada sintoma ---------- */
+  /* Sintomas */
   .sintoma{background:var(--card);border:1px solid var(--line);border-radius:12px;
            padding:22px 24px;margin-bottom:20px;scroll-margin-top:20px}
   .sintoma header{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
   .sintoma .codigo{background:var(--accent-2);color:#111;font-weight:700;padding:2px 10px;
                    border-radius:6px;font-size:.8rem;letter-spacing:.05em}
   .sintoma h3{margin:0;font-size:1.25rem;color:var(--ink)}
-  .sintoma .intro{color:var(--muted);font-style:italic;margin:8px 0 16px;font-size:.92rem}
 
-  /* ---------- Fluxograma Interativo ---------- */
+  /* Fluxograma Interativo */
   .fluxo { display: flex; flex-direction: column; gap: 15px; margin: 20px 0; }
   .passo {
     display: none; background: #0b1220; border: 1px solid var(--line);
@@ -73,7 +69,6 @@
     font-size: 0.8rem; margin-bottom: 12px; text-transform: uppercase;
   }
   
-  /* Layout interno dos passos convertidos */
   .passo .step-content { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 15px;}
   .passo .bloco h4 { margin: 0 0 4px; font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
   .passo .causa h4 { color: var(--causa); }
@@ -105,9 +100,6 @@
   @media (max-width:760px){
     .passo .step-content { grid-template-columns: 1fr; }
   }
-
-  footer{max-width:1100px;margin:48px auto 24px;padding:0 24px;color:var(--muted);font-size:.85rem;
-         border-top:1px solid var(--line);padding-top:16px}
 </style>
 </head>
 <body>
@@ -116,12 +108,6 @@
   <span class="art-kicker">Diagnóstico · Sintomas</span>
   <h1>ISF2.8 CM2220 E / CM2220 AN</h1>
   <p class="art-lead">Diagramas de sintomas de falhas e reparos — Seção TS do manual Cummins. Clique nos botões para avançar no diagnóstico passo a passo.</p>
-  <div class="chips">
-    <span>Cummins ISF2.8</span>
-    <span>47 sintomas</span>
-    <span>Seção TS</span>
-    <span>Manual de Diagnóstico</span>
-  </div>
 </header>
 
 <div class="dica">
@@ -129,32 +115,24 @@
   <p>Selecione o sintoma no índice abaixo. O fluxograma mostrará o primeiro passo. Realize a correção indicada e responda se o problema foi resolvido. Se não, o sistema avançará para a próxima causa provável.</p>
 </div>
 
-<!-- ====================== ÍNDICE ====================== -->
-<nav class="indice" aria-label="Índice de sintomas">
+<nav class="indice">
   <h2>Índice de sintomas</h2>
-
   <div class="indice-grupo">
     <h3>Sistema Elétrico</h3>
     <ul>
-      <li><a href="#t013"><span class="codigo-mini">t013</span> Alternador Não Carrega ou Carrega Insuficientemente</a></li>
+      <li><a href="#t013"><span class="codigo-mini">t013</span> Alternador Não Carrega</a></li>
       <li><a href="#t014"><span class="codigo-mini">t014</span> Alternador com Sobrecarga</a></li>
-      <li><a href="#t016"><span class="codigo-mini">t016</span> Erro de Comunicação — Ferramenta Eletrônica de Serviço</a></li>
-      <li><a href="#t084"><span class="codigo-mini">t084</span> Luzes de Advertência de Códigos de Falha Não Acendem</a></li>
-      <li><a href="#t078"><span class="codigo-mini">t078</span> Motor Não Gira ou Gira Lentamente na Partida</a></li>
+      <li><a href="#t016"><span class="codigo-mini">t016</span> Erro de Comunicação</a></li>
+      <li><a href="#t078"><span class="codigo-mini">t078</span> Motor Não Gira</a></li>
     </ul>
   </div>
-
   <div class="indice-grupo">
     <h3>Sistema de Lubrificação</h3>
     <ul>
-      <li><a href="#t105"><span class="codigo-mini">t105</span> Pressão Baixa do Óleo Lubrificante</a></li>
-      <li><a href="#t104"><span class="codigo-mini">t104</span> Pressão Alta do Óleo Lubrificante</a></li>
-      <li><a href="#t102"><span class="codigo-mini">t102</span> Consumo Excessivo de Óleo Lubrificante</a></li>
-      <li><a href="#t103"><span class="codigo-mini">t103</span> Óleo Lubrificante Contaminado</a></li>
+      <li><a href="#t104"><span class="codigo-mini">t104</span> Pressão Alta do Óleo</a></li>
+      <li><a href="#t105"><span class="codigo-mini">t105</span> Pressão Baixa do Óleo</a></li>
     </ul>
   </div>
-  
-  <!-- (Índice resumido para não ficar gigante na visualização, mas os links funcionam) -->
 </nav>
 
 <!-- ============================================================ -->
@@ -179,7 +157,7 @@
       <span class="passo-n">Passo 2</span>
       <div class="step-content">
         <div class="bloco causa"><h4>Causa</h4><p>Rotação do motor baixa demais para carregar o alternador.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Acione o acelerador para aumentar a rotação do motor para 1200 rpm e excitar o alternador. Consulte o Manual de Operação (Boletim 4022267) para verificar a rotação de marcha lenta.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Acione o acelerador para 1200 rpm e excite o alternador. Verifique a rotação de marcha lenta.</p></div>
       </div>
       <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p3">Não (Próximo passo)</button></div>
     </div>
@@ -188,7 +166,7 @@
       <span class="passo-n">Passo 3</span>
       <div class="step-content">
         <div class="bloco causa"><h4>Causa</h4><p>A correia do alternador está solta.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Verifique a tensão da correia do alternador. Consulte o Procedimento 013-001 na Seção 13.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique a tensão da correia do alternador. Consulte o Procedimento 013-001.</p></div>
       </div>
       <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p4">Não (Próximo passo)</button></div>
     </div>
@@ -196,8 +174,8 @@
     <div class="passo" id="t013-p4">
       <span class="passo-n">Passo 4</span>
       <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>O sistema elétrico está aberto (fusíveis queimados, fios quebrados ou conexões soltas).</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Verifique os fusíveis, os fios e as conexões. Consulte o manual de serviço do OEM e os diagramas elétricos.</p></div>
+        <div class="bloco causa"><h4>Causa</h4><p>Sistema elétrico aberto (fusíveis, fios ou conexões).</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique fusíveis, fios e conexões. Consulte os diagramas elétricos do fabricante.</p></div>
       </div>
       <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p5">Não (Próximo passo)</button></div>
     </div>
@@ -205,8 +183,8 @@
     <div class="passo" id="t013-p5">
       <span class="passo-n">Passo 5</span>
       <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>Os cabos ou as conexões da bateria estão soltos, quebrados ou corroídos.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Verifique os cabos e as conexões da bateria. Consulte o Procedimento 013-009 na Seção 13.</p></div>
+        <div class="bloco causa"><h4>Causa</h4><p>Cabos ou conexões da bateria soltos ou corroídos.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique os cabos e conexões da bateria. Consulte o Procedimento 013-009.</p></div>
       </div>
       <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p6">Não (Próximo passo)</button></div>
     </div>
@@ -214,8 +192,8 @@
     <div class="passo" id="t013-p6">
       <span class="passo-n">Passo 6</span>
       <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>Falha no funcionamento das baterias.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Verifique as condições das baterias. Substitua as baterias, se necessário. Consulte o Procedimento 013-007 na Seção 13.</p></div>
+        <div class="bloco causa"><h4>Causa</h4><p>Falha nas baterias.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique as baterias e substitua se necessário. Consulte o Procedimento 013-007.</p></div>
       </div>
       <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p7">Não (Próximo passo)</button></div>
     </div>
@@ -223,8 +201,8 @@
     <div class="passo" id="t013-p7">
       <span class="passo-n">Passo 7</span>
       <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>A polia do alternador está solta no eixo.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Aperte a polia. Consulte o fabricante do alternador e/ou o manual de serviços do OEM.</p></div>
+        <div class="bloco causa"><h4>Causa</h4><p>Polia do alternador solta no eixo.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Aperte a polia. Consulte o fabricante do alternador.</p></div>
       </div>
       <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p8">Não (Próximo passo)</button></div>
     </div>
@@ -232,39 +210,124 @@
     <div class="passo" id="t013-p8">
       <span class="passo-n">Passo 8</span>
       <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>A temperatura da bateria está acima da especificação.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Mantenha as baterias longe de fontes de calor. Consulte o manual de serviços do OEM.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p9">Não (Próximo passo)</button></div>
-    </div>
-
-    <div class="passo" id="t013-p9">
-      <span class="passo-n">Passo 9</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>Falha no funcionamento do alternador ou do regulador de voltagem.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Teste a saída do alternador. Se necessário, substitua o alternador ou o regulador. Consulte o Procedimento 013-001.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-p10">Não (Próximo passo)</button></div>
-    </div>
-
-    <div class="passo" id="t013-p10">
-      <span class="passo-n">Passo 10</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>Sobrecarga no alternador, ou a capacidade do mesmo está abaixo da especificação.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Instale um alternador de maior capacidade. Consulte o Procedimento 013-001 e o manual do OEM.</p></div>
+        <div class="bloco causa"><h4>Causa</h4><p>Alternador ou regulador de voltagem com falha.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Teste a saída do alternador. Substitua se necessário. Consulte o Procedimento 013-001.</p></div>
       </div>
       <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t013-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t013-fim-erro">Não (Fim do roteiro)</button></div>
     </div>
 
     <div class="passo fim ok" id="t013-fim-ok">
       <span class="passo-n">Resolvido</span>
-      <p>O problema foi solucionado seguindo o roteiro do alternador. Realize o teste de carga final para confirmar e libere o veículo.</p>
+      <p>O problema foi solucionado seguindo o roteiro do alternador. Libere o veículo.</p>
     </div>
-
     <div class="passo fim erro" id="t013-fim-erro">
       <span class="passo-n">Fim do Roteiro</span>
-      <p>Todas as causas foram verificadas, mas o problema persiste. Leia os códigos de falha utilizando o INSITE™ e consulte o Manual de Diagnóstico de Códigos de Falha (Boletim 4021677).</p>
+      <p>Todas as causas foram verificadas. Leia os códigos com o INSITE™ e consulte o Boletim 4021677.</p>
     </div>
+  </div>
+</article>
+
+<article class="sintoma" id="t014">
+  <header><span class="codigo">t014</span><h3>Alternador com Sobrecarga</h3></header>
+  <div class="fluxo">
+    <div class="passo active" id="t014-p1">
+      <span class="passo-n">Passo 1</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Cabos ou conexões da bateria com resistência excessiva.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique os cabos e conexões. Consulte o Procedimento 013-009.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t014-fim-ok">Sim</button><button type="button" class="nao" data-ir="t014-p2">Não</button></div>
+    </div>
+    <div class="passo" id="t014-p2">
+      <span class="passo-n">Passo 2</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Células das baterias danificadas.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique as baterias. Substitua se necessário.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t014-fim-ok">Sim</button><button type="button" class="nao" data-ir="t014-p3">Não</button></div>
+    </div>
+    <div class="passo" id="t014-p3">
+      <span class="passo-n">Passo 3</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Regulador de voltagem com falha.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique e substitua o regulador se necessário.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t014-fim-ok">Sim</button><button type="button" class="nao" data-ir="t014-fim-erro">Não (Fim)</button></div>
+    </div>
+    <div class="passo fim ok" id="t014-fim-ok"><span class="passo-n">Resolvido</span><p>Problema solucionado.</p></div>
+    <div class="passo fim erro" id="t014-fim-erro"><span class="passo-n">Fim</span><p>Verifique códigos de falha com INSITE™ (Boletim 4021677).</p></div>
+  </div>
+</article>
+
+<article class="sintoma" id="t016">
+  <header><span class="codigo">t016</span><h3>Erro de Comunicação — Ferramenta Eletrônica de Serviço</h3></header>
+  <div class="fluxo">
+    <div class="passo active" id="t016-p1">
+      <span class="passo-n">Passo 1</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Erro 5023: Nenhuma conexão com o ECM.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Consulte o Procedimento 019-472 na Seção 19.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t016-fim-ok">Sim</button><button type="button" class="nao" data-ir="t016-p2">Não</button></div>
+    </div>
+    <div class="passo" id="t016-p2">
+      <span class="passo-n">Passo 2</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Erro 5080/5081: ECM inicializado via ROM, necessita recalibração.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Calibre o ECM com o código apropriado (Procedimento 019-032).</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t016-fim-ok">Sim</button><button type="button" class="nao" data-ir="t016-p3">Não</button></div>
+    </div>
+    <div class="passo" id="t016-p3">
+      <span class="passo-n">Passo 3</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Erro 5200-5204: Perda de comunicação datalink.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique a conexão física e o datalink. Consulte o Procedimento 019-472.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t016-fim-ok">Sim</button><button type="button" class="nao" data-ir="t016-fim-erro">Não (Fim)</button></div>
+    </div>
+    <div class="passo fim ok" id="t016-fim-ok"><span class="passo-n">Resolvido</span><p>Conexão restabelecida.</p></div>
+    <div class="passo fim erro" id="t016-fim-erro"><span class="passo-n">Fim</span><p>Verifique o chicote elétrico e os conectores do ECM.</p></div>
+  </div>
+</article>
+
+<article class="sintoma" id="t078">
+  <header><span class="codigo">t078</span><h3>Motor Não Gira ou Gira Lentamente na Partida</h3></header>
+  <div class="fluxo">
+    <div class="passo active" id="t078-p1">
+      <span class="passo-n">Passo 1</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Temperatura da bateria abaixo da especificação.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique o aquecedor da bateria (se equipado).</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t078-fim-ok">Sim</button><button type="button" class="nao" data-ir="t078-p2">Não</button></div>
+    </div>
+    <div class="passo" id="t078-p2">
+      <span class="passo-n">Passo 2</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Códigos de falha ativos ou voltagem da bateria baixa.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Leia os códigos com INSITE™. Verifique as baterias (Procedimento 013-007).</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t078-fim-ok">Sim</button><button type="button" class="nao" data-ir="t078-p3">Não</button></div>
+    </div>
+    <div class="passo" id="t078-p3">
+      <span class="passo-n">Passo 3</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Cabos da bateria soltos ou corroídos.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique os cabos e conexões (Procedimento 013-009).</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t078-fim-ok">Sim</button><button type="button" class="nao" data-ir="t078-p4">Não</button></div>
+    </div>
+    <div class="passo" id="t078-p4">
+      <span class="passo-n">Passo 4</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Motor de partida ou cremalheira danificados.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Inspecione o motor de partida (Procedimento 013-020).</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t078-fim-ok">Sim</button><button type="button" class="nao" data-ir="t078-fim-erro">Não (Fim)</button></div>
+    </div>
+    <div class="passo fim ok" id="t078-fim-ok"><span class="passo-n">Resolvido</span><p>Partida normalizada.</p></div>
+    <div class="passo fim erro" id="t078-fim-erro"><span class="passo-n">Fim</span><p>Verifique danos internos do motor (Procedimento 007-044).</p></div>
   </div>
 </article>
 
@@ -276,7 +339,47 @@
 <section class="sistema">
 <h2>Sistema de Lubrificação</h2>
 
-<!-- ===== T105 COM LÓGICA PERSONALIZADA (DO ARQUIVO DO USUÁRIO) ===== -->
+<article class="sintoma" id="t104">
+  <header><span class="codigo">t104</span><h3>Pressão Alta do Óleo Lubrificante</h3></header>
+  <div class="fluxo">
+    <div class="passo active" id="t104-p1">
+      <span class="passo-n">Passo 1</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Códigos eletrônicos de falha ativos.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique com INSITE™. Consulte o Boletim 4021677.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim</button><button type="button" class="nao" data-ir="t104-p2">Não</button></div>
+    </div>
+    <div class="passo" id="t104-p2">
+      <span class="passo-n">Passo 2</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Temperatura do líquido de arrefecimento baixa.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique o termostato e o sistema de arrefecimento.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim</button><button type="button" class="nao" data-ir="t104-p3">Não</button></div>
+    </div>
+    <div class="passo" id="t104-p3">
+      <span class="passo-n">Passo 3</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Óleo lubrificante fora de especificação.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Troque o óleo e os filtros. Consulte o Procedimento 007-037.</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim</button><button type="button" class="nao" data-ir="t104-p4">Não</button></div>
+    </div>
+    <div class="passo" id="t104-p4">
+      <span class="passo-n">Passo 4</span>
+      <div class="step-content">
+        <div class="bloco causa"><h4>Causa</h4><p>Regulador principal de pressão travado.</p></div>
+        <div class="bloco correcao"><h4>Correção</h4><p>Verifique a montagem do regulador (Procedimento 007-029).</p></div>
+      </div>
+      <div class="resp"><p>Resolveu?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim</button><button type="button" class="nao" data-ir="t104-fim-erro">Não (Fim)</button></div>
+    </div>
+    <div class="passo fim ok" id="t104-fim-ok"><span class="passo-n">Resolvido</span><p>Pressão normalizada.</p></div>
+    <div class="passo fim erro" id="t104-fim-erro"><span class="passo-n">Fim</span><p>Consulte o Manual de Diagnóstico de Códigos de Falha.</p></div>
+  </div>
+</article>
+
+<!-- ===== T105 COM A LÓGICA PERSONALIZADA ===== -->
 <article class="sintoma" id="t105">
   <header><span class="codigo">t105</span><h3>Pressão Baixa do Óleo Lubrificante</h3></header>
   
@@ -358,110 +461,53 @@
   </div>
 </article>
 
-<!-- ===== T104 - CONVERTIDO PARA FLUXO PADRÃO ===== -->
-<article class="sintoma" id="t104">
-  <header><span class="codigo">t104</span><h3>Pressão Alta do Óleo Lubrificante</h3></header>
-  <div class="fluxo">
-    <div class="passo active" id="t104-p1">
-      <span class="passo-n">Passo 1</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>Códigos eletrônicos de falha ativos ou altas contagens.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Verifique com INSITE™. Consulte o Boletim 4021677.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t104-p2">Não (Próximo passo)</button></div>
-    </div>
-    <div class="passo" id="t104-p2">
-      <span class="passo-n">Passo 2</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>A temperatura do líquido de arrefecimento do motor está abaixo da especificação.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Consulte o diagrama 'Temperatura do Líquido de Arrefecimento do Motor Abaixo da Normal'.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t104-p3">Não (Próximo passo)</button></div>
-    </div>
-    <div class="passo" id="t104-p3">
-      <span class="passo-n">Passo 3</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>O óleo lubrificante não atende às especificações para as condições de operação.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Troque o óleo e os filtros. Consulte o Procedimento 007-037 e o Boletim 4022267.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t104-p4">Não (Próximo passo)</button></div>
-    </div>
-    <div class="passo" id="t104-p4">
-      <span class="passo-n">Passo 4</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>O interruptor, o indicador ou o sensor da pressão do óleo instalados pelo OEM estão defeituosos.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Meça a pressão do óleo. Consulte o Procedimento 007-029. Compare as leituras com o indicador do OEM.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t104-p5">Não (Próximo passo)</button></div>
-    </div>
-    <div class="passo" id="t104-p5">
-      <span class="passo-n">Passo 5</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>Falha no sensor/interruptor da pressão do óleo ou no circuito do interruptor.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Meça a pressão e monitore com INSITE™. Substitua, se necessário. Consulte o Procedimento 019-155.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t104-p6">Não (Próximo passo)</button></div>
-    </div>
-    <div class="passo" id="t104-p6">
-      <span class="passo-n">Passo 6</span>
-      <div class="step-content">
-        <div class="bloco causa"><h4>Causa</h4><p>Falha de funcionamento do regulador principal da pressão do óleo.</p></div>
-        <div class="bloco correcao"><h4>Correção</h4><p>Verifique a montagem do regulador. Consulte o Procedimento 007-029 na Seção 7.</p></div>
-      </div>
-      <div class="resp"><p>A correção acima resolveu o problema?</p><button type="button" class="sim" data-ir="t104-fim-ok">Sim (Resolvido)</button><button type="button" class="nao" data-ir="t104-fim-erro">Não (Fim do roteiro)</button></div>
-    </div>
-    
-    <div class="passo fim ok" id="t104-fim-ok">
-      <span class="passo-n">Resolvido</span>
-      <p>O problema foi solucionado. Libere o veículo.</p>
-    </div>
-    <div class="passo fim erro" id="t104-fim-erro">
-      <span class="passo-n">Fim do Roteiro</span>
-      <p>Todas as causas foram verificadas. Consulte o Manual de Diagnóstico de Códigos de Falha (Boletim 4021677).</p>
-    </div>
-  </div>
-</article>
-
 </section>
 
-<footer>
-  <p>Conteúdo baseado no manual Cummins ISF2.8 CM2220 E / CM2220 AN — Seção TS (Diagramas de Sintomas de Falhas e Reparos). Consulte sempre o manual oficial para procedimentos detalhados e valores de torque.</p>
-  <p><strong>Nota de Implementação:</strong> Este arquivo contém os sintomas principais convertidos para o formato de fluxograma. Para adicionar os demais sintomas, basta copiar a estrutura `<article class="sintoma">`, criar as `<div class="fluxo">` e os botões com `data-ir` apontando para o próximo passo (ex: `t014-p2`).</p>
-</footer>
-
-<!-- ================= SCRIPT DE INTERATIVIDADE ================= -->
+<!-- ================= SCRIPT BLINDADO ================= -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  function initFluxos() {
-    document.querySelectorAll('.fluxo').forEach(fluxo => {
+  try {
+    // Seleciona todos os blocos de fluxograma na página
+    const fluxos = document.querySelectorAll('.fluxo');
+    
+    fluxos.forEach(fluxo => {
       const passos = fluxo.querySelectorAll('.passo');
       
-      // Ativa o primeiro passo de cada fluxo
+      // Garante que o primeiro passo esteja visível ao carregar
       if (passos.length > 0) {
         passos[0].classList.add('active');
       }
 
-      // Adiciona evento de clique nos botões
-      fluxo.querySelectorAll('button[data-ir]').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const targetId = this.getAttribute('data-ir');
+      // Adiciona o evento de clique em cada botão
+      const botoes = fluxo.querySelectorAll('button[data-ir]');
+      botoes.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault(); // Evita comportamento padrão
           
-          // Esconde todos os passos do fluxo atual
-          passos.forEach(p => p.classList.remove('active'));
-          
-          // Mostra o passo alvo
-          const targetPasso = document.getElementById(targetId);
-          if (targetPasso) {
-            targetPasso.classList.add('active');
-            // Rola suavemente até o passo alvo
-            targetPasso.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          try {
+            const targetId = this.getAttribute('data-ir');
+            
+            // Esconde todos os passos deste fluxo
+            passos.forEach(p => p.classList.remove('active'));
+            
+            // Encontra o passo alvo
+            const targetPasso = document.getElementById(targetId);
+            
+            if (targetPasso) {
+              targetPasso.classList.add('active');
+              targetPasso.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+              console.warn('Erro no fluxograma: O ID alvo "' + targetId + '" não foi encontrado no HTML.');
+            }
+          } catch (err) {
+            console.error('Erro interno ao tentar navegar no fluxo:', err);
           }
         });
       });
     });
+  } catch (globalErr) {
+    console.error('Erro ao inicializar os fluxogramas:', globalErr);
   }
-
-  initFluxos();
 });
 </script>
 
