@@ -1,298 +1,423 @@
-<!-- Pressão Baixa do Óleo Lubrificante - Cummins ISF2.8 -->
-<header class="art-head">
-  <span class="art-kicker">Motor · Lubrificação</span>
-  <h1>Pressão Baixa do Óleo Lubrificante</h1>
-  <p class="art-lead">Fluxograma de diagnóstico (Sintoma t105) baseado no manual Cummins. Responda Sim ou Não em cada passo até chegar à solução.</p>
-  <div class="chips">
-    <span>Cummins ISF2.8</span>
-    <span>Sintoma t105</span>
-    <span>Pressão de óleo</span>
-  </div>
-</header>
-
-<p>Use este roteiro quando o scanner registrar falhas relacionadas à pressão do óleo ou quando a luz indicadora acender. As causas vão desde sensores com defeito até desgaste interno da bomba de óleo.</p>
-
-<div class="aviso">
-  <strong>Atenção</strong>
-  <p>Não funcione o motor com a luz de óleo acesa. Pode causar danos graves ao motor em poucos segundos.</p>
-</div>
-
-<h2 id="fluxo">Fluxograma</h2>
-<div class="fluxo">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pressão Baixa do Óleo Lubrificante - t105</title>
+<style>
+  :root {
+    --bg: #f8fafc; /* Fundo claro igual ao PDF */
+    --text: #1e293b;
+    --border: #334155;
+    --line-dot: #94a3b8;
+    --font: Arial, sans-serif;
+  }
   
+  * { box-sizing: border-box; }
+  
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.4;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+  }
+
+  .header p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  /* Estrutura de Colunas do Cabeçalho */
+  .col-headers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+
+  /* Container de cada passo */
+  .passo {
+    margin-bottom: 30px;
+  }
+
+  /* Layout do passo (Causa | Linha Pontilhada | Correção) */
+  .passo-grid {
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* Caixas de texto */
+  .box {
+    border: 2px solid var(--border);
+    padding: 15px;
+    background: #fff;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .box strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Linha pontilhada entre as caixas */
+  .linha-pontilhada {
+    border-top: 2px dotted var(--line-dot);
+    width: 100%;
+  }
+
+  /* Texto entre os passos */
+  .divisor {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 15px 0;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    /* Em telas pequenas, empilha as caixas */
+    .passo-grid {
+      grid-template-columns: 1fr;
+    }
+    .linha-pontilhada {
+      display: none; /* Esconde a linha pontilhada no celular */
+    }
+    .box {
+      text-align: left;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h1>Pressão Baixa do Óleo Lubrificante</h1>
+    <p>Diagrama de sintoma t105</p>
+  </div>
+
+  <div class="col-headers">
+    <div>Causa</div>
+    <div>Correção</div>
+  </div>
+
   <!-- PASSO 1 -->
-  <div class="passo" id="p1">
-    <span class="passo-n">Passo 1</span>
-    <p><strong>Causa:</strong> Códigos eletrônicos de falha ativos ou altas contagens.<br>
-    <strong>Ação:</strong> Verifique e faça o diagnóstico dos códigos com a ferramenta INSITE™. Consulte o Manual de Diagnóstico.<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p2">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 1</strong>
+        Códigos eletrônicos de falha ativos ou altas contagens de códigos de falha inativos
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Verifique e faça o diagnóstico dos códigos de falha com a ferramenta eletrônica de serviço INSITE™. Consulte o Manual de Diagnóstico de Falhas e Reparos, Sistema Eletrônico de Controle, do motor em questão.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 2 -->
-  <div class="passo" id="p2">
-    <span class="passo-n">Passo 2</span>
-    <p><strong>Causa:</strong> O interruptor, indicador ou sensor de pressão instalados pelo OEM estão defeituosos.<br>
-    <strong>Ação:</strong> Meça a pressão real (Procedimento 007-037). Compare as leituras com o indicador do veículo.<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p3">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 2</strong>
+        O interruptor, o indicador ou o sensor da pressão do óleo lubrificante instalados pelo OEM estão defeituosos ou não estão instalados no local correto
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Meça a pressão do óleo lubrificante do motor. Consulte o Procedimento 007-037 na Seção 7. Funcione o motor e compare as leituras com o indicador do veículo instalado pelo OEM. Consulte o manual de serviço do OEM.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 3 -->
-  <div class="passo" id="p3">
-    <span class="passo-n">Passo 3</span>
-    <p><strong>Causa:</strong> Falha no sensor/interruptor de pressão do óleo ou no circuito.<br>
-    <strong>Ação:</strong> Monitore a pressão com a ferramenta INSITE™. Se necessário, substitua o sensor (Procedimento 019-155).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p4">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 3</strong>
+        Falha de funcionamento do sensor/interruptor da pressão do óleo lubrificante ou do circuito do interruptor (sistema de combustível controlado eletronicamente)
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Meça a pressão do óleo lubrificante do motor. Consulte o Procedimento 007-037 na Seção 7. Se equipado com um sensor de pressão do óleo, monitore a pressão do óleo com a ferramenta eletrônica de serviço INSITE™. Funcione o motor e compare as leituras. Se necessário, substitua o sensor/interruptor da pressão do óleo. Consulte o Procedimento 019-155 no Manual de Operação e Manutenção dos Motores ISF2.8 CM2220 E e ISF2.8 CM2220 AN, Boletim 4022267, ou o Manual do Proprietário dos Motores ISF2.8 CM2220 E e ISF2.8 CM2220 AN, Boletim 4022266.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 4 -->
-  <div class="passo" id="p4">
-    <span class="passo-n">Passo 4</span>
-    <p><strong>Causa:</strong> Nível do óleo lubrificante acima ou abaixo da especificação.<br>
-    <strong>Ação:</strong> Verifique o nível. Adicione ou drene óleo, se necessário (Procedimentos 007-037 e 007-009).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p5">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 4</strong>
+        O nível do óleo lubrificante está acima ou abaixo da especificação
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Verifique o nível do óleo. Adicione ou drene óleo, se necessário. Consulte o Procedimento 007-037 na Seção 7 e o Procedimento 007-009, na Seção 7.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 5 -->
-  <div class="passo" id="p5">
-    <span class="passo-n">Passo 5</span>
-    <p><strong>Causa:</strong> Vazamento externo de óleo lubrificante.<br>
-    <strong>Ação:</strong> Inspecione o motor. Aperte conexões. Use o Kit de Luz Negra (No. 3163337) e traçador fluorescente para achar o vazamento.<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p6">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 5</strong>
+        Vazamento de óleo lubrificante (externo)
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Inspecione o motor e verifique se há vazamentos externos de óleo. Aperte os parafusos, os bujões e as conexões. Substitua as juntas, se necessário. Consulte o Kit de Luz Negra, No. 3163337, e o traçador fluorescente, No. 3376891, para ajudar a identificar a fonte do vazamento. Siga as instruções correspondentes. Repare conforme necessário.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 6 -->
-  <div class="passo" id="p6">
-    <span class="passo-n">Passo 6</span>
-    <p><strong>Causa:</strong> O óleo lubrificante não atende às especificações.<br>
-    <strong>Ação:</strong> Troque o óleo e os filtros. Consulte o Manual de Operação e Manutenção (Boletim 4022267).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p7">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 6</strong>
+        O óleo lubrificante não atende às especificações para as condições de operação
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Troque o óleo e os filtros. Consulte o Procedimento 007-037 na Seção 7. Consulte o Manual de Operação e Manutenção dos Motores ISF2.8 CM2220 E e ISF2.8 CM2220 AN, Boletim 4022267, ou o Manual do Proprietário dos Motores ISF2.8 CM2220 E e ISF2.8 CM2220 AN, Boletim 4022266, para obter as especificações de óleo.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 7 -->
-  <div class="passo" id="p7">
-    <span class="passo-n">Passo 7</span>
-    <p><strong>Causa:</strong> O óleo lubrificante está contaminado com líquido de arrefecimento ou combustível.<br>
-    <strong>Ação:</strong> Consulte o diagrama de sintoma de falha 'Óleo Lubrificante Contaminado'.<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p8">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 7</strong>
+        O óleo lubrificante está contaminado com líquido de arrefecimento do motor ou com combustível
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Consulte o diagrama do sintoma de falha 'Óleo Lubrificante Contaminado'.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 8 -->
-  <div class="passo" id="p8">
-    <span class="passo-n">Passo 8</span>
-    <p><strong>Causa:</strong> A angularidade do motor durante o funcionamento excede a especificação.<br>
-    <strong>Ação:</strong> Consulte as folhas de dados do motor para obter as especificações de angularidade.<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p9">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 8</strong>
+        A angularidade do motor durante o funcionamento excede a especificação
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Consulte as folhas de dados do motor para obter as especificações de angularidade do motor em questão.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 9 -->
-  <div class="passo" id="p9">
-    <span class="passo-n">Passo 9</span>
-    <p><strong>Causa:</strong> Temperatura do líquido de arrefecimento acima da especificação.<br>
-    <strong>Ação:</strong> Consulte o diagrama 'Temperatura do Líquido de Arrefecimento Acima da Normal - Superaquecimento Gradual'.<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p10">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 9</strong>
+        A temperatura do líquido de arrefecimento do motor está acima da especificação
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Consulte o diagrama do sintoma 'Temperatura do Líquido de Arrefecimento Acima da Normal - Superaquecimento Gradual'.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 10 -->
-  <div class="passo" id="p10">
-    <span class="passo-n">Passo 10</span>
-    <p><strong>Causa:</strong> Falha de funcionamento do regulador principal da pressão do óleo.<br>
-    <strong>Ação:</strong> Verifique a montagem do regulador principal da pressão do óleo (Procedimento 007-029).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p11">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 10</strong>
+        Falha de funcionamento do regulador principal da pressão do óleo
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Verifique a montagem do regulador principal da pressão do óleo. Consulte o Procedimento 007-029 na Seção 7.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 11 -->
-  <div class="passo" id="p11">
-    <span class="passo-n">Passo 11</span>
-    <p><strong>Causa:</strong> O tubo de sucção de óleo lubrificante está quebrado ou a junta vaza.<br>
-    <strong>Ação:</strong> Remova e inspecione o cárter de óleo ou o tubo de sucção (Procedimento 007-025).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p12">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 11</strong>
+        O tubo de sucção de óleo lubrificante está quebrado, ou a junta apresenta vazamento
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Remova e inspecione o cárter de óleo ou o tubo de sucção. Consulte o Procedimento 007-025 na Seção 7.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 12 -->
-  <div class="passo" id="p12">
-    <span class="passo-n">Passo 12</span>
-    <p><strong>Causa:</strong> Bloqueio no sensor/interruptor ou circuito de pressão do óleo.<br>
-    <strong>Ação:</strong> Remova a tampa dianteira das engrenagens e verifique se há selante bloqueando o pórtico (Procedimento 007-003).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p13">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 12</strong>
+        Bloqueio no sensor/interruptor ou circuito de pressão do óleo
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Remova a tampa dianteira das engrenagens e verifique se há selante bloqueando o pórtico do sensor/interruptor da pressão do óleo. Consulte o Procedimento 007-003 na Seção 7.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 13 -->
-  <div class="passo" id="p13">
-    <span class="passo-n">Passo 13</span>
-    <p><strong>Causa:</strong> Falha de funcionamento da bomba de óleo lubrificante.<br>
-    <strong>Ação:</strong> Inspecione a bomba de óleo lubrificante (Procedimento 007-031).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p14">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 13</strong>
+        Falha de funcionamento da bomba de óleo lubrificante
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Inspecione a bomba de óleo lubrificante. Consulte o Procedimento 007-031 na Seção 7.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 14 -->
-  <div class="passo" id="p14">
-    <span class="passo-n">Passo 14</span>
-    <p><strong>Causa:</strong> O arrefecedor do óleo lubrificante está obstruído.<br>
-    <strong>Ação:</strong> Verifique o arrefecedor do óleo (Procedimento 007-003).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p15">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 14</strong>
+        O arrefecedor do óleo lubrificante está obstruído
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Verifique o arrefecedor do óleo. Consulte o Procedimento 007-003 na Seção 7.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 15 -->
-  <div class="passo" id="p15">
-    <span class="passo-n">Passo 15</span>
-    <p><strong>Causa:</strong> Temperatura do óleo lubrificante acima da especificação.<br>
-    <strong>Ação:</strong> Consulte o diagrama 'Temperatura do Óleo Lubrificante Acima da Especificação'.<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p16">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 15</strong>
+        A temperatura do óleo lubrificante está acima da especificação
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Consulte o diagrama do sintoma de falha 'Temperatura do Óleo Lubrificante Acima da Especificação'.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 16 -->
-  <div class="passo" id="p16">
-    <span class="passo-n">Passo 16</span>
-    <p><strong>Causa:</strong> Pulverizadores de arrefecimento dos pistões danificados ou mal instalados.<br>
-    <strong>Ação:</strong> Verifique os pulverizadores (Procedimento 001-046).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="p17">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 16</strong>
+        Os pulverizadores de arrefecimento dos pistões estão danificados ou não estão instalados corretamente
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Verifique os pulverizadores de arrefecimento dos pistões quanto a danos e instalação correta. Consulte o Procedimento 001-046 na Seção 1.
+      </div>
+    </div>
+    <div class="divisor">
+      OK<br>Vá Para o Próximo Passo
     </div>
   </div>
 
   <!-- PASSO 17 -->
-  <div class="passo" id="p17">
-    <span class="passo-n">Passo 17</span>
-    <p><strong>Causa:</strong> Dano interno do motor ou vazamento interno de óleo.<br>
-    <strong>Ação:</strong> Analise o óleo e inspecione o filtro. Locais prováveis: bujões-copo, mancais, casquilhos (Procedimento 007-044).<br>
-    <strong>A correção acima resolveu o problema?</strong></p>
-    <div class="resp">
-      <button type="button" class="sim" data-ir="fim-ok">Sim</button>
-      <button type="button" class="nao" data-ir="fim-erro">Não</button>
+  <div class="passo">
+    <div class="passo-grid">
+      <div class="box">
+        <strong>PASSO 17</strong>
+        Dano interno do motor ou vazamento interno de óleo lubrificante
+      </div>
+      <div class="linha-pontilhada"></div>
+      <div class="box">
+        Analise o óleo lubrificante. Inspecione o filtro de óleo. Consulte o Procedimento 007-044 na Seção 7 para localizar uma área de dano provável. Os locais de danos prováveis são bujões-copo internos, mancais principais, casquilhos das bielas, buchas do eixo comando de válvulas e balanceiros.
+      </div>
     </div>
+    <!-- Último passo não tem o divisor "Vá para o próximo", finaliza no 17 -->
   </div>
 
-  <!-- FIM OK -->
-  <div class="passo fim ok" id="fim-ok">
-    <span class="passo-n">Resolvido</span>
-    <p>O problema foi solucionado seguindo o roteiro. Apague os códigos de falha e realize o teste final de rodagem.</p>
-  </div>
-
-  <!-- FIM ERRO -->
-  <div class="passo fim erro" id="fim-erro">
-    <span class="passo-n">Fim do Roteiro</span>
-    <p>Todas as verificações foram concluídas, mas o problema persiste. Recomenda-se uma análise aprofundada do motor ou contato com o suporte técnico.</p>
-  </div>
 </div>
 
-<h2 id="valores">Valores de referência</h2>
-<table>
-  <tr><th>Item</th><th>Valor esperado</th></tr>
-  <tr><td>Pressão em marcha-lenta (motor quente)</td><td>Conforme especificação Cummins</td></tr>
-  <tr><td>Pressão em alta rotação</td><td>Conforme especificação Cummins</td></tr>
-  <tr><td>Óleo recomendado</td><td>Conforme Boletim 4022267</td></tr>
-</table>
-
-<h2 id="solucoes">Causas comuns</h2>
-<ul>
-  <li><strong>Nível baixo:</strong> complete e verifique vazamentos;</li>
-  <li><strong>Óleo incorreto:</strong> substitua pelo recomendado;</li>
-  <li><strong>Sensor com defeito:</strong> substitua o sensor de pressão;</li>
-  <li><strong>Válvula reguladora travada:</strong> verifique o regulador principal;</li>
-  <li><strong>Bomba de óleo desgastada:</strong> inspecione ou substitua;</li>
-  <li><strong>Mancais desgastados:</strong> dano interno do motor.</li>
-</ul>
-
-<h2 id="codigos">Códigos relacionados</h2>
-<ul>
-  <li><strong>t105:</strong> Pressão Baixa do Óleo Lubrificante;</li>
-  <li><strong>Verifique sempre</strong> antes de ligar o motor, sob risco de danos graves.</li>
-</ul>
-
-<!-- ================= SCRIPT DE INTERATIVIDADE ================= -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // 1. Inicializa mostrando o primeiro passo de cada fluxo
-  document.querySelectorAll('.fluxo').forEach(flow => {
-    const firstStep = flow.querySelector('.passo');
-    if (firstStep) firstStep.classList.add('active');
-  });
-
-  // 2. Delegação de Eventos: ouve o clique em qualquer lugar
-  document.addEventListener('click', function(e) {
-    // Verifica se o clique foi em um botão com a classe sim/nao ou data-ir
-    const btn = e.target.closest('button[data-ir]');
-    if (!btn) return;
-
-    e.preventDefault();
-    const nextId = btn.getAttribute('data-ir');
-    const flowContainer = btn.closest('.fluxo');
-    
-    if (!flowContainer) return;
-
-    // Esconde todos os passos deste fluxo
-    flowContainer.querySelectorAll('.passo').forEach(p => p.classList.remove('active'));
-
-    // Tenta achar o próximo passo
-    const nextStep = document.getElementById(nextId);
-    if (nextStep) {
-      nextStep.classList.add('active');
-      nextStep.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } else {
-      console.warn('Erro no fluxograma: ID alvo "' + nextId + '" não encontrado.');
-    }
-  });
-});
-</script>
+</body>
+</html>
