@@ -1,108 +1,82 @@
-<header class="art-head">
-  <span class="art-kicker">Sistema Elétrico · Carga</span>
-  <h1>Alternador</h1>
-  <p class="art-lead">Circuito de carga da bateria: do alternador ao painel, com fusíveis, lâmpada indicadora e terra.</p>
-  <div class="chips">
-    <span>Bateria</span>
-    <span>Alternador</span>
-    <span>Luz Indicadora</span>
-    <span>Fusível F7</span>
-  </div>
-</header>
-
-<div class="dica">
-  <strong>Como ler</strong>
-  <p>Cada bloco é uma etapa do circuito: <strong>Bateria → Fusível → Componente → Terra</strong>. Cada passo mostra o fio com <strong>função, bitola e cor</strong>.</p>
-</div>
-
-<!-- ===== CARGA DA BATERIA ===== -->
-<h2>Carga da Bateria</h2>
-
-<div class="specs">
-  <div class="spec"><b>+30</b><span>Bateria</span></div>
-  <div class="spec"><b>25,0 mm²</b><span>Bitola do cabo</span></div>
-  <div class="spec"><b>B+</b><span>Terminal do alternador</span></div>
-</div>
-
-<ol>
-  <li><strong>Origem:</strong> Bateria (positivo, +30).</li>
-  <li><strong>Caminho:</strong> Cabo <strong>A(210) · 25,0 mm² · Vermelho</strong> até o terminal B+ do alternador.</li>
-  <li><strong>Retorno:</strong> Cabo <strong>A(210) · 8,0 mm² · Vermelho</strong> do terminal B+ para o positivo da bateria.</li>
-  <li><strong>Destino:</strong> Bateria carregada.</li>
-</ol>
-
-<div class="aviso">
-  <strong>Atenção</strong>
-  <p>Antes de desconectar o cabo B+, desligue o motor e remova o cabo negativo da bateria. O cabo B+ está sempre energizado.</p>
-</div>
-
-<!-- ===== LUZ INDICADORA ===== -->
-<h2>Luz Indicadora de Carga</h2>
-
-<div class="specs">
-  <div class="spec"><b>F7</b><span>Fusível 7,5A</span></div>
-  <div class="spec"><b>D+</b><span>Terminal do alternador</span></div>
-  <div class="spec"><b>0,75 mm²</b><span>Bitola do fio</span></div>
-</div>
-
-<ol>
-  <li><strong>Origem:</strong> Bateria (+15 pós-chave).</li>
-  <li><strong>Passa por:</strong> Fusível F7 (7,5A) — cabo <strong>L(250) · 1,0 mm² · Vermelho</strong>.</li>
-  <li><strong>Passa por:</strong> Luz indicadora de carga — cabo <strong>C(61) · 0,75 mm² · Azul</strong>.</li>
-  <li><strong>Destino:</strong> Terminal D+ do alternador — cabo <strong>A(110) · 1,5 mm² · Marrom</strong>.</li>
-  <li><strong>Terra:</strong> Chassi.</li>
-</ol>
-
-<div class="dica">
-  <strong>Dica</strong>
-  <p>Com a chave ligada e o motor desligado, a luz deve acender. Com o motor em marcha lenta, ela deve apagar. Se ficar acesa, o alternador não está carregando.</p>
-</div>
-
-<!-- ===== ALIMENTAÇÃO DO ALTERNADOR ===== -->
-<h2>Alimentação do Alternador</h2>
-
-<div class="specs">
-  <div class="spec"><b>+30</b><span>Bateria</span></div>
-  <div class="spec"><b>+15</b><span>Pós-chave</span></div>
-  <div class="spec"><b>1,0 mm²</b><span>Bitola do fio</span></div>
-</div>
-
-<ol>
-  <li><strong>Origem:</strong> Bateria (+30) — cabo <strong>A(230) · 4,0 mm² · Vermelho</strong>.</li>
-  <li><strong>Passa por:</strong> Fusível F7 (7,5A) — cabo <strong>A(230) · 1,5 mm² · Azul</strong>.</li>
-  <li><strong>Passa por:</strong> Interruptor de ignição — cabo <strong>A(215) · 1,0 mm² · Azul</strong>.</li>
-  <li><strong>Destino:</strong> Terminal D+ do alternador — cabo <strong>A(110) · 1,5 mm² · Marrom</strong>.</li>
-  <li><strong>Terra:</strong> Chassi.</li>
-</ol>
-
-<!-- ===== CÓDIGOS DE FALHA ===== -->
-<h2>Códigos de Falha Relacionados</h2>
-
-<div class="codigos">
-  <div class="codigo">
-    <span class="num">P0562</span>
-    <div>
-      <h4>Tensão do sistema baixa</h4>
-      <p>O ECM detectou tensão abaixo do esperado. Verifique:</p>
-      <ul>
-        <li>Correia do alternador frouxa ou rompida</li>
-        <li>Terminais B+ e D+ oxidados ou soltos</li>
-        <li>Fusível F7 queimado</li>
-        <li>Bateria descarregada</li>
-      </ul>
+<div class="fluxo">
+  <!-- Passo 1 -->
+  <div class="passo on" id="t105-p1">
+    <span class="passo-n">Passo 1</span>
+    <p>O scanner (INSITE™) registrou códigos de falha ativos relacionados à pressão do óleo?</p>
+    <div class="resp">
+      <button class="sim" data-next="t105-p2">Sim</button>
+      <button class="nao" data-next="t105-fim">Não</button>
     </div>
   </div>
 
-  <div class="codigo">
-    <span class="num">P0563</span>
-    <div>
-      <h4>Tensão do sistema alta</h4>
-      <p>O ECM detectou tensão acima do esperado. Verifique:</p>
-      <ul>
-        <li>Regulador de tensão do alternador com defeito</li>
-        <li>Bateria em fim de vida útil</li>
-        <li>Mau contato no cabo B+</li>
-      </ul>
+  <!-- Passo 2 -->
+  <div class="passo" id="t105-p2">
+    <span class="passo-n">Passo 2</span>
+    <p>Meça a pressão real do óleo com um manômetro mecânico. A pressão medida é igual ou superior à pressão do indicador do painel?</p>
+    <div class="resp">
+      <button class="sim" data-next="t105-p3">Sim</button>
+      <button class="nao" data-next="t105-fim-sensor">Não (Pressão real baixa)</button>
     </div>
+  </div>
+
+  <!-- Passo 3 -->
+  <div class="passo" id="t105-p3">
+    <span class="passo-n">Passo 3</span>
+    <p>O nível de óleo está dentro da especificação e não há vazamentos externos visíveis?</p>
+    <div class="resp">
+      <button class="sim" data-next="t105-p4">Sim</button>
+      <button class="nao" data-next="t105-fim-nivel">Não</button>
+    </div>
+  </div>
+
+  <!-- Passo 4 -->
+  <div class="passo" id="t105-p4">
+    <span class="passo-n">Passo 4</span>
+    <p>A pressão do óleo está correta com o motor em temperatura normal de operação?</p>
+    <div class="resp">
+      <button class="sim" data-next="t105-p5">Sim</button>
+      <button class="nao" data-next="t105-fim-mecanico">Não</button>
+    </div>
+  </div>
+
+  <!-- Passo 5 -->
+  <div class="passo" id="t105-p5">
+    <span class="passo-n">Passo 5</span>
+    <p>O regulador principal de pressão do óleo está travado aberto ou a bomba de óleo está com desgaste interno?</p>
+    <div class="resp">
+      <button class="sim" data-next="t105-fim-bomba">Sim</button>
+      <button class="nao" data-next="t105-fim-ok">Não</button>
+    </div>
+  </div>
+
+  <!-- Finais -->
+  <div class="passo fim acao" id="t105-fim-sensor">
+    <span class="passo-n">Resultado</span>
+    <p><strong>Ação:</strong> O painel está mentindo. Substitua o sensor/interruptor de pressão do óleo ou verifique o chicote (Procedimento 007-037).</p>
+  </div>
+
+  <div class="passo fim acao" id="t105-fim-nivel">
+    <span class="passo-n">Resultado</span>
+    <p><strong>Ação:</strong> Adicione óleo ou encontre o vazamento usando o Kit de Luz Negra (No. 3163337).</p>
+  </div>
+
+  <div class="passo fim erro" id="t105-fim-mecanico">
+    <span class="passo-n">Resultado</span>
+    <p><strong>Ação:</strong> Verifique a válvula reguladora de pressão, o tubo de sucção do cárter e o arrefecedor de óleo.</p>
+  </div>
+
+  <div class="passo fim erro" id="t105-fim-bomba">
+    <span class="passo-n">Resultado</span>
+    <p><strong>Ação:</strong> Inspecione a bomba de óleo (Procedimento 007-031). Pode haver dano interno (mancais/bielas). Consulte o Procedimento 007-044.</p>
+  </div>
+
+  <div class="passo fim ok" id="t105-fim-ok">
+    <span class="passo-n">Resultado</span>
+    <p><strong>Ação:</strong> O sistema está OK. Verifique a calibração do indicador do painel.</p>
+  </div>
+
+  <div class="passo fim acao" id="t105-fim">
+    <span class="passo-n">Resultado</span>
+    <p><strong>Ação:</strong> Nenhum código ativo. Siga para as verificações preliminares (bateria e aterramento).</p>
   </div>
 </div>
