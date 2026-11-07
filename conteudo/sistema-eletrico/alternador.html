@@ -2385,70 +2385,24 @@
 (function () {
   'use strict';
 
-  function normalizar(txt) {
-    return (txt || '')
-      .toLowerCase()
-      .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // remove acentos
-      .replace(/[^a-z0-9]+/g, ' ')
-      .trim();
-  }
-
-  // Mapa: texto normalizado do link -> elemento .sintoma correspondente
-  function construirMapa() {
-    var mapa = {};
-    document.querySelectorAll('.sintoma').forEach(function (bloco) {
-      var h3 = bloco.querySelector('.sintoma-cab h3');
-      if (h3) {
-        mapa[normalizar(h3.textContent)] = bloco;
-      }
-    });
-    return mapa;
-  }
-
-  function rolarPara(alvo) {
-    if (!alvo) return false;
-    alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    return true;
-  }
-
   document.addEventListener('click', function (e) {
     var link = e.target.closest('.indice a');
     if (!link) return;
 
-    e.preventDefault();
-    e.stopPropagation();
-
-    // 1) tenta pelo id (se ainda existir)
     var href = link.getAttribute('href') || '';
-    var id = link.getAttribute('data-goto') || href.replace(/^#/, '');
-    if (id) {
-      var porId = document.getElementById(id);
-      if (porId && rolarPara(porId)) return;
+    if (href.charAt(0) !== '#') return;
+
+    var alvo = document.getElementById(href.slice(1));
+    if (!alvo) return; // deixa o navegador tentar nativamente
+
+    e.preventDefault();
+    alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Atualiza a URL sem recarregar
+    if (history.pushState) {
+      history.pushState(null, '', href);
     }
-
-    // 2) fallback: procura pelo texto do título
-    var textoLink = normalizar(link.textContent);
-    var mapa = construirMapa();
-
-    // tenta match exato
-    if (mapa[textoLink] && rolarPara(mapa[textoLink])) return;
-
-    // tenta match parcial (o link pode conter o código "t013" antes do título)
-    var chaves = Object.keys(mapa);
-    for (var i = 0; i < chaves.length; i++) {
-      if (textoLink.indexOf(chaves[i]) !== -1 || chaves[i].indexOf(textoLink) !== -1) {
-        if (rolarPara(mapa[chaves[i]])) return;
-      }
-    }
-
-    // 3) último recurso: se o link tiver data-goto, procura qualquer elemento com esse data
-    if (id) {
-      var porData = document.querySelector('[data-sintoma="' + id + '"]');
-      if (porData && rolarPara(porData)) return;
-    }
-
-    console.warn('[Índice] Destino não encontrado para:', link.textContent.trim());
-  }, true); // captura na fase de captura para evitar outros handlers
+  });
 })();
 </script>
 </body>
