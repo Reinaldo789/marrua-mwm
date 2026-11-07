@@ -10,6 +10,7 @@
     --borda:#d7dde3; --texto:#1f2933; --suave:#5b6770; --ok:#2e7d32; --alerta:#c62828;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{margin:0;font-family:"Segoe UI",Roboto,Arial,sans-serif;background:#eef2f5;color:var(--texto);line-height:1.55}
   .wrap{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
   .art-head{background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;border-radius:14px;padding:26px 26px 22px;box-shadow:0 8px 24px rgba(0,58,93,.18)}
@@ -31,7 +32,7 @@
   .codigo-mini{flex:0 0 auto;font-family:ui-monospace,Consolas,monospace;font-size:11px;background:var(--azul);color:#fff;padding:1px 6px;border-radius:4px;letter-spacing:.03em}
   .sistema{margin-top:30px}
   .sistema>h2{font-size:23px;color:var(--azul);border-left:6px solid var(--laranja);padding-left:12px;margin:26px 0 14px}
-  .sintoma{background:#fff;border:1px solid var(--borda);border-radius:12px;margin:14px 0;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+  .sintoma{background:#fff;border:1px solid var(--borda);border-radius:12px;margin:14px 0;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.04);scroll-margin-top:16px}
   .sintoma-cab{display:flex;align-items:center;gap:12px;padding:14px 18px;background:#f8fafc;border-bottom:1px solid var(--borda)}
   .sint-cod{font-family:ui-monospace,Consolas,monospace;font-size:12px;font-weight:700;background:var(--laranja);color:#fff;padding:3px 9px;border-radius:6px}
   .sintoma-cab h3{margin:0;font-size:17px;color:var(--azul)}
@@ -2380,30 +2381,5 @@
 </div>
 
 </div>
-
- <script>
-(function () {
-  'use strict';
-
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest('.indice a');
-    if (!link) return;
-
-    var href = link.getAttribute('href') || '';
-    if (href.charAt(0) !== '#') return;
-
-    var alvo = document.getElementById(href.slice(1));
-    if (!alvo) return; // deixa o navegador tentar nativamente
-
-    e.preventDefault();
-    alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    // Atualiza a URL sem recarregar
-    if (history.pushState) {
-      history.pushState(null, '', href);
-    }
-  });
-})();
-</script>
 </body>
 </html>
