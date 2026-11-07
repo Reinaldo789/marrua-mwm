@@ -2380,5 +2380,31 @@
 </div>
 
 </div>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.indice a').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var href = this.getAttribute('href') || '';
+      var id = this.getAttribute('data-goto') || href.replace(/^#/, '');
+      if (!id) return;
+
+      var alvo = document.getElementById(id);
+      if (!alvo) {
+        console.warn('[Índice] ID não encontrado no DOM:', id);
+        return; // deixa a âncora nativa agir, se possível
+      }
+
+      e.preventDefault();
+      alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Atualiza o hash sem pular novamente
+      if (history.replaceState) {
+        history.replaceState(null, '', '#' + id);
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
