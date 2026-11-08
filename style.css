@@ -645,3 +645,7 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
   --text-muted: #475569;     
 }
 .page-card { border: 1px solid var(--card-borda); box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15); }
+
+.site-wrapper > header .mobile-toggle {
+  display: flex !important; 
+}
