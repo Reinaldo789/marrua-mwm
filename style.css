@@ -1040,7 +1040,7 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    ========================================== */
 :root {
   --barra-menu: #6366f1;        /* cor da barra do menu (sempre colorida) */
-  --menu-aberto: #ffa500;       /* cor da aba aberta e do painel do menu */
+  --menu-aberto: #ffaf4d;       /* cor da aba aberta e do painel do menu */
 }
 
 /* Barra do menu: sempre colorida, com letras brancas */
