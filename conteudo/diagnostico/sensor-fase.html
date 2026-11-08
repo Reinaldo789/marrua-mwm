@@ -1,12 +1,15 @@
-<!-- Sensor de Fase não funciona (luz acesa) - MWM Sprint 2.8 -->
-
+ <!-- Sensor de Fase não funciona (luz acesa) - MWM Sprint 2.8 -->
 <header class="art-head">
+  <!-- <span class="art-kicker">Sistema de Injeção · Diagnóstico</span> -->
   <h1>Sensor de Fase (Comando de Válvulas)</h1>
+ <!-- <p class="art-lead">Fluxograma de diagnóstico com a luz amarela acesa: responda Sim ou Não em cada passo até chegar à solução.</p>
+  <div class="chips"><span>MWM Sprint 2.8</span><span>S10 até 2011</span><span>P0340 · P0341</span></div> -->
 </header>
 
 <p>Use este roteiro quando a diagnose registrar P0340 (sinal perdido) ou P0341 (falha no sinal). Se o sinal falhar com o motor funcionando, a rotação será limitada a 2500 rpm.</p>
 
 <div class="aviso"><strong>Atenção</strong><p>Se o sinal do sensor de Fase for perdido com o motor funcionando, o ECM não desliga o motor, porém quando for desligado não permite nova partida até a falha ser corrigida.</p></div>
+
 
 <h2 id="fluxo">Fluxograma</h2>
 <div class="fluxo">
@@ -57,19 +60,20 @@
 
 <div class="aviso"><strong>Atenção</strong><p>Antes de qualquer teste elétrico, confira a bateria e o alternador. Tensão instável gera falhas em vários sensores ao mesmo tempo.</p></div>
 
-<h2 id="codigos-de-falha">Códigos de falha</h2>
+<!--
+<h2 id="codigos">Códigos relacionados</h2>
+<ul>
+<li><strong>P0340</strong>: Sinal do sensor de fase perdido — rotação limitada a 2500 rpm;</li>
+<li><strong>P0341</strong>: Falha no sinal do sensor de fase — mesmo comportamento do P0340.</li>
+</ul>
+-->
 
-<div style="display: grid; gap: 0.8rem; margin-top: 1rem;">
+<h2 id="codigos-de-falha">Códigos de falha</h2>
+<div class="codigos">
   
-  <details class="code-box" open>
-    <summary>
-      <div class="titulo-grupo">
-        <span class="num">P0340</span>
-        <span class="titulo-codigo">- Falha no circuito do sensor de fase</span>
-      </div>
-      <i class="fa-solid fa-chevron-down seta"></i>
-    </summary>
-    <div class="codigo-body">
+  <div class="codigo">
+    <div>
+      <h4><span class="num">P0340</span> - Falha no circuito do sensor de fase</h4>
       <p>Sem sinal da árvore de comando chegando à ECM. Causas:</p>
       <ul>
         <li>Sensor desconectado/queimado;</li>
@@ -77,9 +81,22 @@
         <li>Alimentação 5 V ausente.</li>
       </ul>
     </div>
-  </details>
+  </div>
 
-  <!-- O segundo bloco igual a este -->
+  <div class="codigo">
+    <div>
+      <h4><span class="num">P0341</span> - Sinal incorreto ou fora de faixa do CMP</h4>
+      <p>O sinal existe, mas está com ruído ou fora de sincronismo. Causas:</p>
+      <ul>
+        <li>Sensor perdendo referência;</li>
+        <li>Folga mecânica no comando;</li>
+        <li>Motor fora de ponto.</li>
+      </ul>
+    </div>
+  </div>
 
 </div>
-<!-- Fim das caixas -->
+    </div>
+  </div>
+
+</div>
