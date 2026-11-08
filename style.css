@@ -1093,7 +1093,7 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    ========================================== */
 :root {
   --bg-page: #cbd5e1;        /* cor do fundo atrás do conteúdo (as laterais) */
-  --card-borda: #94a3b8;     /* borda do cartão branco do conteúdo */
+  --card-borda: #e8f1fd;     /* borda do cartão branco do conteúdo */
   --text-muted: #475569;     /* textos secundários, um pouco mais escuros */
 }
 .page-card {
