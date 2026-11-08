@@ -1039,8 +1039,24 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    Para trocar as cores, altere só as variáveis abaixo.
    ========================================== */
 :root {
-  --barra-menu: #4338ca;        /* cor da barra do menu (sempre colorida) */
-  --menu-aberto: #3730a3;       /* cor da aba aberta e do painel do menu */
+  /* Barra principal (sempre colorida) */
+  --barra-menu: #4338ca;          /* índigo base */
+  --barra-menu-hover: #5b52d6;    /* tom mais claro para hover */
+
+  /* Aba aberta / painel do menu */
+  --menu-aberto: #3730a3;         /* índigo mais escuro (estado ativo) */
+  --menu-aberto-hover: #4338ca;
+
+  /* Submenu — tons mais claros */
+  --submenu-fundo: #6366f1;       /* índigo claro */
+  --submenu-hover: #818cf8;       /* ainda mais claro */
+  --submenu-ativo: #4f46e5;
+
+  /* Texto e detalhes */
+  --menu-texto: #ffffff;
+  --menu-texto-suave: rgba(255, 255, 255, 0.75);
+  --menu-borda: rgba(255, 255, 255, 0.15);
+  --menu-sombra: rgba(15, 23, 42, 0.25);
 }
 
 /* Barra do menu: sempre colorida, com letras brancas */
