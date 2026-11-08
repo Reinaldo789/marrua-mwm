@@ -14,17 +14,30 @@
 
   <div class="site-wrapper">
 
-    <!-- NAVBAR -->
+       <!-- NAVBAR -->
     <header>
       <div class="nav-container">
-        <a href="#" class="logo">
-          <i class="fa-solid fa-house"></i>
-          <span>Início</span>
-        </a>
+        
+        <!-- NOVO: Contêiner para alinhar o Início e o botão do menu -->
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          
+          <a href="#" class="logo">
+            <i class="fa-solid fa-house"></i>
+            <span>Início</span>
+          </a>
 
-        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Abrir Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+          <!-- Botão que abre o menu -->
+          <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Abrir Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          
+        </div>
+
+        <!-- O menu em si (continua aqui, mas não afeta o alinhamento do topo) -->
+        <ul class="main-nav" id="main-nav">
+          <!-- ... (todos os seus itens de menu continuam aqui) ... -->
+        </ul>
+
       </div>
     </header>
 
