@@ -656,3 +656,75 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
 .site-wrapper > header { z-index: 1010; }   /* acima do .main-nav (1005) */
 .main-nav { z-index: 1005; }                 /* acima do overlay (1004) */
 .nav-overlay { z-index: 1004; }              /* acima do conteúdo e do float-btn (999) */
+
+/* ==========================================
+   CÓDIGOS DE FALHA (GLOBAL)
+   ========================================== */
+.code-box {
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.code-box summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: #fff7ed; /* Laranja bem claro */
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s;
+}
+
+.code-box summary::-webkit-details-marker {
+  display: none;
+}
+
+.code-box summary:hover {
+  background: #ffedd5;
+}
+
+.code-box .titulo-grupo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap; 
+}
+
+.code-box .num {
+  background: #ea580c; /* Laranja forte do código */
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.code-box .titulo-codigo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #431407;
+  line-height: 1.3;
+}
+
+.code-box .seta {
+  color: #9a3412;
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.code-box[open] .seta {
+  transform: rotate(180deg);
+}
+
+.code-box .codigo-body {
+  padding: 1rem;
+  border-top: 1px solid #fed7aa;
+  background: #ffffff;
+}
