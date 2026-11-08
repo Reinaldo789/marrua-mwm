@@ -49,7 +49,7 @@ html, body {
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1010; /* ✅ AJUSTE: acima do .main-nav (1005) para o botão X ficar clicável */
   width: 100%;
 }
 
@@ -75,8 +75,6 @@ html, body {
 }
 
 .logo i { font-size: 1.3rem; }
-
-/* [MENU ANTIGO REMOVIDO DAQUI] */
 
 .mobile-toggle {
   display: none;
@@ -649,3 +647,12 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
 .site-wrapper > header .mobile-toggle {
   display: flex !important; 
 }
+
+/* ==========================================
+   ✅ AJUSTE FINAL: garantir que o menu fique
+   por cima do conteúdo, e o header por cima do menu
+   para o botão X continuar clicável.
+   ========================================== */
+.site-wrapper > header { z-index: 1010; }   /* acima do .main-nav (1005) */
+.main-nav { z-index: 1005; }                 /* acima do overlay (1004) */
+.nav-overlay { z-index: 1004; }              /* acima do conteúdo e do float-btn (999) */
