@@ -145,9 +145,10 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (DESKTOP) - COM BORDAS
+   3. MEGA MENU DROPDOWN (DESKTOP) - DEFINITIVO
    ========================================== */
 
+/* 1. O DESENHO DA CAIXA (Oculto por padrão) */
 .mega-menu {
   position: absolute;
   top: 100%;
@@ -159,6 +160,7 @@ html, body {
   max-height: calc(100vh - 90px);
   overflow-y: auto;
   
+  /* Fundo e Bordas */
   background: #ffffff !important; 
   border: 1px solid #cbd5e1 !important; 
   border-top: 4px solid #4f46e5 !important; 
@@ -167,11 +169,34 @@ html, body {
   
   padding: 0.8rem !important; 
   
+  /* Estado inicial (Invisível) */
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   z-index: 1001;
+  
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+/* 2. Posicionamento para os últimos itens não vazarem */
+.nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
+
+/* 3. GATILHO DE ABERTURA (O Segredo para o menu funcionar!) */
+@media (min-width: 961px) {
+  .nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Mantém fechado se a classe .closed for adicionada (via JS) */
+  .nav-item.closed .mega-menu { 
+    opacity: 0 !important; 
+    visibility: hidden !important; 
+  }
 }
 
 
