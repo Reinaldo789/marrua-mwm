@@ -145,178 +145,108 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (DESKTOP) - COM LINHAS
+   3. MEGA MENU DROPDOWN (ESTILO CARTÕES)
    ========================================== */
 .mega-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  width: max-content;
-  min-width: 270px; /* Um pouco mais largo para respirar */
-  max-width: 350px;
+  width: 100%;
+  min-width: 320px; /* Mais largo para caber os textos */
+  max-width: 420px;
   margin: 0;
   max-height: calc(100vh - 90px);
   overflow-y: auto;
   
-  /* Fundo branco sólido e borda da caixa principal */
   background: #ffffff !important; 
-  border: 1px solid #e2e8f0 !important; /* Linha ao redor da caixa */
+  border: 1px solid #e2e8f0 !important;
   border-radius: 12px !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+  padding: 1rem !important; /* Espaço interno da caixa branca */
   
-  padding: 0.5rem 0 !important; /* Remove padding lateral para os links encostarem na borda */
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   z-index: 1001;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
 }
 
-/* Alinhamento para os últimos itens do menu não vazarem da tela */
 .nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
 
-/* ==========================================
-   O GATILHO DE ABERTURA (Desktop)
-   ========================================== */
+/* Gatilho de abertura */
 @media (min-width: 961px) {
   .nav-item:hover .mega-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
   }
-  .nav-item.closed .mega-menu { 
-    opacity: 0 !important; 
-    visibility: hidden !important; 
-  }
+  .nav-item.closed .mega-menu { opacity: 0 !important; visibility: hidden !important; }
 }
 
-/* ==========================================
-   ESTILOS INTERNOS: LINHAS E GRUPOS
-   ========================================== */
-.mega-menu::-webkit-scrollbar { width: 6px; }
-.mega-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-
-.mega-categories-container { display: flex; flex-direction: column; gap: 0; }
-
-/* O Grupo (ex: Linha de Baixa) */
-.category-group {
-  padding: 0.5rem 0;
-  position: relative;
-}
-
-.category-group:first-child { padding-top: 0; }
-.category-group:last-child { padding-bottom: 0; }
-
-/* A LINHA DIVISÓRIA ENTRE OS GRUPOS */
-.category-group::after {
-  content: "";
-  display: block;
-  width: calc(100% - 1.5rem); /* Deixa uma margemzinha nas laterais */
-  height: 1px;
-  background-color: #e2e8f0;
-  position: absolute;
-  bottom: 0;
-  left: 0.75rem;
-}
-
-.category-group:last-child::after { display: none; }
-
-/* Título do Grupo (LINHA DE BAIXA / ALTA) */
+/* Título do Grupo (Ex: SENSORES) */
 .category-title {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #94a3b8 !important;
-  font-weight: 700;
-  margin: 0 0 0.4rem 0;
-  padding: 0 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-/* Grid de links */
-.mega-links-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
-
-/* O Link Individual */
-.mega-link-item {
+  letter-spacing: 0.05em;
+  color: #64748b !important; /* Cinza azulado */
+  font-weight: 800;
+  margin: 0 0 0.6rem 0.2rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem; /* Padding lateral para o texto não encostar */
+}
+
+/* Espaçamento entre os grupos de links */
+.category-group {
+  margin-bottom: 1rem;
+}
+.category-group:last-child {
+  margin-bottom: 0;
+}
+
+/* Grid de links (Aqui a mágica dos cartões acontece) */
+.mega-links-grid { 
+  display: flex; 
+  flex-direction: column;
+  gap: 0.4rem; /* Espaço entre cada cartão */
+}
+
+/* O CARTÃO (Link) */
+.mega-link-item {
+  display: block;
+  padding: 0.7rem 1rem;
   text-decoration: none;
-  color: #334155 !important; 
-  font-size: 0.88rem;
-  font-weight: 500;
+  color: #4f46e5 !important; /* Texto azul escuro */
+  font-size: 0.9rem;
+  font-weight: 700; /* Negrito como na foto */
   transition: all 0.2s ease;
   
-  /* LINHA ESQUERDA EM CADA ITEM (Invisível por padrão) */
-  border-left: 3px solid transparent; 
+  /* O fundo e a borda azulzinha da foto */
+  background-color: #eef2ff !important; 
+  border: 1px solid #dbeafe !important;
+  border-radius: 8px; /* Bordas arredondadas */
 }
 
-/* Hover no Link */
+/* Hover no Cartão */
 .mega-link-item:hover {
-  background-color: #f8fafc !important; /* Fundo cinza bem clarinho */
-  color: #4f46e5 !important;
-  border-left-color: #c7d2fe !important; /* Linha esquerda aparece em azul claro */
-  padding-left: 1.15rem; /* Leve deslize do texto */
+  background-color: #e0e7ff !important; /* Fica um pouco mais escuro ao passar o mouse */
+  border-color: #c7d2fe !important;
+  transform: translateY(-1px); /* Efeito de levantar de leve */
+  box-shadow: 0 2px 5px rgba(79, 70, 229, 0.1);
 }
 
-/* Link ATIVO (Bomba Engrenagem) */
+/* Se o cartão estiver ATIVO (Página atual) */
 .mega-link-item.active {
-  background-color: #eef2ff !important;
-  color: #4f46e5 !important;
-  font-weight: 700;
-  border-left-color: #4f46e5 !important; /* Linha esquerda azul forte */
+  background-color: #4f46e5 !important; /* Fundo Azul forte */
+  color: #ffffff !important; /* Texto Branco */
+  border-color: #4338ca !important;
 }
 
-/* ==========================================
-   PAINEL INFERIOR (Consultar Linha)
-   ========================================== */
-.mega-explore-side {
-  background: transparent !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  padding: 0.5rem 0 0 0 !important; /* Remove padding lateral */
-  margin-top: 0 !important;
-  
-  /* LINHA DIVISÓRIA SUPERIOR */
-  border-top: 1px solid #e2e8f0 !important; 
-  
-  display: block !important;
-  box-shadow: none !important;
-}
-
-/* Esconde o banner quebrado */
+/* Removendo os painéis e banners extras para não sujar o visual */
+.mega-explore-side, 
 .mega-explore-side .explore-banner,
 .mega-explore-side .explore-header-title {
   display: none !important; 
-}
-
-.mega-explore-side * { color: #1e293b !important; }
-
-/* O Botão Consultar Linha */
-.explore-link {
-  color: #4f46e5 !important;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Joga a setinha para a direita */
-  width: 100%;
-  transition: all 0.25s ease;
-  padding: 0.6rem 1rem; /* Alinhado com os outros links */
-  border-left: 3px solid transparent;
-}
-
-.explore-link:hover { 
-  background-color: #f8fafc !important;
-  border-left-color: #c7d2fe !important;
-  padding-left: 1.15rem;
 }
 
 /* ==========================================
