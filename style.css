@@ -145,7 +145,7 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (DESKTOP)
+   3. MEGA MENU DROPDOWN (DESKTOP) - CORRIGIDO
    ========================================== */
 .mega-menu {
   position: absolute;
@@ -157,11 +157,14 @@ html, body {
   margin: 0;
   max-height: calc(100vh - 90px);
   overflow-y: auto;
-  background: var(--menu-aberto-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  box-shadow: var(--shadow-lg);
-  padding: 0.8rem;
+  
+  /* FORÇANDO O FUNDO BRANCO SÓLIDO E A SOMBRA */
+  background: #ffffff !important; 
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  
+  padding: 0.8rem !important;
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -203,7 +206,7 @@ html, body {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #94a3b8;
+  color: #94a3b8 !important;
   font-weight: 700;
   margin: 0 0 0.3rem 0;
   padding: 0 0.6rem;
@@ -221,61 +224,63 @@ html, body {
   padding: 0.45rem 0.7rem;
   border-radius: 8px;
   text-decoration: none;
-  color: var(--menu-texto);
+  color: #1e293b !important; /* Texto escuro garantido */
   font-size: 0.88rem;
   font-weight: 500;
-  transition: var(--transition);
+  transition: all 0.25s ease;
   border: 1px solid transparent;
 }
 
 .mega-link-item:hover {
-  background-color: var(--menu-hover);
-  color: var(--primary);
+  background-color: #eef2ff !important; /* Azulzinho claro no hover */
+  color: #4f46e5 !important; /* Texto azul no hover */
   padding-left: 0.95rem; /* Efeito de deslize */
 }
 
 .mega-link-item.active {
-  background-color: var(--primary-light);
-  color: var(--primary);
+  background-color: #eef2ff !important;
+  color: #4f46e5 !important;
   font-weight: 700;
-  border-left: 3px solid var(--primary);
-  border-radius: 4px 8px 8px 4px;
+  border-left: 3px solid #4f46e5 !important;
+  border-radius: 4px 8px 8px 4px !important;
 }
 
-/* Painel Lateral Explore do Menu */
+/* Painel Lateral Explore do Menu (Onde está o problema do bloco azul) */
 .mega-explore-side {
-  background: none;
-  border: 0;
-  border-radius: 0;
-  padding: 0.5rem 0.6rem 0.1rem;
-  margin-top: 0.4rem;
-  border-top: 1px solid var(--border-color);
-  display: block;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0.5rem 0.6rem 0.1rem !important;
+  margin-top: 0.4rem !important;
+  border-top: 1px solid #e2e8f0 !important;
+  display: block !important;
+  box-shadow: none !important;
+}
+
+/* REMOVENDO O FUNDO AZUL E IMAGEM QUEBRADA DO BANNER */
+.mega-explore-side .explore-banner,
+.mega-explore-side .explore-header-title {
+  display: none !important; 
+}
+
+/* Forçando os textos internos a ficarem escuros */
+.mega-explore-side * {
+  color: #1e293b !important;
 }
 
 .explore-link {
-  color: var(--primary);
+  color: #4f46e5 !important;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.85rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  transition: var(--transition);
+  transition: all 0.25s ease;
   padding: 0.4rem 0;
 }
 
-.explore-link:hover { gap: 0.7rem; color: var(--primary-hover); }
-
-/* Hover Desktop */
-@media (min-width: 961px) {
-  .nav-item:hover .mega-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  .nav-item.closed .mega-menu { opacity: 0 !important; visibility: hidden !important; }
-}
+.explore-link:hover { gap: 0.7rem; color: #4338ca !important; }
 
 /* ==========================================
    4. CONTEÚDO DA PÁGINA E CARTÕES
