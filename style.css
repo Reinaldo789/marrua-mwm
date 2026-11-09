@@ -145,26 +145,26 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (DESKTOP) - DEFINITIVO
+   3. MEGA MENU DROPDOWN (DESKTOP) - COM LINHAS
    ========================================== */
 .mega-menu {
   position: absolute;
   top: 100%;
   left: 0;
   width: max-content;
-  min-width: 260px;
-  max-width: 340px;
+  min-width: 270px; /* Um pouco mais largo para respirar */
+  max-width: 350px;
   margin: 0;
   max-height: calc(100vh - 90px);
   overflow-y: auto;
   
-  /* Fundo branco sólido e sombra flutuante */
+  /* Fundo branco sólido e borda da caixa principal */
   background: #ffffff !important; 
-  border: 1px solid #e2e8f0 !important;
+  border: 1px solid #e2e8f0 !important; /* Linha ao redor da caixa */
   border-radius: 12px !important;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
   
-  padding: 0.8rem !important;
+  padding: 0.5rem 0 !important; /* Remove padding lateral para os links encostarem na borda */
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
@@ -179,7 +179,7 @@ html, body {
 .nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
 
 /* ==========================================
-   O GATILHO DE ABERTURA (Isso estava faltando!)
+   O GATILHO DE ABERTURA (Desktop)
    ========================================== */
 @media (min-width: 961px) {
   .nav-item:hover .mega-menu {
@@ -194,89 +194,103 @@ html, body {
 }
 
 /* ==========================================
-   ESTILOS INTERNOS DO MENU
+   ESTILOS INTERNOS: LINHAS E GRUPOS
    ========================================== */
 .mega-menu::-webkit-scrollbar { width: 6px; }
 .mega-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
 
 .mega-categories-container { display: flex; flex-direction: column; gap: 0; }
 
+/* O Grupo (ex: Linha de Baixa) */
 .category-group {
   padding: 0.5rem 0;
   position: relative;
 }
+
 .category-group:first-child { padding-top: 0; }
 .category-group:last-child { padding-bottom: 0; }
 
+/* A LINHA DIVISÓRIA ENTRE OS GRUPOS */
 .category-group::after {
   content: "";
   display: block;
-  width: 100%;
+  width: calc(100% - 1.5rem); /* Deixa uma margemzinha nas laterais */
   height: 1px;
-  background-color: #f1f5f9;
+  background-color: #e2e8f0;
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0.75rem;
 }
 
 .category-group:last-child::after { display: none; }
 
+/* Título do Grupo (LINHA DE BAIXA / ALTA) */
 .category-title {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: #94a3b8 !important;
   font-weight: 700;
-  margin: 0 0 0.3rem 0;
-  padding: 0 0.6rem;
+  margin: 0 0 0.4rem 0;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.mega-links-grid { display: grid; grid-template-columns: 1fr; gap: 2px; }
+/* Grid de links */
+.mega-links-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
 
+/* O Link Individual */
 .mega-link-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.7rem;
-  border-radius: 8px;
+  padding: 0.5rem 1rem; /* Padding lateral para o texto não encostar */
   text-decoration: none;
-  color: #1e293b !important; /* Texto escuro */
+  color: #334155 !important; 
   font-size: 0.88rem;
   font-weight: 500;
-  transition: all 0.25s ease;
-  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  
+  /* LINHA ESQUERDA EM CADA ITEM (Invisível por padrão) */
+  border-left: 3px solid transparent; 
 }
 
+/* Hover no Link */
 .mega-link-item:hover {
-  background-color: #eef2ff !important;
+  background-color: #f8fafc !important; /* Fundo cinza bem clarinho */
   color: #4f46e5 !important;
-  padding-left: 0.95rem; 
+  border-left-color: #c7d2fe !important; /* Linha esquerda aparece em azul claro */
+  padding-left: 1.15rem; /* Leve deslize do texto */
 }
 
+/* Link ATIVO (Bomba Engrenagem) */
 .mega-link-item.active {
   background-color: #eef2ff !important;
   color: #4f46e5 !important;
   font-weight: 700;
-  border-left: 3px solid #4f46e5 !important;
-  border-radius: 4px 8px 8px 4px !important;
+  border-left-color: #4f46e5 !important; /* Linha esquerda azul forte */
 }
 
-/* Painel inferior do menu (Consultar Linha) */
+/* ==========================================
+   PAINEL INFERIOR (Consultar Linha)
+   ========================================== */
 .mega-explore-side {
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
-  padding: 0.5rem 0.6rem 0.1rem !important;
-  margin-top: 0.4rem !important;
-  border-top: 1px solid #e2e8f0 !important;
+  padding: 0.5rem 0 0 0 !important; /* Remove padding lateral */
+  margin-top: 0 !important;
+  
+  /* LINHA DIVISÓRIA SUPERIOR */
+  border-top: 1px solid #e2e8f0 !important; 
+  
   display: block !important;
   box-shadow: none !important;
 }
 
-/* ESCONDE O BLOCO AZUL VAZIO (Banner quebrado) */
+/* Esconde o banner quebrado */
 .mega-explore-side .explore-banner,
 .mega-explore-side .explore-header-title {
   display: none !important; 
@@ -284,21 +298,26 @@ html, body {
 
 .mega-explore-side * { color: #1e293b !important; }
 
+/* O Botão Consultar Linha */
 .explore-link {
   color: #4f46e5 !important;
   text-decoration: none;
   font-weight: 700;
   font-size: 0.85rem;
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
+  justify-content: space-between; /* Joga a setinha para a direita */
+  width: 100%;
   transition: all 0.25s ease;
-  padding: 0.4rem 0;
+  padding: 0.6rem 1rem; /* Alinhado com os outros links */
+  border-left: 3px solid transparent;
 }
 
-.explore-link:hover { gap: 0.7rem; color: #4338ca !important; }
-
-
+.explore-link:hover { 
+  background-color: #f8fafc !important;
+  border-left-color: #c7d2fe !important;
+  padding-left: 1.15rem;
+}
 
 /* ==========================================
    4. CONTEÚDO DA PÁGINA E CARTÕES
@@ -601,36 +620,4 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
   .page-card th { font-size: 0.8rem; }
 }
 
-/* ==========================================
-   EFEITO DE DESFOQUE (BLUR) - VERSÃO DEFINITIVA
-   ========================================== */
 
-/* O véu que cobre a tela */
-.backdrop-blur-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(15, 23, 42, 0.4); /* Película escura */
-  backdrop-filter: blur(5px);        /* Desfoque */
-  -webkit-backdrop-filter: blur(5px);
-  z-index: 999; /* Fica abaixo do menu (que é 1001) e acima do conteúdo */
-  
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  pointer-events: none;
-}
-
-/* Quando o body tiver a classe .menu-aberto, o véu aparece */
-body.menu-aberto .backdrop-blur-overlay {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* No celular, não queremos o desfoque pois o menu ocupa a tela toda */
-@media (max-width: 960px) {
-  .backdrop-blur-overlay { display: none !important; }
-}
