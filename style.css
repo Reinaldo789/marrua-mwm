@@ -602,33 +602,35 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
 }
 
 /* ==========================================
-   EFEITO DE DESFOQUE (BLUR) AO ABRIR O MENU
+   EFEITO DE DESFOQUE (BLUR) - VERSÃO DEFINITIVA
    ========================================== */
-@media (min-width: 961px) {
-  /* Cria o véu escuro atrás do menu */
-  .site-wrapper > header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(15, 23, 42, 0.4); /* Cor escura semi-transparente */
-    backdrop-filter: blur(5px);        /* O desfoque (aumente para 8px se quiser mais forte) */
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 1000; /* Fica acima do conteúdo, mas abaixo do menu (que é 1001) */
-    
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none; /* Não bloqueia cliques quando invisível */
-  }
 
-  /* Quando o mouse passa por cima de qualquer item do menu, o véu aparece */
-  .site-wrapper > header:has(.nav-item:hover)::before,
-  .site-wrapper > header:has(.nav-btn.atual)::before {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto; /* Bloqueia cliques no fundo se necessário */
-  }
+/* O véu que cobre a tela */
+.backdrop-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.4); /* Película escura */
+  backdrop-filter: blur(5px);        /* Desfoque */
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 999; /* Fica abaixo do menu (que é 1001) e acima do conteúdo */
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+/* Quando o body tiver a classe .menu-aberto, o véu aparece */
+body.menu-aberto .backdrop-blur-overlay {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* No celular, não queremos o desfoque pois o menu ocupa a tela toda */
+@media (max-width: 960px) {
+  .backdrop-blur-overlay { display: none !important; }
 }
