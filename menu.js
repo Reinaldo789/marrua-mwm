@@ -1,138 +1,51 @@
-// ==========================================
-// MENU LATERAL
-// Os itens do menu do topo (.nav-item) continuam no HTML, porque o
-// roteador e a busca da página inicial usam eles. O JS monta a barra
-// lateral com os mesmos grupos e links e esconde o menu do topo (CSS).
-// ==========================================
 const navItems = document.querySelectorAll('.nav-item');
 const mobileToggleBtn = document.getElementById('mobile-toggle-btn');
+const mainNav = document.getElementById('main-nav');
 const toggleIcon = mobileToggleBtn.querySelector('i');
-const topoSite = document.querySelector('.site-wrapper > header');
-const escMenu = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-const menuLateral = document.createElement('aside');
-menuLateral.className = 'menu-lateral';
-menuLateral.id = 'menuLateral';
-const fundoMenu = document.createElement('div');
-fundoMenu.className = 'fundo-menu';
-fundoMenu.id = 'fundoMenu';
-
-function montarMenuLateral() {
-  const nomeSite = topoSite.querySelector('.logo')?.textContent.trim() || 'Menu';
-  menuLateral.innerHTML =
-    `<div class="menu-cabecalho"><span>${escMenu(nomeSite)}</span><button type="button" id="fecharMenu" aria-label="Fechar menu">&times;</button></div>`;
-  const nav = document.createElement('nav');
-  nav.setAttribute('aria-label', 'Menu principal');
-
-  const inicio = document.createElement('a');
-  inicio.className = 'item-menu';
-  inicio.href = '#';
-  inicio.innerHTML = '<i class="fa-solid fa-house"></i><span>Início</span>';
-  nav.append(inicio);
-
-  navItems.forEach((item, i) => {
-    const btn = item.querySelector('.nav-btn');
-    const rotulo = (btn.querySelector('span')?.textContent || btn.textContent).trim();
-    const icone = [...btn.querySelectorAll('i')].find(el => !el.className.includes('chevron'));
-    const id = `sub-menu-${i}`;
-
-    const grupo = document.createElement('button');
-    grupo.type = 'button';
-    grupo.className = 'grupo-menu';
-    grupo.setAttribute('aria-controls', id);
-    grupo.setAttribute('aria-expanded', 'false');
-    grupo.innerHTML =
-      `<span class="grupo-rotulo">${icone ? `<i class="${icone.className}"></i>` : ''}<span>${escMenu(rotulo)}</span></span>` +
-      '<i class="fa-solid fa-chevron-down grupo-seta"></i>';
-
-    const sub = document.createElement('div');
-    sub.className = 'sub-menu';
-    sub.id = id;
-
-    const grupos = item.querySelectorAll('.category-group');
-    grupos.forEach(g => {
-      const titulo = g.querySelector('.category-title');
-      if (titulo) {
-        const p = document.createElement('p');
-        p.className = 'sub-titulo';
-        titulo.childNodes.forEach(n => p.append(n.cloneNode(true)));
-        sub.append(p);
+// ==========================================
+// LÓGICA DO MENU MOBILE (SEM SANFONA)
+// Cada item abre/fecha independentemente
+// ==========================================
+navItems.forEach(item => {
+  const btn = item.querySelector('.nav-btn');
+  
+  btn.addEventListener('click', (e) => {
+    if (window.innerWidth <= 960) {
+      e.preventDefault();
+      
+      // Sanfona: ao abrir um item, fecha os outros
+      const abrir = !item.classList.contains('active');
+      navItems.forEach(i => i.classList.remove('active'));
+      if (abrir) {
+        item.classList.add('active');
+        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
-      g.querySelectorAll('a.mega-link-item').forEach(a => {
-        const l = document.createElement('a');
-        l.className = 'sub-link';
-        l.href = a.getAttribute('href');
-        l.textContent = a.textContent.trim();
-        sub.append(l);
-      });
-    });
-    if (!grupos.length) {   // menu sem categorias: lista direta
-      item.querySelectorAll('.mega-menu a.mega-link-item').forEach(a => {
-        const l = document.createElement('a');
-        l.className = 'sub-link';
-        l.href = a.getAttribute('href');
-        l.textContent = a.textContent.trim();
-        sub.append(l);
-      });
     }
-    item.querySelectorAll('.mega-explore-side .explore-link').forEach(a => {
-      const l = document.createElement('a');
-      l.className = 'sub-link sub-explorar';
-      l.href = a.getAttribute('href');
-      a.childNodes.forEach(n => l.append(n.cloneNode(true)));
-      sub.append(l);
-    });
-    nav.append(grupo, sub);
   });
-  menuLateral.append(nav);
-  topoSite.after(menuLateral);
-  document.body.append(fundoMenu);
-}
-montarMenuLateral();
+});
 
-// a barra lateral começa logo abaixo do cabeçalho (altura medida pelo JS)
-function medirTopo() {
-  document.documentElement.style.setProperty('--topo', topoSite.offsetHeight + 'px');
-}
-medirTopo();
-window.addEventListener('resize', medirTopo);
-window.addEventListener('load', medirTopo);
-
-const ehCelular = () => window.matchMedia('(max-width: 960px)').matches;
-
-function definirMenu(aberto) {
-  menuLateral.classList.toggle('aberto', aberto);
-  fundoMenu.classList.toggle('visivel', aberto);
-  mobileToggleBtn.setAttribute('aria-expanded', String(aberto));
-  mobileToggleBtn.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
-  toggleIcon.classList.toggle('fa-xmark', aberto);
-  toggleIcon.classList.toggle('fa-bars', !aberto);
-  document.body.style.overflow = aberto && ehCelular() ? 'hidden' : '';
-}
-
-function abrirGrupo(idSub) {
-  menuLateral.querySelectorAll('.sub-menu').forEach(s => s.classList.toggle('aberto', s.id === idSub));
-  menuLateral.querySelectorAll('.grupo-menu').forEach(b =>
-    b.setAttribute('aria-expanded', String(b.getAttribute('aria-controls') === idSub)));
-}
-
-mobileToggleBtn.addEventListener('click', e => {
+// Toggle Menu Hamburguer Mobile
+mobileToggleBtn.addEventListener('click', (e) => {
   e.stopPropagation();
-  definirMenu(!menuLateral.classList.contains('aberto'));
-});
-document.getElementById('fecharMenu').addEventListener('click', () => definirMenu(false));
-fundoMenu.addEventListener('click', () => definirMenu(false));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') definirMenu(false); });
+  const isOpen = mainNav.classList.toggle('active');
+  
+  // Bloqueia a rolagem do fundo do site quando o menu está aberto no celular
+  if (isOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
 
-menuLateral.querySelectorAll('.grupo-menu').forEach(botao => {
-  botao.addEventListener('click', () => {
-    const idSub = botao.getAttribute('aria-controls');
-    const vaiAbrir = !document.getElementById(idSub).classList.contains('aberto');
-    abrirGrupo(vaiAbrir ? idSub : null);
-  });
-});
-menuLateral.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => { if (ehCelular()) definirMenu(false); });
+  if (isOpen) {
+    toggleIcon.classList.remove('fa-bars');
+    toggleIcon.classList.add('fa-xmark');
+  } else {
+    toggleIcon.classList.remove('fa-xmark');
+    toggleIcon.classList.add('fa-bars');
+    // Fecha todos os itens ao fechar o menu hambúrguer
+    navItems.forEach(item => item.classList.remove('active'));
+  }
 });
 
 // ==========================================
@@ -163,13 +76,10 @@ async function abrirPagina() {
   const path = decodeURIComponent(location.hash.slice(1)).replace(/^\/+/, '');
   document.querySelectorAll('.mega-link-item.active').forEach(a => a.classList.remove('active'));
   document.querySelectorAll('.nav-btn.atual').forEach(b => b.classList.remove('atual'));
-  menuLateral.querySelectorAll('a.ativo').forEach(a => a.classList.remove('ativo'));
-  menuLateral.querySelectorAll('.grupo-menu.atual').forEach(b => b.classList.remove('atual'));
 
   // sem rota válida = Home
   if (!/^[a-z0-9-]+\/[a-z0-9-]+$/.test(path)) {
     card.hidden = true; home.hidden = false;
-    menuLateral.querySelector('.item-menu')?.classList.add('ativo');
     return;
   }
 
@@ -177,14 +87,6 @@ async function abrirPagina() {
   const links = document.querySelectorAll(`a[href="#${path}"]`);
   const link = links[0];
   links.forEach(a => {
-    if (a.closest('.menu-lateral')) {   // item da barra lateral: destaca e abre o grupo dele
-      a.classList.add('ativo');
-      const sub = a.closest('.sub-menu');
-      if (sub) {
-        abrirGrupo(sub.id);
-        menuLateral.querySelector(`[aria-controls="${sub.id}"]`)?.classList.add('atual');
-      }
-    }
     if (a.classList.contains('mega-link-item')) {
       a.classList.add('active');
       a.closest('.nav-item')?.querySelector('.nav-btn')?.classList.add('atual');
@@ -212,7 +114,18 @@ async function abrirPagina() {
   }
 }
 
-// (o menu lateral fecha sozinho no celular: veja montarMenuLateral)
+// clicou num item: fecha o menu (celular) ou o painel (desktop)
+document.querySelectorAll('.mega-menu a').forEach(a => {
+  a.addEventListener('click', () => {
+    if (window.innerWidth <= 960) {
+      if (mainNav.classList.contains('active')) mobileToggleBtn.click();
+    } else {
+      const item = a.closest('.nav-item');
+      item.classList.add('closed');
+      item.addEventListener('mouseleave', () => item.classList.remove('closed'), { once: true });
+    }
+  });
+});
 
 window.addEventListener('hashchange', abrirPagina);
 abrirPagina();
