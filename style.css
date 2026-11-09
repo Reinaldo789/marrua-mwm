@@ -298,37 +298,7 @@ html, body {
 
 .explore-link:hover { gap: 0.7rem; color: #4338ca !important; }
 
-/* ==========================================
-   EFEITO DE DESFOQUE (BLUR) AO ABRIR O MENU
-   ========================================== */
-@media (min-width: 961px) {
-  /* Cria o véu escuro atrás do menu */
-  .site-wrapper > header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(15, 23, 42, 0.4); /* Cor escura semi-transparente */
-    backdrop-filter: blur(5px);        /* O desfoque (aumente para 8px se quiser mais forte) */
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 1000; /* Fica acima do conteúdo, mas abaixo do menu (que é 1001) */
-    
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none; /* Não bloqueia cliques quando invisível */
-  }
 
-  /* Quando o mouse passa por cima de qualquer item do menu, o véu aparece */
-  .site-wrapper > header:has(.nav-item:hover)::before,
-  .site-wrapper > header:has(.nav-btn.atual)::before {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto; /* Bloqueia cliques no fundo se necessário */
-  }
-}
 
 /* ==========================================
    4. CONTEÚDO DA PÁGINA E CARTÕES
@@ -629,4 +599,36 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
   .page-card table:has(tr > :nth-child(4)) { display: block !important; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .page-card th, .page-card td { padding: 0.5rem 0.55rem; font-size: 0.88rem; line-height: 1.4; overflow-wrap: break-word; vertical-align: top; }
   .page-card th { font-size: 0.8rem; }
+}
+
+/* ==========================================
+   EFEITO DE DESFOQUE (BLUR) AO ABRIR O MENU
+   ========================================== */
+@media (min-width: 961px) {
+  /* Cria o véu escuro atrás do menu */
+  .site-wrapper > header::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.4); /* Cor escura semi-transparente */
+    backdrop-filter: blur(5px);        /* O desfoque (aumente para 8px se quiser mais forte) */
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000; /* Fica acima do conteúdo, mas abaixo do menu (que é 1001) */
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none; /* Não bloqueia cliques quando invisível */
+  }
+
+  /* Quando o mouse passa por cima de qualquer item do menu, o véu aparece */
+  .site-wrapper > header:has(.nav-item:hover)::before,
+  .site-wrapper > header:has(.nav-btn.atual)::before {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* Bloqueia cliques no fundo se necessário */
+  }
 }
