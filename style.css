@@ -145,7 +145,7 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (DESKTOP) - CORRIGIDO
+   3. MEGA MENU DROPDOWN (DESKTOP) - DEFINITIVO
    ========================================== */
 .mega-menu {
   position: absolute;
@@ -158,7 +158,7 @@ html, body {
   max-height: calc(100vh - 90px);
   overflow-y: auto;
   
-  /* FORÇANDO O FUNDO BRANCO SÓLIDO E A SOMBRA */
+  /* Fundo branco sólido e sombra flutuante */
   background: #ffffff !important; 
   border: 1px solid #e2e8f0 !important;
   border-radius: 12px !important;
@@ -175,8 +175,27 @@ html, body {
   gap: 0;
 }
 
+/* Alinhamento para os últimos itens do menu não vazarem da tela */
 .nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
 
+/* ==========================================
+   O GATILHO DE ABERTURA (Isso estava faltando!)
+   ========================================== */
+@media (min-width: 961px) {
+  .nav-item:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-item.closed .mega-menu { 
+    opacity: 0 !important; 
+    visibility: hidden !important; 
+  }
+}
+
+/* ==========================================
+   ESTILOS INTERNOS DO MENU
+   ========================================== */
 .mega-menu::-webkit-scrollbar { width: 6px; }
 .mega-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
 
@@ -224,7 +243,7 @@ html, body {
   padding: 0.45rem 0.7rem;
   border-radius: 8px;
   text-decoration: none;
-  color: #1e293b !important; /* Texto escuro garantido */
+  color: #1e293b !important; /* Texto escuro */
   font-size: 0.88rem;
   font-weight: 500;
   transition: all 0.25s ease;
@@ -232,9 +251,9 @@ html, body {
 }
 
 .mega-link-item:hover {
-  background-color: #eef2ff !important; /* Azulzinho claro no hover */
-  color: #4f46e5 !important; /* Texto azul no hover */
-  padding-left: 0.95rem; /* Efeito de deslize */
+  background-color: #eef2ff !important;
+  color: #4f46e5 !important;
+  padding-left: 0.95rem; 
 }
 
 .mega-link-item.active {
@@ -245,7 +264,7 @@ html, body {
   border-radius: 4px 8px 8px 4px !important;
 }
 
-/* Painel Lateral Explore do Menu (Onde está o problema do bloco azul) */
+/* Painel inferior do menu (Consultar Linha) */
 .mega-explore-side {
   background: transparent !important;
   border: 0 !important;
@@ -257,16 +276,13 @@ html, body {
   box-shadow: none !important;
 }
 
-/* REMOVENDO O FUNDO AZUL E IMAGEM QUEBRADA DO BANNER */
+/* ESCONDE O BLOCO AZUL VAZIO (Banner quebrado) */
 .mega-explore-side .explore-banner,
 .mega-explore-side .explore-header-title {
   display: none !important; 
 }
 
-/* Forçando os textos internos a ficarem escuros */
-.mega-explore-side * {
-  color: #1e293b !important;
-}
+.mega-explore-side * { color: #1e293b !important; }
 
 .explore-link {
   color: #4f46e5 !important;
