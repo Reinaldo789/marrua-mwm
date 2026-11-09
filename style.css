@@ -145,14 +145,14 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (ESTILO CARTÕES)
+   3. MEGA MENU DROPDOWN (ESTILO LIMPO E MODERNO)
    ========================================== */
 .mega-menu {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  min-width: 320px; /* Mais largo para caber os textos */
+  min-width: 320px; 
   max-width: 420px;
   margin: 0;
   max-height: calc(100vh - 90px);
@@ -162,7 +162,7 @@ html, body {
   border: 1px solid #e2e8f0 !important;
   border-radius: 12px !important;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
-  padding: 1rem !important; /* Espaço interno da caixa branca */
+  padding: 0.8rem !important; 
   
   opacity: 0;
   visibility: hidden;
@@ -173,7 +173,6 @@ html, body {
 
 .nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
 
-/* Gatilho de abertura */
 @media (min-width: 961px) {
   .nav-item:hover .mega-menu {
     opacity: 1;
@@ -183,20 +182,20 @@ html, body {
   .nav-item.closed .mega-menu { opacity: 0 !important; visibility: hidden !important; }
 }
 
-/* Título do Grupo (Ex: SENSORES) */
+/* Título do Grupo (LINHA DE BAIXA / ALTA) */
 .category-title {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #64748b !important; /* Cinza azulado */
+  color: #94a3b8 !important; /* Cinza claro, para não brigar com os links */
   font-weight: 800;
-  margin: 0 0 0.6rem 0.2rem;
+  margin: 0 0 0.4rem 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* Espaçamento entre os grupos de links */
+/* Espaçamento entre os grupos */
 .category-group {
   margin-bottom: 1rem;
 }
@@ -204,50 +203,64 @@ html, body {
   margin-bottom: 0;
 }
 
-/* Grid de links (Aqui a mágica dos cartões acontece) */
+/* Grid de links */
 .mega-links-grid { 
   display: flex; 
   flex-direction: column;
-  gap: 0.4rem; /* Espaço entre cada cartão */
+  gap: 0.2rem; /* Menos espaço entre os itens, pois não são mais cartões */
 }
 
-/* O CARTÃO (Link) */
+/* O LINK (Agora limpo, sem fundo) */
 .mega-link-item {
-  display: block;
-  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
   text-decoration: none;
-  color: #4f46e5 !important; /* Texto azul escuro */
+  color: #334155 !important; /* Texto cinza escuro (muito mais elegante) */
   font-size: 0.9rem;
-  font-weight: 700; /* Negrito como na foto */
+  font-weight: 500; 
   transition: all 0.2s ease;
-  
-  /* O fundo e a borda azulzinha da foto */
-  background-color: #eef2ff !important; 
-  border: 1px solid #dbeafe !important;
-  border-radius: 8px; /* Bordas arredondadas */
+  border-radius: 8px;
+  border-left: 3px solid transparent; /* Borda invisível para não pular no hover */
 }
 
-/* Hover no Cartão */
+/* Ícone do link (o `>`) */
+.mega-link-item i, 
+.mega-link-item::before {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  transition: transform 0.2s;
+}
+
+/* HOVER (Passar o mouse) */
 .mega-link-item:hover {
-  background-color: #e0e7ff !important; /* Fica um pouco mais escuro ao passar o mouse */
-  border-color: #c7d2fe !important;
-  transform: translateY(-1px); /* Efeito de levantar de leve */
-  box-shadow: 0 2px 5px rgba(79, 70, 229, 0.1);
+  background-color: #f8fafc !important; /* Fundo cinza bem clarinho */
+  color: #4f46e5 !important; /* Texto azul */
+  border-left-color: #c7d2fe !important; /* Borda azul clara na esquerda */
 }
 
-/* Se o cartão estiver ATIVO (Página atual) */
+.mega-link-item:hover i,
+.mega-link-item:hover::before {
+  color: #4f46e5;
+  transform: translateX(2px); /* Ícone se move levemente */
+}
+
+/* ITEM ATIVO (Página atual) */
 .mega-link-item.active {
-  background-color: #4f46e5 !important; /* Fundo Azul forte */
-  color: #ffffff !important; /* Texto Branco */
-  border-color: #4338ca !important;
+  background-color: #eef2ff !important; /* Fundo azulzinho */
+  color: #4f46e5 !important; /* Texto azul forte */
+  font-weight: 700;
+  border-left-color: #4f46e5 !important; /* Borda azul forte na esquerda */
 }
 
-/* Removendo os painéis e banners extras para não sujar o visual */
-.mega-explore-side, 
-.mega-explore-side .explore-banner,
-.mega-explore-side .explore-header-title {
-  display: none !important; 
+.mega-link-item.active i,
+.mega-link-item.active::before {
+  color: #4f46e5;
 }
+
+/* Escondendo lixos antigos */
+.mega-explore-side { display: none !important; }
 
 /* ==========================================
    4. CONTEÚDO DA PÁGINA E CARTÕES
