@@ -145,39 +145,129 @@ html, body {
 }
 
 /* ==========================================
-   3. MEGA MENU DROPDOWN (DESKTOP) - CORRIGIDO
+   3. MEGA MENU DROPDOWN (DESKTOP)
    ========================================== */
-
-/* A caixa branca do menu */
 .mega-menu {
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
-  min-width: 280px; 
-  max-width: 380px;
+  width: max-content;
+  min-width: 260px;
+  max-width: 340px;
   margin: 0;
   max-height: calc(100vh - 90px);
   overflow-y: auto;
-  
-  background: #ffffff !important; 
-  border: 1px solid #cbd5e1 !important; 
-  border-top: 4px solid #4f46e5 !important; 
-  border-radius: 0 0 12px 12px !important; 
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15) !important;
-  padding: 1rem !important; 
-  
+  background: var(--menu-aberto-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 0.8rem;
   opacity: 0;
   visibility: hidden;
   transform: translateY(8px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   z-index: 1001;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
-/* Posicionamento para não vazar da tela */
 .nav-item:nth-last-child(-n+2) .mega-menu { left: auto; right: 0; }
 
-/* Gatilho de Abertura (Hover) */
+.mega-menu::-webkit-scrollbar { width: 6px; }
+.mega-menu::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+
+.mega-categories-container { display: flex; flex-direction: column; gap: 0; }
+
+.category-group {
+  padding: 0.5rem 0;
+  position: relative;
+}
+.category-group:first-child { padding-top: 0; }
+.category-group:last-child { padding-bottom: 0; }
+
+.category-group::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #f1f5f9;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.category-group:last-child::after { display: none; }
+
+.category-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+  padding: 0 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.mega-links-grid { display: grid; grid-template-columns: 1fr; gap: 2px; }
+
+.mega-link-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--menu-texto);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.mega-link-item:hover {
+  background-color: var(--menu-hover);
+  color: var(--primary);
+  padding-left: 0.95rem; /* Efeito de deslize */
+}
+
+.mega-link-item.active {
+  background-color: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+  border-left: 3px solid var(--primary);
+  border-radius: 4px 8px 8px 4px;
+}
+
+/* Painel Lateral Explore do Menu */
+.mega-explore-side {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0.5rem 0.6rem 0.1rem;
+  margin-top: 0.4rem;
+  border-top: 1px solid var(--border-color);
+  display: block;
+}
+
+.explore-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+  padding: 0.4rem 0;
+}
+
+.explore-link:hover { gap: 0.7rem; color: var(--primary-hover); }
+
+/* Hover Desktop */
 @media (min-width: 961px) {
   .nav-item:hover .mega-menu {
     opacity: 1;
@@ -186,85 +276,6 @@ html, body {
   }
   .nav-item.closed .mega-menu { opacity: 0 !important; visibility: hidden !important; }
 }
-
-/* Título do Grupo (LINHA DE BAIXA / ALTA) */
-.category-title {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #64748b !important;
-  font-weight: 800;
-  margin: 0.8rem 0 0.4rem 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.category-group:first-child .category-title { margin-top: 0; }
-
-/* A lista de links (UL) - Removemos os pontinhos da lista */
-.mega-menu ul {
-  list-style: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-/* O Link (LI > A) */
-.mega-menu li a {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 0.6rem;
-  text-decoration: none;
-  color: #334155 !important;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  border-left: 3px solid transparent; /* Borda invisível para alinhar */
-}
-
-/* Hover no link */
-.mega-menu li a:hover {
-  background-color: #eef2ff !important;
-  color: #4f46e5 !important;
-  border-left-color: #4f46e5 !important;
-}
-
-/* Link Ativo */
-.mega-menu li a.active {
-  background-color: #eef2ff !important;
-  color: #4f46e5 !important;
-  font-weight: 700;
-  border-left-color: #4f46e5 !important;
-}
-
-/* Removendo as setinhas ">" do HTML que estão quebrando o layout */
-.mega-menu li a::before {
-  content: "\f105"; /* Ícone de seta do FontAwesome */
-  font-family: "Font Awesome 6 Free"; 
-  font-weight: 900;
-  color: #94a3b8;
-  margin-right: 0.5rem;
-  font-size: 0.8rem;
-  transition: all 0.2s ease;
-}
-.mega-menu li a:hover::before,
-.mega-menu li a.active::before {
-  color: #4f46e5;
-  transform: translateX(2px);
-}
-
-/* ==========================================
-   ESCONDENDO O BANNER AZUL QUEBRADO
-   ========================================== */
-.mega-explore-side,
-.explore-banner,
-.explore-header-title {
-  display: none !important; 
-}
-
 
 /* ==========================================
    4. CONTEÚDO DA PÁGINA E CARTÕES
@@ -566,5 +577,3 @@ a.img-link::after { content: "\f03e"; font-family: "Font Awesome 6 Free"; font-w
   .page-card th, .page-card td { padding: 0.5rem 0.55rem; font-size: 0.88rem; line-height: 1.4; overflow-wrap: break-word; vertical-align: top; }
   .page-card th { font-size: 0.8rem; }
 }
-
-
