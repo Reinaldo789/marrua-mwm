@@ -1039,8 +1039,8 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    Para trocar as cores, altere só as variáveis abaixo.
    ========================================== */
 :root {
-  --barra-menu: #6366f1;        /* cor da barra do menu (sempre colorida) */
-  --menu-aberto: #6585e7;       /* cor da aba aberta e do painel do menu */
+  --barra-menu: #4338ca;        /* cor da barra do menu (sempre colorida) */
+  --menu-aberto: #3730a3;       /* cor da aba aberta e do painel do menu */
 }
 
 /* Barra do menu: sempre colorida, com letras brancas */
@@ -1093,30 +1093,10 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    ========================================== */
 :root {
   --bg-page: #cbd5e1;        /* cor do fundo atrás do conteúdo (as laterais) */
-  --card-borda: #e8f1fd;     /* borda do cartão branco do conteúdo */
+  --card-borda: #94a3b8;     /* borda do cartão branco do conteúdo */
   --text-muted: #475569;     /* textos secundários, um pouco mais escuros */
 }
 .page-card {
   border: 1px solid var(--card-borda);
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
-}
-
-/* ==========================================
-   ESTILOS EXTRAS PARA O MENU LATERAL
-   ========================================== */
-.separador-menu {
-  height: 1px;
-  background-color: #e2e8f0;
-  margin: 1.5rem 0 1rem 0;
-  width: 100%;
-}
-
-.titulo-menu-extra {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #64748b;
-  font-weight: 700;
-  margin-bottom: 0.8rem;
-  padding-left: 0.5rem;
 }
