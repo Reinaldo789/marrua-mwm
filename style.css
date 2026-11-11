@@ -1326,3 +1326,33 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   /* painel de conteúdo ocupa o espaço à direita */
   main { padding: 2rem 1.5rem; }
 }
+
+
+/* ==========================================
+   BOTÃO INÍCIO DENTRO DA CAIXA DO MENU (desktop)
+   ========================================== */
+.nav-home { display: none; }
+
+@media (min-width: 961px) {
+  /* a barra índigo do topo some: o Início agora é um botão dentro da lista */
+  .site-wrapper > header .logo { display: none; }
+
+  .nav-home { display: block; flex-shrink: 0; }
+  .home-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 1.1rem;
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+    font-weight: 800;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .home-btn:hover { background: var(--primary-light); }
+}
