@@ -1121,45 +1121,46 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   }
 
  /* ==========================================
-   AJUSTE FINO DE LARGURA NO CELULAR (MEIO TERMO)
+   AJUSTE FINO DE LARGURA NO CELULAR (QUASE COLANDO)
    ========================================== */
 @media (max-width: 768px) {
   
-  /* 1. Mantém o respiro nas laterais do main */
+  /* 1. Reduz o respiro do main para quase zero */
   main {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+    padding-left: 0.3rem !important;  /* Fiozinho de margem */
+    padding-right: 0.3rem !important; 
   }
 
-  /* 2. Hero (caixa de cima) - Diminui um pouco para acompanhar */
+  /* 2. Hero (caixa de cima) - Bem largo */
   .home-hero {
-    width: 94% !important; /* <--- ALTERE AQUI: 94% deixa ele levemente mais fino */
-    max-width: 94% !important;
+    width: 100% !important; 
+    max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 1.8rem 1rem !important; 
+    padding: 1.5rem 0.8rem !important; /* Padding interno menor para o texto não encostar */
+    border-radius: 16px !important;
   }
 
-  /* 3. Cards de Sistema (de baixo) - O "Meio Termo" */
+  /* 3. Cards de Sistema - Bem largos */
   .home-grid {
     width: 100% !important;
     padding: 0 !important;
     margin: 0 auto !important;
     grid-template-columns: 1fr !important; 
-    /* Centraliza os itens do grid */
     justify-items: center; 
   }
 
   .home-card {
-    /* Aqui está o ajuste do meio termo */
-    width: 94% !important;     /* <--- ALTERE AQUI: 94% da largura do container */
-    max-width: 360px !important; /* <--- ALTERE AQUI: Tamanho máximo em pixels (para telas maiores) */
+    /* Ocupa 99% da tela, deixando só um fio de margem */
+    width: 99% !important;     
+    max-width: 99% !important; 
     margin: 0 auto !important; 
     box-sizing: border-box;
+    padding: 1.2rem !important; /* Padding interno para o texto respirar */
   }
 
-  /* 4. Ajuste fino do título "Escolha um sistema" */
+  /* 4. Ajuste do título "Escolha um sistema" */
   .home-title {
-    padding-left: 3% !important; /* Alinha o texto com o início do card */
+    padding-left: 2% !important; 
     margin-left: 0 !important;
   }
 }
