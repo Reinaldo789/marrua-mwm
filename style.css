@@ -1120,30 +1120,46 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
     padding: 2rem 1rem !important; /* Diminui o padding interno para caber melhor */
   }
 
-  /* 3. Ajusta os Cards de Sistema (Sistema Elétrico, etc) */
+ /* ==========================================
+   AJUSTE FINO DE LARGURA NO CELULAR (MEIO TERMO)
+   ========================================== */
+@media (max-width: 768px) {
+  
+  /* 1. Mantém o respiro nas laterais do main */
+  main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* 2. Hero (caixa de cima) - Diminui um pouco para acompanhar */
+  .home-hero {
+    width: 94% !important; /* <--- ALTERE AQUI: 94% deixa ele levemente mais fino */
+    max-width: 94% !important;
+    margin: 0 auto !important;
+    padding: 1.8rem 1rem !important; 
+  }
+
+  /* 3. Cards de Sistema (de baixo) - O "Meio Termo" */
   .home-grid {
-    /* Garante que o grid ocupe o espaço do main */
     width: 100% !important;
     padding: 0 !important;
     margin: 0 auto !important;
-    /* Em celular, força uma coluna só */
     grid-template-columns: 1fr !important; 
+    /* Centraliza os itens do grid */
+    justify-items: center; 
   }
 
   .home-card {
-    /* Aqui está o segredo: o card não ocupa 100%, ele tem um limite */
-    width: 100% !important;
-    max-width: 100% !important; /* Ocupa toda a largura do main (que já tem margem) */
-    
-    /* Se você quiser ele AINDA mais estreito que a tela, mude o max-width acima para 320px, por exemplo */
-    
-    margin: 0 auto !important; /* Centraliza o card */
+    /* Aqui está o ajuste do meio termo */
+    width: 94% !important;     /* <--- ALTERE AQUI: 94% da largura do container */
+    max-width: 360px !important; /* <--- ALTERE AQUI: Tamanho máximo em pixels (para telas maiores) */
+    margin: 0 auto !important; 
     box-sizing: border-box;
   }
 
-  /* 4. Ajuste fino para o texto "Escolha um sistema" não colar na borda */
+  /* 4. Ajuste fino do título "Escolha um sistema" */
   .home-title {
-    padding-left: 0 !important;
+    padding-left: 3% !important; /* Alinha o texto com o início do card */
     margin-left: 0 !important;
   }
 }
