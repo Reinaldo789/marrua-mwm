@@ -1101,21 +1101,49 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
 }
 
-/* Ajuste para os cards da Home ficarem mais estreitos no celular */
+/* ==========================================
+   AJUSTE FINO DE LARGURA NO CELULAR (CORRIGIDO)
+   ========================================== */
 @media (max-width: 768px) {
+  
+  /* 1. Dá um respiro nas laterais de toda a página */
+  main {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* 2. Ajusta o Hero (caixa de cima com o título e busca) */
+  .home-hero {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 2rem 1rem !important; /* Diminui o padding interno para caber melhor */
+  }
+
+  /* 3. Ajusta os Cards de Sistema (Sistema Elétrico, etc) */
   .home-grid {
-    /* Muda o grid para 1 coluna, mas com largura controlada */
-    grid-template-columns: 1fr; 
-    /* Adiciona um respiro nas laterais */
-    padding: 0 1rem; 
-    /* Ou, se quiser que os cards fiquem centralizados e mais estreitos que a tela: */
-    /* justify-items: center; */
+    /* Garante que o grid ocupe o espaço do main */
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    /* Em celular, força uma coluna só */
+    grid-template-columns: 1fr !important; 
   }
 
   .home-card {
-    /* Aqui você define a largura máxima desejada */
-    width: 100%;
-    max-width: 340px; /* <--- ALTERE AQUI o tamanho máximo do card */
-    margin: 0 auto;   /* Centraliza o card na tela */
+    /* Aqui está o segredo: o card não ocupa 100%, ele tem um limite */
+    width: 100% !important;
+    max-width: 100% !important; /* Ocupa toda a largura do main (que já tem margem) */
+    
+    /* Se você quiser ele AINDA mais estreito que a tela, mude o max-width acima para 320px, por exemplo */
+    
+    margin: 0 auto !important; /* Centraliza o card */
+    box-sizing: border-box;
+  }
+
+  /* 4. Ajuste fino para o texto "Escolha um sistema" não colar na borda */
+  .home-title {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
   }
 }
