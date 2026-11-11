@@ -11,16 +11,14 @@ navItems.forEach(item => {
   const btn = item.querySelector('.nav-btn');
   
   btn.addEventListener('click', (e) => {
-    if (window.innerWidth <= 960) {
-      e.preventDefault();
-      
-      // Sanfona: ao abrir um item, fecha os outros
-      const abrir = !item.classList.contains('active');
-      navItems.forEach(i => i.classList.remove('active'));
-      if (abrir) {
-        item.classList.add('active');
-        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
+    e.preventDefault();
+
+    // Sanfona (celular e menu lateral do desktop): ao abrir um item, fecha os outros
+    const abrir = !item.classList.contains('active');
+    navItems.forEach(i => i.classList.remove('active'));
+    if (abrir) {
+      item.classList.add('active');
+      item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   });
 });
@@ -131,13 +129,8 @@ async function abrirPagina() {
 // clicou num item: fecha o menu (celular) ou o painel (desktop)
 document.querySelectorAll('.mega-menu a').forEach(a => {
   a.addEventListener('click', () => {
-    if (window.innerWidth <= 960) {
-      if (mainNav.classList.contains('active')) mobileToggleBtn.click();
-    } else {
-      const item = a.closest('.nav-item');
-      item.classList.add('closed');
-      item.addEventListener('mouseleave', () => item.classList.remove('closed'), { once: true });
-    }
+    // celular: fecha o painel lateral; desktop: o menu lateral fica aberto
+    if (window.innerWidth <= 960 && mainNav.classList.contains('active')) mobileToggleBtn.click();
   });
 });
 
