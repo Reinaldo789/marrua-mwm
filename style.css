@@ -1193,3 +1193,136 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
     visibility: visible;
   }
 }
+
+
+/* ==========================================
+   MENU LATERAL FIXO NO DESKTOP (como na imagem)
+   Barra índigo "Início" no topo + itens em cartões brancos
+   que abrem ao clicar. O conteúdo fica à direita.
+   Para mudar a largura, altere --largura-menu.
+   ========================================== */
+@media (min-width: 961px) {
+  :root { --largura-menu: 300px; }
+
+  .site-wrapper { padding-left: var(--largura-menu); }
+
+  .site-wrapper > header,
+  .site-wrapper > header.scrolled {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: var(--largura-menu);
+    background: var(--bg-page);
+    border-bottom: 0;
+    border-right: 1px solid #b6c2d3;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .site-wrapper > header .logo {
+    flex-shrink: 0;
+    padding: 0.95rem 1.1rem;
+    background: var(--primary-hover);
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
+  .mobile-toggle { display: none; }
+
+  .main-nav {
+    flex: 1;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem 1rem 2rem;
+    overflow-y: auto;
+  }
+
+  .nav-item,
+  .nav-item:nth-last-child(-n+2) {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+    overflow: hidden;
+  }
+
+  /* botão de cada item */
+  .site-wrapper > header .nav-btn,
+  .site-wrapper > header .nav-item:hover > .nav-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 1.1rem;
+    border-radius: 0;
+    background: #fff !important;
+    color: var(--text-main) !important;
+    font-weight: 700;
+  }
+  .site-wrapper > header .nav-item.active > .nav-btn,
+  .site-wrapper > header .nav-btn.atual {
+    background: var(--primary-light) !important;
+    color: var(--primary) !important;
+  }
+  .site-wrapper > header .nav-btn i.fa-solid:not(.fa-chevron-down) { color: var(--primary) !important; }
+  .site-wrapper > header .nav-btn i.fa-chevron-down { color: var(--text-main) !important; }
+  .nav-item:hover > .nav-btn i.fa-chevron-down { transform: none; }
+  .nav-item.active > .nav-btn i.fa-chevron-down { transform: rotate(180deg); }
+
+  /* lista que abre embaixo do botão (sanfona) */
+  .site-wrapper > header .mega-menu,
+  .nav-item:nth-last-child(-n+2) .mega-menu {
+    position: static;
+    display: none;
+    grid-template-columns: 1fr;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    max-height: none;
+    overflow: visible;
+    margin: 0;
+    padding: 0.8rem;
+    opacity: 1;
+    visibility: visible;
+    transform: none !important;
+    background: #fff !important;
+    border: 0 !important;
+    border-top: 1px solid var(--border-color) !important;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .nav-item.active .mega-menu { display: block; animation: slideDown 0.25s ease; }
+  .nav-item.closed .mega-menu { opacity: 1 !important; visibility: visible !important; }
+
+  .site-wrapper > header .nav-item .mega-menu .category-title { color: var(--text-muted) !important; padding: 0; }
+  .site-wrapper > header .nav-item .mega-menu .category-group::after { background: var(--border-color) !important; left: 0; width: 100%; }
+  .site-wrapper > header .nav-item .mega-menu .mega-link-item {
+    color: var(--text-main) !important;
+    background: #f8fafc;
+    padding: 0.6rem 0.8rem;
+  }
+  .site-wrapper > header .nav-item .mega-menu .mega-link-item:hover {
+    background: var(--primary-light) !important;
+    color: var(--primary) !important;
+    padding-left: 0.8rem;
+  }
+  .site-wrapper > header .nav-item .mega-menu .mega-link-item.active {
+    background: var(--primary-light) !important;
+    color: var(--primary) !important;
+  }
+  .site-wrapper > header .nav-item .mega-menu .explore-link,
+  .site-wrapper > header .nav-item .mega-menu .explore-header-title { color: var(--primary) !important; }
+  .site-wrapper > header .nav-item .mega-menu .mega-explore-side { border-top-color: var(--border-color) !important; }
+
+  /* painel de conteúdo ocupa o espaço à direita */
+  main { padding: 2rem 1.5rem; }
+}
