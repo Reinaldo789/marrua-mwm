@@ -49,6 +49,20 @@ mobileToggleBtn.addEventListener('click', (e) => {
 });
 
 // ==========================================
+// MENU LATERAL (celular): fechar pelo X, pelo fundo escuro, pelo Início ou com Esc
+// ==========================================
+const fecharMenuLateral = () => {
+  if (mainNav.classList.contains('active')) mobileToggleBtn.click();
+};
+document.getElementById('drawer-close-btn').addEventListener('click', fecharMenuLateral);
+document.getElementById('drawer-overlay').addEventListener('click', fecharMenuLateral);
+document.querySelector('.drawer-home').addEventListener('click', fecharMenuLateral);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharMenuLateral(); });
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 960 && mainNav.classList.contains('active')) fecharMenuLateral();
+});
+
+// ==========================================
 // BOTÃO VOLTAR AO TOPO
 // ==========================================
 const btnTop = document.getElementById('btn-top');

@@ -27,6 +27,14 @@
         </button>
 
         <ul class="main-nav" id="main-nav">
+
+          <!-- CABEÇALHO DO MENU LATERAL (só aparece no celular) -->
+          <li class="drawer-head">
+            <a href="#" class="drawer-home"><i class="fa-solid fa-house"></i> Início</a>
+            <button type="button" class="drawer-close" id="drawer-close-btn" aria-label="Fechar menu">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </li>
           
           <!-- 1. SISTEMA ELÉTRICO -->
           <li class="nav-item">
@@ -80,15 +88,15 @@
                   <h5>Painel & Fusíveis</h5>
                   <p>Consulte a caixa de fusíveis e luzes de alerta do painel.</p>
                 </div>
-                <a href="#sistema-eletrico/destaque" class="explore-link">Diagramas Elétrico<i class="fa-solid fa-arrow-right"></i></a>
+                <a href="pdfs/seu-arquivo.pdf" class="explore-link">Diagramas Elétrico<i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </li>
 
-          <!-- 2. ALIMENTAÇÃO COMBUSTÍVEL -->
+          <!-- 2. ALIMENTAÇÃO DE COMBUSTÍVEL -->
           <li class="nav-item">
             <button class="nav-btn">
-              <span><i class="fa-solid fa-gas-pump" style="margin-right:6px; color:var(--primary);"></i> Linha Combustível</span>
+              <span><i class="fa-solid fa-gas-pump" style="margin-right:6px; color:var(--primary);"></i> Linha de Combustível</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
@@ -178,82 +186,57 @@
             </div>
           </li>
 
-          <!-- 4. MOTOR (Novo Menu Separado) -->
+          <!-- 4. MOTOR E CHASSI -->
           <li class="nav-item">
             <button class="nav-btn">
-              <span><i class="fa-solid fa-gear" style="margin-right:6px; color:var(--primary);"></i> Motor</span>
+              <span><i class="fa-solid fa-wrench" style="margin-right:6px; color:var(--primary);"></i> Motor e Chassi</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
             <div class="mega-menu">
               <div class="mega-categories-container">
 
-                <!-- Motor Base -->
+                <!-- Motor -->
                 <div class="category-group">
-                  <div class="category-title"><i class="fa-solid fa-gear"></i> Especificações</div>
+                  <div class="category-title"><i class="fa-solid fa-gear"></i> Motor</div>
                   <div class="mega-links-grid">
-                    <a href="#motor/dados-do-motor" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Dados do Motor</a>
-                    <a href="#motor/lubrificacao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Lubrificação e Revisao</a>
-                    <a href="#motor/estudo-viscosidade-oleos" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tipos e Classificação do Óleo</a>
-                    <a href="#motor/tabela-de-torque" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tabela de Torque - Nm</a>
+                    <a href="#motor-e-chassi/dados-do-motor" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Dados do Motor</a>
+                    <a href="#motor-e-chassi/lubrificacao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Lubrificação e Revisao</a>
+                    <a href="#motor-e-chassi/estudo-viscosidade-oleos" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tipos e Classificação do Óleo</a>
+                    <a href="#motor-e-chassi/tabela-de-torque" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tabela de Torque - Nm</a>
                   </div>
                 </div>
                 
-                <!-- Sistema de Arrefecimento (Movido para cá) -->
+                <!-- Sistema de Arrefecimento -->
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-snowflake"></i> Sistema de Arrefecimento</div>
                   <div class="mega-links-grid">
-                    <a href="#motor/correia-e-ventoinha" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Correia e Ventoinha</a>
-                    <a href="#motor/bomba-de-agua" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Agua</a>
-                    <a href="#motor/trocador-de-calor" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Trocador de calor</a>
-                    <a href="#motor/valvula-termostatica" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Válvula termostática</a>
+                    <a href="#motor-e-chassi/correia-e-ventoinha" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Correia e Ventoinha</a>
+                    <a href="#motor-e-chassi/bomba-de-agua" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Agua</a>
+                    <a href="#motor-e-chassi/trocador-de-calor" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Trocador de calor</a>
+                    <a href="#motor-e-chassi/valvula-termostatica" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Válvula termostática</a>
                   </div>
                 </div>
 
-              </div>
-
-              <!-- Destaque Lateral -->
-              <div class="mega-explore-side">
-                <div class="explore-header-title">Manutenção do Motor</div>
-                <div class="explore-banner" style="background-color: #1e1b4b;">
-                  <i class="fa-solid fa-wrench"></i>
-                  <h5>Óleos e Arrefecimento</h5>
-                  <p>Especificações técnicas de fluidos e componentes do motor.</p>
-                </div>
-                <a href="#motor/destaque" class="explore-link">Ver Especificações <i class="fa-solid fa-arrow-right"></i></a>
-              </div>
-            </div>
-          </li>
-
-          <!-- 5. CHASSI (Novo Menu Separado) -->
-          <li class="nav-item">
-            <button class="nav-btn">
-              <span><i class="fa-solid fa-car-side" style="margin-right:6px; color:var(--primary);"></i> Chassi</span>
-              <i class="fa-solid fa-chevron-down"></i>
-            </button>
-
-            <div class="mega-menu">
-              <div class="mega-categories-container">
-
-                <!-- Sistema de Direção (Movido para cá) -->
+                <!-- Sistema de Direção -->
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-dharmachakra"></i> Eixo e Direção</div>
                   <div class="mega-links-grid">
-                    <a href="#chassi/bomba-de-direcao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Direção</a>
-                    <a href="#chassi/caixa-de-direcao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Caixa de direção</a>
-                    <a href="#chassi/eixo-dianteiro" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Eixo Dianteiro</a>
+                    <a href="#motor-e-chassi/bomba-de-direcao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Direção</a>
+                    <a href="#motor-e-chassi/caixa-de-direcao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Caixa de direção</a>
+                    <a href="#motor-e-chassi/eixo-dianteiro" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Eixo Dianteiro</a>
                   </div>
                 </div>
 
-                <!-- Sistemas de Freios (Movido para cá) -->
+                <!-- Sistemas de Freios -->
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-circle-stop"></i> Sistemas de Freios</div>
                   <div class="mega-links-grid">
-                    <a href="#chassi/bomba-de-vacuo" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Vácuo</a>
-                    <a href="#chassi/cilindro-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Cilindro de Freio</a>
-                    <a href="#chassi/oleo-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Óleo de Freio</a>
-                    <a href="#chassi/pincas-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Pinças de Freio</a>
-                    <a href="#chassi/regulagem-freio-de-mao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Regulagem Freio de mão</a>
+                    <a href="#motor-e-chassi/bomba-de-vacuo" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Vácuo</a>
+                    <a href="#motor-e-chassi/cilindro-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Cilindro de Freio</a>
+                    <a href="#motor-e-chassi/oleo-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Óleo de Freio</a>
+                    <a href="#motor-e-chassi/pincas-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Pinças de Freio</a>
+                    <a href="#motor-e-chassi/regulagem-freio-de-mao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Regulagem Freio de mão</a>
                   </div>
                 </div>
 
@@ -261,7 +244,7 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-gears"></i> Transmissão</div>
                   <div class="mega-links-grid">
-                    <a href="#chassi/caixa-de-mudancas" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Caixa de Mudanças</a>
+                    <a href="#motor-e-chassi/caixa-de-mudancas" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Caixa de Mudanças</a>
                   </div>
                 </div>
 
@@ -269,18 +252,18 @@
 
               <!-- Destaque Lateral -->
               <div class="mega-explore-side">
-                <div class="explore-header-title">Manutenção de Chassi</div>
-                <div class="explore-banner" style="background-color: #4c1d95;">
-                  <i class="fa-solid fa-car-side"></i>
-                  <h5>Freios e Direção</h5>
-                  <p>Especificações técnicas e regulagens do chassi.</p>
+                <div class="explore-header-title">Manutenção Mecânica</div>
+                <div class="explore-banner" style="background-color: #1e1b4b;">
+                  <i class="fa-solid fa-wrench"></i>
+                  <h5>Torques e Fluídos</h5>
+                  <p>Especificações técnicas de fluidos de freio e direção.</p>
                 </div>
-                <a href="#chassi/destaque" class="explore-link">Ver Especificações <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#motor-e-chassi/destaque" class="explore-link">Ver Especificações <i class="fa-solid fa-arrow-right"></i></a>
               </div>
             </div>
           </li>
 
-          <!-- 6. DIAGNÓSTICO -->
+          <!-- 5. DIAGNÓSTICO -->
           <li class="nav-item">
             <button class="nav-btn">
               <span><i class="fa-solid fa-stethoscope" style="margin-right:6px; color:var(--primary);"></i> Diagnóstico</span>
@@ -331,6 +314,7 @@
                   <div class="category-title"><i class="fa-solid fa-triangle-exclamation"></i> Sintomas do Motor</div>
                   <div class="mega-links-grid">
                     <a href="#diagnostico/motor-nao-pega" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Motor Não Pega</a>
+                    <a href="#diagnostico/limitacao-rotacao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Limitação de Rotação</a>
                     <a href="#diagnostico/fumaca-preta" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Fumaça Preta</a>
                     <a href="#diagnostico/falha-acelerador" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Falha do Acelerador</a>
                     <a href="#diagnostico/superaquecimento" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Superaquecimento</a>
@@ -354,6 +338,9 @@
           </li>
 
         </ul>
+
+        <!-- Fundo escuro atrás do menu lateral -->
+        <div class="drawer-overlay" id="drawer-overlay"></div>
       </div>
     </header>
 
@@ -372,8 +359,8 @@
         </section>
 
         <section class="home-stats">
-          <div><strong>6</strong><span>Sistemas</span></div>
-          <div><strong>16</strong><span>Grupos</span></div>
+          <div><strong>5</strong><span>Sistemas</span></div>
+          <div><strong>17</strong><span>Grupos</span></div>
           <div><strong>68</strong><span>Assuntos</span></div>
         </section>
 
@@ -400,23 +387,13 @@
           <div class="home-chips"><a href="#sistema-de-injecao/sensor-rotacao">Sensor Rotação</a><a href="#sistema-de-injecao/sensor-pres-rail">Sensor Pres. Rail</a><a href="#sistema-de-injecao/valvula-mprop">Válvula MProp</a><a href="#sistema-de-injecao/bicos-injetores">Bicos Injetores</a><a href="#sistema-de-injecao/modulador-turbina">Modulador Turbina</a></div>
           <a class="home-card-more" href="#sistema-de-injecao/destaque">Ver tudo de Sistema de Injeção <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        
         <div class="home-card" style="--c:#1e1b4b">
-          <div class="home-card-icon"><i class="fa-solid fa-gear"></i></div>
-          <h3>Motor</h3>
-          <p>Arrefecimento, lubrificação, torques e especificações do motor.</p>
-          <div class="home-chips"><a href="#motor/bomba-de-agua">Bomba de Água</a><a href="#motor/valvula-termostatica">Válvula termostática</a><a href="#motor/dados-do-motor">Dados do Motor</a></div>
-          <a class="home-card-more" href="#motor/destaque">Ver tudo de Motor <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="home-card-icon"><i class="fa-solid fa-wrench"></i></div>
+          <h3>Motor e Chassi</h3>
+          <p>Arrefecimento, direção e freios: fluidos, regulagens e problemas comuns.</p>
+          <div class="home-chips"><a href="#motor-e-chassi/bomba-de-agua">Bomba de Água</a><a href="#motor-e-chassi/valvula-termostatica">Válvula termostática</a><a href="#motor-e-chassi/caixa-de-direcao">Caixa de direção</a><a href="#motor-e-chassi/bomba-de-vacuo">Bomba de Vácuo</a><a href="#motor-e-chassi/pincas-de-freio">Pinças de Freio</a></div>
+          <a class="home-card-more" href="#motor-e-chassi/destaque">Ver tudo de Motor e Chassi <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-        
-        <div class="home-card" style="--c:#4c1d95">
-          <div class="home-card-icon"><i class="fa-solid fa-car-side"></i></div>
-          <h3>Chassi</h3>
-          <p>Direção, freios e transmissão: fluidos, regulagens e problemas comuns.</p>
-          <div class="home-chips"><a href="#chassi/caixa-de-direcao">Caixa de direção</a><a href="#chassi/bomba-de-vacuo">Bomba de Vácuo</a><a href="#chassi/pincas-de-freio">Pinças de Freio</a></div>
-          <a class="home-card-more" href="#chassi/destaque">Ver tudo de Chassi <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-
         <div class="home-card" style="--c:#7c2d12">
           <div class="home-card-icon"><i class="fa-solid fa-stethoscope"></i></div>
           <h3>Diagnóstico Interativo</h3>
@@ -431,7 +408,7 @@
           <a href="#sistema-de-injecao/valvula-mprop"><i class="fa-solid fa-sliders"></i> Válvula MProp</a>
           <a href="#sistema-eletrico/luzes-de-injecao"><i class="fa-solid fa-triangle-exclamation"></i> Luzes de Injeção</a>
           <a href="#alimentacao-de-combustivel/tubo-rail"><i class="fa-solid fa-gauge-high"></i> Tubo Rail</a>
-          <a href="#chassi/oleo-de-freio"><i class="fa-solid fa-circle-stop"></i> Óleo de Freio</a>
+          <a href="#motor-e-chassi/oleo-de-freio"><i class="fa-solid fa-circle-stop"></i> Óleo de Freio</a>
           <a href="#sistema-eletrico/agua-no-combustivel"><i class="fa-solid fa-droplet"></i> Água no Combustível</a>
         </div>
       </div>
@@ -452,7 +429,7 @@
         <div class="footer-col"><h4>Injeção</h4>
           <a href="#sistema-de-injecao/valvula-mprop">Válvula MProp</a><a href="#sistema-de-injecao/bicos-injetores">Bicos</a><a href="#sistema-de-injecao/destaque">Testes</a></div>
         <div class="footer-col"><h4>Motor e Chassi</h4>
-          <a href="#motor/bomba-de-agua">Bomba de Água</a><a href="#chassi/pincas-de-freio">Freios</a><a href="#motor/destaque">Especificações</a></div>
+          <a href="#motor-e-chassi/bomba-de-agua">Bomba de Água</a><a href="#motor-e-chassi/pincas-de-freio">Freios</a><a href="#motor-e-chassi/destaque">Especificações</a></div>
       </div>
       <div class="footer-bottom">
         <span>© 2026. Conteúdo de caráter orientativo: confirme valores no manual do fabricante.</span>

@@ -1039,8 +1039,8 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    Para trocar as cores, altere só as variáveis abaixo.
    ========================================== */
 :root {
-  --barra-menu: #4338ca;        /* cor da barra do menu (sempre colorida) */
-  --menu-aberto: #3730a3;       /* cor da aba aberta e do painel do menu */
+  --barra-menu: #6366f1;        /* cor da barra do menu (sempre colorida) */
+  --menu-aberto: #6585e7;       /* cor da aba aberta e do painel do menu */
 }
 
 /* Barra do menu: sempre colorida, com letras brancas */
@@ -1093,7 +1093,7 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
    ========================================== */
 :root {
   --bg-page: #cbd5e1;        /* cor do fundo atrás do conteúdo (as laterais) */
-  --card-borda: #94a3b8;     /* borda do cartão branco do conteúdo */
+  --card-borda: #e8f1fd;     /* borda do cartão branco do conteúdo */
   --text-muted: #475569;     /* textos secundários, um pouco mais escuros */
 }
 .page-card {
@@ -1101,66 +1101,95 @@ header.scrolled .mobile-toggle:hover { background: rgba(255,255,255,0.12); color
   box-shadow: 0 2px 10px rgba(15, 23, 42, 0.15);
 }
 
+
 /* ==========================================
-   AJUSTE FINO DE LARGURA NO CELULAR (CORRIGIDO)
+   MENU LATERAL (celular e tablet)
+   Painel que desliza da esquerda, com fundo escuro atrás.
+   Para trocar o lado: troque left por right e -100% por 100%.
    ========================================== */
-@media (max-width: 768px) {
-  
-  /* 1. Dá um respiro nas laterais de toda a página */
-  main {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+.drawer-head, .drawer-overlay { display: none; }
+
+@media (max-width: 960px) {
+  .main-nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: min(88vw, 400px);
+    height: auto;
+    padding: 0 1rem calc(3rem + env(safe-area-inset-bottom, 0px));
+    gap: 0.8rem;
+    background: var(--bg-page);
+    box-shadow: 8px 0 30px rgba(15, 23, 42, 0.35);
+    animation: none;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+    z-index: 1002;
+  }
+  .main-nav.active {
+    transform: translateX(0);
+    visibility: visible;
   }
 
-  /* 2. Ajusta o Hero (caixa de cima com o título e busca) */
-  .home-hero {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 2rem 1rem !important; /* Diminui o padding interno para caber melhor */
+  /* faixa de cima: Início + X */
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 0 -1rem 0.2rem;
+    padding: 0.95rem 1.1rem;
+    background: var(--primary-hover);
+    color: #fff;
   }
-
- /* ==========================================
-   AJUSTE FINO DE LARGURA NO CELULAR (QUASE COLANDO)
-   ========================================== */
-@media (max-width: 768px) {
-  
-  /* 1. Reduz o respiro do main para quase zero */
-  main {
-    padding-left: 0.3rem !important;  /* Fiozinho de margem */
-    padding-right: 0.3rem !important; 
+  .drawer-home {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
-
-  /* 2. Hero (caixa de cima) - Bem largo */
-  .home-hero {
-    width: 100% !important; 
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 1.5rem 0.8rem !important; /* Padding interno menor para o texto não encostar */
-    border-radius: 16px !important;
+  .drawer-close {
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
   }
+  .drawer-close:hover { background: rgba(255, 255, 255, 0.15); }
 
-  /* 3. Cards de Sistema - Bem largos */
-  .home-grid {
-    width: 100% !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-    grid-template-columns: 1fr !important; 
-    justify-items: center; 
+  /* cartões brancos dos itens, como na imagem */
+  .nav-item {
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
   }
+  .nav-btn { font-weight: 700; }
 
-  .home-card {
-    /* Ocupa 99% da tela, deixando só um fio de margem */
-    width: 99% !important;     
-    max-width: 99% !important; 
-    margin: 0 auto !important; 
-    box-sizing: border-box;
-    padding: 1.2rem !important; /* Padding interno para o texto respirar */
+  /* fundo escuro atrás do painel */
+  .drawer-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+    z-index: 1001;
   }
-
-  /* 4. Ajuste do título "Escolha um sistema" */
-  .home-title {
-    padding-left: 2% !important; 
-    margin-left: 0 !important;
+  .main-nav.active ~ .drawer-overlay {
+    opacity: 1;
+    visibility: visible;
   }
 }
