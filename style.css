@@ -19,7 +19,7 @@
   --border-color: #e2e8f0;
   --barra-menu: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
   --radius: 14px;
-  --h-header: 62px;
+  --h-header: 48px;   /* altura da barra do menu */
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, .08);
   --shadow-md: 0 6px 16px -4px rgba(15, 23, 42, .16);
   --shadow-lg: 0 24px 48px -12px rgba(15, 23, 42, .28);
@@ -69,12 +69,12 @@ main { flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 2.5rem 
 .logo {
   display: flex; align-items: center; gap: .55rem;
   color: #fff; text-decoration: none;
-  font-size: 1.2rem; font-weight: 800; letter-spacing: -.02em;
+  font-size: 1.05rem; font-weight: 800; letter-spacing: -.02em;
 }
-.logo i { font-size: 1.25rem; }
+.logo i { font-size: 1.1rem; }
 
 .mobile-toggle {
-  display: inline-grid; place-items: center; width: 42px; height: 42px;
+  display: inline-grid; place-items: center; width: 36px; height: 36px;
   background: rgba(255, 255, 255, .12); border: 0; border-radius: 12px;
   color: #fff; font-size: 1.25rem; cursor: pointer; transition: background .2s;
 }
@@ -156,8 +156,8 @@ main { flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 2.5rem 
     background: none; border-radius: 0; box-shadow: none; overflow: visible;
   }
   .nav-btn {
-    width: auto; padding: .55rem .9rem; border-radius: 10px;
-    background: transparent; color: #fff; font-size: .9rem; font-weight: 600;
+    width: auto; padding: .38rem .8rem; border-radius: 8px;
+    background: transparent; color: #fff; font-size: .88rem; font-weight: 600;
   }
   .nav-btn span i { margin-right: .4rem; color: #e0e7ff; }
   .nav-btn .fa-chevron-down { color: #c7d2fe; }
