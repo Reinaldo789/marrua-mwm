@@ -48,10 +48,10 @@
 <h2 id="parte-eletrica">Parte Elétrica e Testes (V CC)</h2>
 <p>Para testar este componente, o multímetro deve ser configurado na escala de <b>Tensão Contínua (V CC ou VDC)</b>. O teste é realizado por trás do conector (backprobing) utilizando o polo negativo da bateria como referência de aterramento para a ponta preta.</p>
 
- <!-- <h3 id="teste-alimentacao">Pino 1 – Alimentação (+5,0V)</h3>  -->
+<h3 id="teste-alimentacao">Pino 1 – Alimentação (+5,0V)</h3>
 <p>Com a chave ligada ou o motor em funcionamento, este pino deve registrar uma tensão contínua constante de <b>5,0 Volts</b> (com tolerância de 4,8V a 5,2V) enviada pela ECU Bosch EDC16C8. O valor deve ser totalmente estável e linear em qualquer regime de rotação.</p>
 
- <!-- <h3 id="teste-sinal">Pino 2 – Sinal de Retorno (Chaveamento Digital)</h3> -->
+<h3 id="teste-sinal">Pino 2 – Sinal de Retorno (Chaveamento Digital)</h3>
 <p>Este pino transmite o sinal de sincronismo digital para a central. Por causa da configuração mecânica de apenas 1 dente no comando, e devido à taxa de amostragem do multímetro convencional ao calcular a média desse pulso único, <b>a tensão lida é inversamente proporcional à velocidade do motor</b>.</p>
 
 <div class="specs">
@@ -158,7 +158,7 @@
   <p>Se a tensão média travar fixa em 0V ou fixa na tensão máxima de alimentação (5V) sem oscilar nada durante a partida ou aceleração, o sensor queimou ou o comando de válvulas está desalinhado fisicamente.</p>
 </div>
 
-<!-- <h3 id="teste-terra">Pino 3 – Aterramento (Massa dos Sensores)</h3> -->
+<h3 id="teste-terra">Pino 3 – Aterramento (Massa dos Sensores)</h3>
 <p>Este pino fornece o terra eletrônico isolado vindo do módulo de injeção. Ao medir contra o polo negativo da bateria, o valor deve registrar no máximo <b>0,1 Volt</b>. Valores acima disso indicam alta resistência no chicote ou deficiência no aterramento principal da injeção.</p>
 
 <h2 id="problemas-comuns">Sintomas Práticos de Falha</h2>
