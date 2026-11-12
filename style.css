@@ -74,10 +74,12 @@ main { flex: 1; width: 100%; max-width: 1200px; margin: 0 auto; padding: 2.5rem 
 .logo i { font-size: 1.1rem; }
 
 .mobile-toggle {
-  display: inline-grid; place-items: center; width: 36px; height: 36px;
-  background: rgba(255, 255, 255, .12); border: 0; border-radius: 12px;
-  color: #fff; font-size: 1.25rem; cursor: pointer; transition: background .2s;
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-width: 7.5rem; height: 36px; padding: 0 1rem;
+  background: rgba(255, 255, 255, .14); border: 0; border-radius: 12px;
+  color: #fff; font-size: .95rem; font-weight: 700; cursor: pointer; transition: background .2s;
 }
+.mobile-toggle i { font-size: 1.05rem; }
 .mobile-toggle:hover { background: rgba(255, 255, 255, .22); }
 
 /* lista de menus — padrão = celular (painel que ocupa a tela abaixo da barra) */
