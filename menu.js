@@ -20,6 +20,7 @@ const header     = $('.site-header');
 const nav        = $('#main-nav');
 const toggle     = $('#mobile-toggle-btn');
 const toggleIcon = $('i', toggle);
+const toggleTexto = $('.toggle-label', toggle);
 const navItems   = $$('.nav-item');
 const btnTop     = $('#btn-top');
 const home       = $('#home-box');
@@ -33,6 +34,7 @@ function abrirMenu(aberto) {
   toggle.setAttribute('aria-expanded', aberto);
   toggleIcon.classList.toggle('fa-bars', !aberto);
   toggleIcon.classList.toggle('fa-xmark', aberto);
+  toggleTexto.textContent = aberto ? 'Fechar Menu' : 'Menu';
   if (!aberto) marcarItem(null);
 }
 
