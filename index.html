@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4338ca">
   <title>Marrua MWM 2.8</title>
 
   <!-- Ícones Font Awesome -->
@@ -15,49 +16,36 @@
   <div class="site-wrapper">
 
     <!-- NAVBAR -->
-    <header>
+    <header class="site-header">
       <div class="nav-container">
         <a href="#" class="logo">
           <i class="fa-solid fa-house"></i>
           <span>Início</span>
         </a>
 
-        <button class="mobile-toggle" id="mobile-toggle-btn" aria-label="Abrir Menu">
+        <button type="button" class="mobile-toggle" id="mobile-toggle-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
           <i class="fa-solid fa-bars"></i>
         </button>
 
         <ul class="main-nav" id="main-nav">
 
-          <!-- BOTÃO INÍCIO DENTRO DO MENU LATERAL (só aparece no desktop) -->
-          <li class="nav-home">
-            <a href="#" class="home-btn"><i class="fa-solid fa-house"></i> Início</a>
-          </li>
-
-          <!-- CABEÇALHO DO MENU LATERAL (só aparece no celular) -->
-          <li class="drawer-head">
-            <a href="#" class="drawer-home"><i class="fa-solid fa-house"></i> Início</a>
-            <button type="button" class="drawer-close" id="drawer-close-btn" aria-label="Fechar menu">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </li>
-          
           <!-- 1. SISTEMA ELÉTRICO -->
           <li class="nav-item">
-            <button class="nav-btn">
-              <span><i class="fa-solid fa-bolt" style="margin-right:6px; color:var(--primary);"></i> Sistema Elétrico</span>
+            <button type="button" class="nav-btn" aria-expanded="false">
+              <span><i class="fa-solid fa-bolt"></i> Sistema Elétrico</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
             <div class="mega-menu">
               <div class="mega-categories-container">
-                
+
                 <!-- Luzes -->
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-lightbulb"></i> Luzes</div>
                   <div class="mega-links-grid">
-                    <a href="#sistema-eletrico/fusiveis-e-lampadas" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Fusíveis e Lampadas</a>
-                    <a href="#sistema-eletrico/luz-de-farol-e-posicao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Luz de Farol e Posição</a>
-                    <a href="#sistema-eletrico/luz-de-seta-e-alerta" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Luz de Seta e alerta</a>
+                    <a href="#sistema-eletrico/fusiveis-e-lampadas" class="mega-link-item">Fusíveis e Lampadas</a>
+                    <a href="#sistema-eletrico/luz-de-farol-e-posicao" class="mega-link-item">Luz de Farol e Posição</a>
+                    <a href="#sistema-eletrico/luz-de-seta-e-alerta" class="mega-link-item">Luz de Seta e alerta</a>
                   </div>
                 </div>
 
@@ -65,10 +53,10 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-gauge"></i> Painel de Instrumentos</div>
                   <div class="mega-links-grid">
-                    <a href="#sistema-eletrico/luz-e-pressao-de-oleo" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Luz e Pressão de óleo</a>
-                    <a href="#sistema-eletrico/luzes-de-injecao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Luzes de Injeção</a>
-                    <a href="#sistema-eletrico/agua-no-combustivel" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Agua no Combustível</a>
-                    <a href="#sistema-eletrico/agua-de-arrefecimento" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Agua de Arrefecimento</a>
+                    <a href="#sistema-eletrico/luz-e-pressao-de-oleo" class="mega-link-item">Luz e Pressão de óleo</a>
+                    <a href="#sistema-eletrico/luzes-de-injecao" class="mega-link-item">Luzes de Injeção</a>
+                    <a href="#sistema-eletrico/agua-no-combustivel" class="mega-link-item">Agua no Combustível</a>
+                    <a href="#sistema-eletrico/agua-de-arrefecimento" class="mega-link-item">Agua de Arrefecimento</a>
                   </div>
                 </div>
 
@@ -76,10 +64,10 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-car-battery"></i> Acessórios</div>
                   <div class="mega-links-grid">
-                    <a href="#sistema-eletrico/diagramas-eletrico" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Diagrama Elétrico</a>
-                    <a href="#sistema-eletrico/bateria-e-alternador" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bateria e Alternador</a>
-                    <a href="#sistema-eletrico/motor-de-partida" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Motor de Partida</a>
-                    <a href="#sistema-eletrico/limpador-de-para-brisa" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Limpador de Parabriza</a>
+                    <a href="#sistema-eletrico/diagramas-eletrico" class="mega-link-item">Diagrama Elétrico</a>
+                    <a href="#sistema-eletrico/bateria-e-alternador" class="mega-link-item">Bateria e Alternador</a>
+                    <a href="#sistema-eletrico/motor-de-partida" class="mega-link-item">Motor de Partida</a>
+                    <a href="#sistema-eletrico/limpador-de-para-brisa" class="mega-link-item">Limpador de Parabriza</a>
                   </div>
                 </div>
 
@@ -100,22 +88,22 @@
 
           <!-- 2. ALIMENTAÇÃO DE COMBUSTÍVEL -->
           <li class="nav-item">
-            <button class="nav-btn">
-              <span><i class="fa-solid fa-gas-pump" style="margin-right:6px; color:var(--primary);"></i> Linha de Combustível</span>
+            <button type="button" class="nav-btn" aria-expanded="false">
+              <span><i class="fa-solid fa-gas-pump"></i> Linha de Combustível</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
             <div class="mega-menu">
               <div class="mega-categories-container">
-                
+
                 <!-- Linha de Combustível -->
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-filter"></i> Linha de Baixa</div>
                   <div class="mega-links-grid">
-                    <a href="#alimentacao-de-combustivel/tanque-filtro-mang" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tanque, Filtro, Mang.</a>
-                    <a href="#alimentacao-de-combustivel/bomba-eletrica" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba Elétrica</a>
-                    <a href="#alimentacao-de-combustivel/bomba-engrenagem" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba Engrenagem</a>
-                    <a href="#alimentacao-de-combustivel/valvula-kuv" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Válvula KUV</a>
+                    <a href="#alimentacao-de-combustivel/tanque-filtro-mang" class="mega-link-item">Tanque, Filtro, Mang.</a>
+                    <a href="#alimentacao-de-combustivel/bomba-eletrica" class="mega-link-item">Bomba Elétrica</a>
+                    <a href="#alimentacao-de-combustivel/bomba-engrenagem" class="mega-link-item">Bomba Engrenagem</a>
+                    <a href="#alimentacao-de-combustivel/valvula-kuv" class="mega-link-item">Válvula KUV</a>
                   </div>
                 </div>
 
@@ -123,8 +111,8 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-gauge-high"></i> Linha de Alta</div>
                   <div class="mega-links-grid">
-                    <a href="#alimentacao-de-combustivel/bomba-alta-pressao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba Alta Pressão</a>
-                    <a href="#alimentacao-de-combustivel/tubo-rail" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tubo Rail</a>
+                    <a href="#alimentacao-de-combustivel/bomba-alta-pressao" class="mega-link-item">Bomba Alta Pressão</a>
+                    <a href="#alimentacao-de-combustivel/tubo-rail" class="mega-link-item">Tubo Rail</a>
                   </div>
                 </div>
 
@@ -133,7 +121,7 @@
               <!-- Destaque Lateral -->
               <div class="mega-explore-side">
                 <div class="explore-header-title">Linha de Combustível</div>
-                <div class="explore-banner" style="background-color: #0284c7;">
+                <div class="explore-banner">
                   <i class="fa-solid fa-gas-pump"></i>
                   <h5>Baixa e Alta Pressão</h5>
                   <p>Esquemas da linha de combustível e bomba elétrica.</p>
@@ -145,23 +133,23 @@
 
           <!-- 3. SISTEMA DE INJEÇÃO -->
           <li class="nav-item">
-            <button class="nav-btn">
-              <span><i class="fa-solid fa-microchip" style="margin-right:6px; color:var(--primary);"></i> Sistema de Injeção</span>
+            <button type="button" class="nav-btn" aria-expanded="false">
+              <span><i class="fa-solid fa-microchip"></i> Sistema de Injeção</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
             <div class="mega-menu">
               <div class="mega-categories-container">
-                
+
                 <!-- Sensores -->
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-microchip"></i> Sensores</div>
                   <div class="mega-links-grid">
-                    <a href="#sistema-de-injecao/sensor-rotacao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor Rotação</a>
-                    <a href="#sistema-de-injecao/sensor-fase" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor Fase</a>
-                    <a href="#sistema-de-injecao/sensor-pres-adm" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor Pres. Adm</a>
-                    <a href="#sistema-de-injecao/sensor-temp-ecm" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor Temp. ECM</a>
-                    <a href="#sistema-de-injecao/sensor-pres-rail" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor Pres. Rail</a>
+                    <a href="#sistema-de-injecao/sensor-rotacao" class="mega-link-item">Sensor Rotação</a>
+                    <a href="#sistema-de-injecao/sensor-fase" class="mega-link-item">Sensor Fase</a>
+                    <a href="#sistema-de-injecao/sensor-pres-adm" class="mega-link-item">Sensor Pres. Adm</a>
+                    <a href="#sistema-de-injecao/sensor-temp-ecm" class="mega-link-item">Sensor Temp. ECM</a>
+                    <a href="#sistema-de-injecao/sensor-pres-rail" class="mega-link-item">Sensor Pres. Rail</a>
                   </div>
                 </div>
 
@@ -169,11 +157,11 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-sliders"></i> Atuadores</div>
                   <div class="mega-links-grid">
-                    <a href="#sistema-de-injecao/valvula-mprop" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Válvula MProp</a>
-                    <a href="#sistema-de-injecao/pedal-acelerador" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Pedal Acelerador</a>
-                    <a href="#sistema-de-injecao/modulador-turbina" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Modulador Turbina</a>
-                    <a href="#sistema-de-injecao/bicos-injetores" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bicos Injetores</a>
-                    <a href="#sistema-de-injecao/lampada-painel" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Lampada Painel</a>
+                    <a href="#sistema-de-injecao/valvula-mprop" class="mega-link-item">Válvula MProp</a>
+                    <a href="#sistema-de-injecao/pedal-acelerador" class="mega-link-item">Pedal Acelerador</a>
+                    <a href="#sistema-de-injecao/modulador-turbina" class="mega-link-item">Modulador Turbina</a>
+                    <a href="#sistema-de-injecao/bicos-injetores" class="mega-link-item">Bicos Injetores</a>
+                    <a href="#sistema-de-injecao/lampada-painel" class="mega-link-item">Lampada Painel</a>
                   </div>
                 </div>
               </div>
@@ -181,7 +169,7 @@
               <!-- Destaque Lateral -->
               <div class="mega-explore-side">
                 <div class="explore-header-title">Diagnóstico de Injeção</div>
-                <div class="explore-banner" style="background-color: #065f46;">
+                <div class="explore-banner">
                   <i class="fa-solid fa-syringe"></i>
                   <h5>Sensores & Atuadores</h5>
                   <p>Tabela de testes da MProp, Tubo Rail e Bicos Injetores.</p>
@@ -193,8 +181,8 @@
 
           <!-- 4. MOTOR E CHASSI -->
           <li class="nav-item">
-            <button class="nav-btn">
-              <span><i class="fa-solid fa-wrench" style="margin-right:6px; color:var(--primary);"></i> Motor e Chassi</span>
+            <button type="button" class="nav-btn" aria-expanded="false">
+              <span><i class="fa-solid fa-wrench"></i> Motor e Chassi</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
@@ -205,21 +193,21 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-gear"></i> Motor</div>
                   <div class="mega-links-grid">
-                    <a href="#motor-e-chassi/dados-do-motor" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Dados do Motor</a>
-                    <a href="#motor-e-chassi/lubrificacao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Lubrificação e Revisao</a>
-                    <a href="#motor-e-chassi/estudo-viscosidade-oleos" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tipos e Classificação do Óleo</a>
-                    <a href="#motor-e-chassi/tabela-de-torque" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tabela de Torque - Nm</a>
+                    <a href="#motor-e-chassi/dados-do-motor" class="mega-link-item">Dados do Motor</a>
+                    <a href="#motor-e-chassi/lubrificacao" class="mega-link-item">Lubrificação e Revisao</a>
+                    <a href="#motor-e-chassi/estudo-viscosidade-oleos" class="mega-link-item">Tipos e Classificação do Óleo</a>
+                    <a href="#motor-e-chassi/tabela-de-torque" class="mega-link-item">Tabela de Torque - Nm</a>
                   </div>
                 </div>
-                
+
                 <!-- Sistema de Arrefecimento -->
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-snowflake"></i> Sistema de Arrefecimento</div>
                   <div class="mega-links-grid">
-                    <a href="#motor-e-chassi/correia-e-ventoinha" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Correia e Ventoinha</a>
-                    <a href="#motor-e-chassi/bomba-de-agua" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Agua</a>
-                    <a href="#motor-e-chassi/trocador-de-calor" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Trocador de calor</a>
-                    <a href="#motor-e-chassi/valvula-termostatica" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Válvula termostática</a>
+                    <a href="#motor-e-chassi/correia-e-ventoinha" class="mega-link-item">Correia e Ventoinha</a>
+                    <a href="#motor-e-chassi/bomba-de-agua" class="mega-link-item">Bomba de Agua</a>
+                    <a href="#motor-e-chassi/trocador-de-calor" class="mega-link-item">Trocador de calor</a>
+                    <a href="#motor-e-chassi/valvula-termostatica" class="mega-link-item">Válvula termostática</a>
                   </div>
                 </div>
 
@@ -227,9 +215,9 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-dharmachakra"></i> Eixo e Direção</div>
                   <div class="mega-links-grid">
-                    <a href="#motor-e-chassi/bomba-de-direcao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Direção</a>
-                    <a href="#motor-e-chassi/caixa-de-direcao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Caixa de direção</a>
-                    <a href="#motor-e-chassi/eixo-dianteiro" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Eixo Dianteiro</a>
+                    <a href="#motor-e-chassi/bomba-de-direcao" class="mega-link-item">Bomba de Direção</a>
+                    <a href="#motor-e-chassi/caixa-de-direcao" class="mega-link-item">Caixa de direção</a>
+                    <a href="#motor-e-chassi/eixo-dianteiro" class="mega-link-item">Eixo Dianteiro</a>
                   </div>
                 </div>
 
@@ -237,11 +225,11 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-circle-stop"></i> Sistemas de Freios</div>
                   <div class="mega-links-grid">
-                    <a href="#motor-e-chassi/bomba-de-vacuo" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bomba de Vácuo</a>
-                    <a href="#motor-e-chassi/cilindro-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Cilindro de Freio</a>
-                    <a href="#motor-e-chassi/oleo-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Óleo de Freio</a>
-                    <a href="#motor-e-chassi/pincas-de-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Pinças de Freio</a>
-                    <a href="#motor-e-chassi/regulagem-freio-de-mao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Regulagem Freio de mão</a>
+                    <a href="#motor-e-chassi/bomba-de-vacuo" class="mega-link-item">Bomba de Vácuo</a>
+                    <a href="#motor-e-chassi/cilindro-de-freio" class="mega-link-item">Cilindro de Freio</a>
+                    <a href="#motor-e-chassi/oleo-de-freio" class="mega-link-item">Óleo de Freio</a>
+                    <a href="#motor-e-chassi/pincas-de-freio" class="mega-link-item">Pinças de Freio</a>
+                    <a href="#motor-e-chassi/regulagem-freio-de-mao" class="mega-link-item">Regulagem Freio de mão</a>
                   </div>
                 </div>
 
@@ -249,7 +237,7 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-gears"></i> Transmissão</div>
                   <div class="mega-links-grid">
-                    <a href="#motor-e-chassi/caixa-de-mudancas" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Caixa de Mudanças</a>
+                    <a href="#motor-e-chassi/caixa-de-mudancas" class="mega-link-item">Caixa de Mudanças</a>
                   </div>
                 </div>
 
@@ -258,7 +246,7 @@
               <!-- Destaque Lateral -->
               <div class="mega-explore-side">
                 <div class="explore-header-title">Manutenção Mecânica</div>
-                <div class="explore-banner" style="background-color: #1e1b4b;">
+                <div class="explore-banner">
                   <i class="fa-solid fa-wrench"></i>
                   <h5>Torques e Fluídos</h5>
                   <p>Especificações técnicas de fluidos de freio e direção.</p>
@@ -270,8 +258,8 @@
 
           <!-- 5. DIAGNÓSTICO -->
           <li class="nav-item">
-            <button class="nav-btn">
-              <span><i class="fa-solid fa-stethoscope" style="margin-right:6px; color:var(--primary);"></i> Diagnóstico</span>
+            <button type="button" class="nav-btn" aria-expanded="false">
+              <span><i class="fa-solid fa-stethoscope"></i> Diagnóstico</span>
               <i class="fa-solid fa-chevron-down"></i>
             </button>
 
@@ -282,11 +270,11 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-microchip"></i> Sensores</div>
                   <div class="mega-links-grid">
-                    <a href="#diagnostico/sensor-rotacao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor de Rotação</a>
-                    <a href="#diagnostico/sensor-fase" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor de Fase</a>
-                    <a href="#diagnostico/sensor-pres-rail" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor de Pressão do Rail</a>
-                    <a href="#diagnostico/sensor-pres-adm" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor de Pressão Admissão</a>
-                    <a href="#diagnostico/sensor-temp-ecm" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Sensor de Temperatura Líquido</a>
+                    <a href="#diagnostico/sensor-rotacao" class="mega-link-item">Sensor de Rotação</a>
+                    <a href="#diagnostico/sensor-fase" class="mega-link-item">Sensor de Fase</a>
+                    <a href="#diagnostico/sensor-pres-rail" class="mega-link-item">Sensor de Pressão do Rail</a>
+                    <a href="#diagnostico/sensor-pres-adm" class="mega-link-item">Sensor de Pressão Admissão</a>
+                    <a href="#diagnostico/sensor-temp-ecm" class="mega-link-item">Sensor de Temperatura Líquido</a>
                   </div>
                 </div>
 
@@ -294,10 +282,10 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-sliders"></i> Atuadores</div>
                   <div class="mega-links-grid">
-                    <a href="#diagnostico/valvula-mprop" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Válvula MProp</a>
-                    <a href="#diagnostico/modulador-turbina" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Modulador do Turbo</a>
-                    <a href="#diagnostico/bicos-injetores" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Bicos Injetores</a>
-                    <a href="#diagnostico/rele-bomba-combustivel" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Relé Bomba Combustível</a>
+                    <a href="#diagnostico/valvula-mprop" class="mega-link-item">Válvula MProp</a>
+                    <a href="#diagnostico/modulador-turbina" class="mega-link-item">Modulador do Turbo</a>
+                    <a href="#diagnostico/bicos-injetores" class="mega-link-item">Bicos Injetores</a>
+                    <a href="#diagnostico/rele-bomba-combustivel" class="mega-link-item">Relé Bomba Combustível</a>
                   </div>
                 </div>
 
@@ -305,12 +293,12 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-bolt"></i> Sistema Elétrico</div>
                   <div class="mega-links-grid">
-                    <a href="#diagnostico/rele-principal" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Relé Principal K15</a>
-                    <a href="#diagnostico/lampada-painel" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Lâmpada do Painel</a>
-                    <a href="#diagnostico/tensao-bateria" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tensão da Bateria</a>
-                    <a href="#diagnostico/tensao-sensores" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Tensão dos Sensores</a>
-                    <a href="#diagnostico/sensor-pedal-freio" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Interruptor Pedal Freio</a>
-                    <a href="#diagnostico/sensor-pedal-embreagem" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Interruptor Pedal Embreagem</a>
+                    <a href="#diagnostico/rele-principal" class="mega-link-item">Relé Principal K15</a>
+                    <a href="#diagnostico/lampada-painel" class="mega-link-item">Lâmpada do Painel</a>
+                    <a href="#diagnostico/tensao-bateria" class="mega-link-item">Tensão da Bateria</a>
+                    <a href="#diagnostico/tensao-sensores" class="mega-link-item">Tensão dos Sensores</a>
+                    <a href="#diagnostico/sensor-pedal-freio" class="mega-link-item">Interruptor Pedal Freio</a>
+                    <a href="#diagnostico/sensor-pedal-embreagem" class="mega-link-item">Interruptor Pedal Embreagem</a>
                   </div>
                 </div>
 
@@ -318,12 +306,12 @@
                 <div class="category-group">
                   <div class="category-title"><i class="fa-solid fa-triangle-exclamation"></i> Sintomas do Motor</div>
                   <div class="mega-links-grid">
-                    <a href="#diagnostico/motor-nao-pega" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Motor Não Pega</a>
-                    <a href="#diagnostico/limitacao-rotacao" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Limitação de Rotação</a>
-                    <a href="#diagnostico/fumaca-preta" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Fumaça Preta</a>
-                    <a href="#diagnostico/falha-acelerador" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Falha do Acelerador</a>
-                    <a href="#diagnostico/superaquecimento" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Superaquecimento</a>
-                    <a href="#diagnostico/baixa-pressao-oleo" class="mega-link-item"><i class="fa-solid fa-chevron-right"></i> Baixa Pressão de Óleo</a>
+                    <a href="#diagnostico/motor-nao-pega" class="mega-link-item">Motor Não Pega</a>
+                    <a href="#diagnostico/limitacao-rotacao" class="mega-link-item">Limitação de Rotação</a>
+                    <a href="#diagnostico/fumaca-preta" class="mega-link-item">Fumaça Preta</a>
+                    <a href="#diagnostico/falha-acelerador" class="mega-link-item">Falha do Acelerador</a>
+                    <a href="#diagnostico/superaquecimento" class="mega-link-item">Superaquecimento</a>
+                    <a href="#diagnostico/baixa-pressao-oleo" class="mega-link-item">Baixa Pressão de Óleo</a>
                   </div>
                 </div>
 
@@ -332,7 +320,7 @@
               <!-- Destaque Lateral -->
               <div class="mega-explore-side">
                 <div class="explore-header-title">Diagnóstico Interativo</div>
-                <div class="explore-banner" style="background-color: #7c2d12;">
+                <div class="explore-banner">
                   <i class="fa-solid fa-stethoscope"></i>
                   <h5>21 Fluxogramas</h5>
                   <p>Roteiros passo a passo com Sim/Não até a solução.</p>
@@ -343,9 +331,6 @@
           </li>
 
         </ul>
-
-        <!-- Fundo escuro atrás do menu lateral -->
-        <div class="drawer-overlay" id="drawer-overlay"></div>
       </div>
     </header>
 
@@ -452,7 +437,7 @@
   </div>
 
   <!-- JAVASCRIPT -->
-  <script src="menu.js"></script>
+  <script src="menu.js" defer></script>
 
 </body>
 </html>
